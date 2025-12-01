@@ -363,8 +363,46 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Downloads Section */}
+      {/* Recommendations Section */}
       <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge variant="secondary" className="mb-4">Testimonials</Badge>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">Recommendations</h2>
+            </div>
+            
+            <Card className="shadow-soft border-0 bg-card">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-4">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl font-bold text-primary-foreground">AA</span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                      <div>
+                        <h3 className="text-lg font-display font-semibold text-foreground">Assem Abdou</h3>
+                        <p className="text-sm text-muted-foreground">Electrical, Instrumentation & Control Systems Lead</p>
+                      </div>
+                      <div className="flex items-center gap-2 mt-2 sm:mt-0">
+                        <LinkedinIcon className="w-4 h-4 text-accent" />
+                        <span className="text-xs text-muted-foreground">September 23, 2023</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-muted-foreground mb-4">Assem managed Mohamed directly</p>
+                    <blockquote className="text-muted-foreground leading-relaxed italic border-l-4 border-primary/30 pl-4">
+                      "Mohamed was part of my I&C team. He was always a reliable team member, stepping in to provide support when needed. He is a very decent person and it's always been easy to work and deal with him."
+                    </blockquote>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Downloads Section */}
+      <section className="py-24 bg-gradient-subtle">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <Badge variant="secondary" className="mb-4">Resources</Badge>
