@@ -16,7 +16,15 @@ import {
   ZapIcon,
   SparklesIcon,
   ArrowRightIcon,
-  StarIcon
+  StarIcon,
+  FactoryIcon,
+  BuildingIcon,
+  WrenchIcon,
+  HeadsetIcon,
+  GlobeIcon,
+  LayersIcon,
+  ServerIcon,
+  UsersIcon
 } from "lucide-react";
 import innovationAward from "@/assets/innovation-award.jpg";
 
@@ -257,8 +265,126 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Diverse Experience Section */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-14 max-w-3xl mx-auto">
+            <Badge variant="secondary" className="mb-4">A 360° Perspective</Badge>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+              Diverse Experience Across the Ecosystem
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              A decade of working every side of the control systems world — as an end user,
+              a global vendor, and a system integrator — across industries, project phases,
+              and specialized technology teams.
+            </p>
+          </div>
+
+          {/* Three Vantage Points */}
+          <div className="mb-12">
+            <h3 className="text-center text-sm font-semibold uppercase tracking-widest text-accent mb-6">
+              Three Vantage Points of the Industry
+            </h3>
+            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {[
+                {
+                  icon: FactoryIcon,
+                  role: "End User",
+                  company: "Methanex",
+                  desc: "Operated and maintained mission-critical control systems from the plant floor, understanding firsthand what reliability means to operations."
+                },
+                {
+                  icon: BuildingIcon,
+                  role: "Global Vendor",
+                  company: "Schneider Electric",
+                  desc: "Worked inside an OEM powerhouse, mastering platforms at their source and supporting customers worldwide."
+                },
+                {
+                  icon: LayersIcon,
+                  role: "System Integrator",
+                  company: "Advansys Intelligent Solutions",
+                  desc: "Designing and delivering tailored automation solutions, bridging vendor technologies with real-world client needs."
+                }
+              ].map(({ icon: Icon, role, company, desc }) => (
+                <Card
+                  key={role}
+                  className="group border-0 bg-gradient-subtle hover:shadow-tech transition-all duration-500 hover:-translate-y-2"
+                >
+                  <CardHeader>
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-warm flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-7 h-7 text-primary" />
+                    </div>
+                    <Badge variant="outline" className="w-fit mb-2 text-xs">{role}</Badge>
+                    <CardTitle className="text-xl font-display text-foreground">{company}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Breadth Grid */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                icon: GlobeIcon,
+                title: "Industries Served",
+                items: ["Petrochemicals", "Data Centers"],
+                desc: "Delivering reliability where uptime is non-negotiable."
+              },
+              {
+                icon: WrenchIcon,
+                title: "Project Lifecycle",
+                items: ["Engineering & Design", "Maintenance & Operations"],
+                desc: "From greenfield engineering to long-term plant care."
+              },
+              {
+                icon: HeadsetIcon,
+                title: "Engagement Modes",
+                items: ["On-Site Field Engineering", "Global Customer Support Expert"],
+                desc: "Hands-on at the plant, and remote expert support across the globe."
+              },
+              {
+                icon: ServerIcon,
+                title: "Specialized Teams",
+                items: ["SCADA Team", "AVEVA PI Team"],
+                desc: "Deep specialization in real-time control and operational data intelligence."
+              }
+            ].map(({ icon: Icon, title, items, desc }) => (
+              <Card
+                key={title}
+                className="group border-0 bg-card hover:shadow-warm transition-all duration-500"
+              >
+                <CardHeader>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
+                      <Icon className="w-6 h-6 text-accent" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-lg font-display text-foreground mb-1">{title}</CardTitle>
+                      <p className="text-sm text-muted-foreground">{desc}</p>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {items.map((item) => (
+                      <Badge key={item} variant="secondary" className="text-xs">
+                        {item}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Project Experience Section */}
-      <section id="projects" className="py-24 bg-background">
+      <section id="projects" className="py-24 bg-gradient-subtle">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge variant="secondary" className="mb-4">Portfolio</Badge>
