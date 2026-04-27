@@ -27,6 +27,36 @@ import {
   UsersIcon
 } from "lucide-react";
 import innovationAward from "@/assets/innovation-award.jpg";
+import SEO from "@/components/SEO";
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Mohamed Eissa",
+  url: "https://melsaeideissa.com/",
+  image: "https://melsaeideissa.com/og-image.jpg",
+  jobTitle: "Senior Control Systems Engineer",
+  worksFor: { "@type": "Organization", name: "Advansys Intelligent Solutions" },
+  alumniOf: [
+    { "@type": "Organization", name: "Schneider Electric" },
+    { "@type": "Organization", name: "Methanex Corporation" },
+  ],
+  sameAs: ["https://www.linkedin.com/in/mohamedeeissa"],
+  knowsAbout: [
+    "DCS", "SIS", "SCADA", "AVEVA PI", "Functional Safety",
+    "Foxboro", "Triconex", "ISA/IEC 62443", "Alarm Management",
+    "Industrial Automation", "Petrochemicals", "Data Centers",
+  ],
+  award: "Innovation Award 2025 — Advansys Intelligent Solutions",
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://melsaeideissa.com/" },
+  ],
+};
 
 const Index = () => {
   const technicalSkills = {
@@ -105,8 +135,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO jsonLd={[personJsonLd, breadcrumbJsonLd]} />
+      <main>
       {/* Hero Section - Warm & Inviting */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+      <section aria-label="Introduction" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
         {/* Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
