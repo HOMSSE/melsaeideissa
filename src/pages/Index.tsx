@@ -498,31 +498,62 @@ const Index = () => {
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">Recommendations</h2>
             </div>
             
-            <Card className="shadow-soft border-0 bg-card">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
-                    <span className="text-xl font-bold text-primary-foreground">AA</span>
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                      <div>
-                        <h3 className="text-lg font-display font-semibold text-foreground">Assem Abdou</h3>
-                        <p className="text-sm text-muted-foreground">Electrical, Instrumentation & Control Systems Lead</p>
-                      </div>
-                      <div className="flex items-center gap-2 mt-2 sm:mt-0">
-                        <LinkedinIcon className="w-4 h-4 text-accent" />
-                        <span className="text-xs text-muted-foreground">September 23, 2023</span>
-                      </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="shadow-soft border-0 bg-card">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
+                      <span className="text-xl font-bold text-primary-foreground">AA</span>
                     </div>
-                    <p className="text-xs text-muted-foreground mb-4">Assem managed Mohamed directly</p>
-                    <blockquote className="text-muted-foreground leading-relaxed italic border-l-4 border-primary/30 pl-4">
-                      "Mohamed was part of my I&C team. He was always a reliable team member, stepping in to provide support when needed. He is a very decent person and it's always been easy to work and deal with him."
-                    </blockquote>
+                    <div className="flex-1">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-2">
+                        <div>
+                          <h3 className="text-lg font-display font-semibold text-foreground">Assem Abdou</h3>
+                          <p className="text-sm text-muted-foreground">Electrical, Instrumentation & Control Systems Lead</p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <LinkedinIcon className="w-4 h-4 text-accent" />
+                          <span className="text-xs text-muted-foreground whitespace-nowrap">Sep 23, 2023</span>
+                        </div>
+                      </div>
+                      <p className="text-xs text-muted-foreground mb-4">Assem managed Mohamed directly</p>
+                      <blockquote className="text-muted-foreground leading-relaxed italic border-l-4 border-primary/30 pl-4">
+                        "Mohamed was part of my I&C team. He was always a reliable team member, stepping in to provide support when needed. He is a very decent person and it's always been easy to work and deal with him."
+                      </blockquote>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-soft border-0 bg-card">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center flex-shrink-0">
+                      <span className="text-xl font-bold text-primary-foreground">AS</span>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-2">
+                        <div>
+                          <h3 className="text-lg font-display font-semibold text-foreground">Anas Sakr</h3>
+                          <p className="text-sm text-muted-foreground">Senior Instrumentation & Control Systems Engineer — Methanex Corporation</p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <LinkedinIcon className="w-4 h-4 text-accent" />
+                          <span className="text-xs text-muted-foreground whitespace-nowrap">Apr 21, 2026</span>
+                        </div>
+                      </div>
+                      <p className="text-xs text-muted-foreground mb-4">Anas was senior to Mohamed but didn't manage directly</p>
+                      <blockquote className="text-muted-foreground leading-relaxed italic border-l-4 border-primary/30 pl-4 space-y-3">
+                        <p>"I had the pleasure of working with Mohamed Eissa as a colleague in the field of Instrumentation and Control Engineering in Methanex, and I can confidently say he is a highly skilled and reliable engineer.</p>
+                        <p>Mohamed has strong hands-on experience with Foxboro IA systems and Triconex safety systems, demonstrating solid knowledge in DCS and SIS environments. He is detail-oriented, technically sound, and always approaches challenges with a practical and structured mindset.</p>
+                        <p>Beyond his technical strengths, Mohamed is a great team player. He communicates effectively, supports his colleagues, and maintains a positive and professional attitude even under pressure. His willingness to learn and continuously improve truly sets him apart.</p>
+                        <p>I highly recommend Mohamed to any team looking for a competent and dedicated professional Instrumentation and Control Engineer."</p>
+                      </blockquote>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
