@@ -672,6 +672,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
       <footer className="bg-tech-dark text-card py-16">
