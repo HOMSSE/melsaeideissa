@@ -5,7 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
+import IndexEditorial from "./pages/IndexEditorial";
 import NotFound from "./pages/NotFound";
+import StyleToggle from "./components/StyleToggle";
 
 const queryClient = new QueryClient();
 
@@ -16,8 +18,10 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <StyleToggle />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/editorial" element={<IndexEditorial />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
