@@ -7,6 +7,7 @@ const editions = [
   { to: "/scroll3d", label: "v4 3D Scroll" },
   { to: "/terminal", label: "v5 Terminal" },
   { to: "/physics", label: "v6 Physics" },
+  { to: "/cube", label: "v7 Cube" },
 ];
 
 export const StyleToggle = () => {
