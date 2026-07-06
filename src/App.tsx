@@ -11,6 +11,7 @@ import IndexScroll3D from "./pages/IndexScroll3D";
 import IndexTerminal from "./pages/IndexTerminal";
 import IndexPhysics from "./pages/IndexPhysics";
 import IndexCube from "./pages/IndexCube";
+import IndexChroma from "./pages/IndexChroma";
 import NotFound from "./pages/NotFound";
 import StyleToggle from "./components/StyleToggle";
 
