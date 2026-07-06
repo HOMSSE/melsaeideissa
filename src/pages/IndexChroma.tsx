@@ -255,11 +255,35 @@ const IndexChroma = () => {
             className="mt-8 max-w-2xl text-lg md:text-xl"
             style={{ color: rgb(theme.mute) }}
           >
-            An instrumentation & control career told through the colors of the
-            companies that shaped it. Scroll — the page becomes each brand.
+            An instrumentation & control career told through the colors — and
+            logos — of the companies that shaped it. Scroll: the page becomes
+            each brand.
           </p>
+
+          {/* Hero logo trio */}
+          <div className="mt-12 flex flex-wrap items-center gap-4">
+            {brands.map((br) => (
+              <div
+                key={br.key}
+                className="flex items-center justify-center px-4 py-3"
+                style={{
+                  background: br.logoBg,
+                  border: `1px solid ${rgb(theme.accent, 0.3)}`,
+                  minWidth: 140,
+                  height: 60,
+                }}
+              >
+                <img
+                  src={br.logo}
+                  alt={br.name}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+
           <div
-            className="mt-16 text-[10px] tracking-[0.4em] animate-pulse"
+            className="mt-12 text-[10px] tracking-[0.4em] animate-pulse"
             style={{ color: rgb(theme.accent), fontFamily: "'JetBrains Mono', monospace" }}
           >
             ▼ SCROLL TO ENTER METHANEX
