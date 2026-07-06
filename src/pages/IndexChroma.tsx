@@ -27,13 +27,15 @@ type Brand = {
   tagline: string;
   narrative: string;
   bullets: string[];
-  // color system (hex)
-  bg: [number, number, number];        // page background
-  surface: [number, number, number];   // panels
-  ink: [number, number, number];       // primary text
-  mute: [number, number, number];      // muted text
-  accent: [number, number, number];    // brand accent
-  accent2: [number, number, number];   // secondary accent
+  logo: string;
+  logoBg: string; // background behind the logo plate
+  // color system (rgb triplets)
+  bg: [number, number, number];
+  surface: [number, number, number];
+  ink: [number, number, number];
+  mute: [number, number, number];
+  accent: [number, number, number];
+  accent2: [number, number, number];
 };
 
 const brands: Brand[] = [
@@ -42,7 +44,7 @@ const brands: Brand[] = [
     name: "METHANEX",
     role: "Instrument & Control Engineer",
     years: "2015 — 2023",
-    tagline: "From the plant floor.",
+    tagline: "The power of agility.",
     narrative:
       "Eight years operating and maintaining mission-critical control systems at the world's largest methanol producer. Reliability wasn't a slide — it was the shift.",
     bullets: [
@@ -51,19 +53,22 @@ const brands: Brand[] = [
       "Alarm rationalization -75%",
       "SIL-3 ESD implementation",
     ],
-    bg: [0, 32, 66],          // Methanex navy
-    surface: [0, 48, 87],
-    ink: [232, 240, 250],
-    mute: [160, 190, 220],
-    accent: [227, 24, 55],    // Methanex red accent
-    accent2: [255, 255, 255],
+    logo: methanexLogo.url,
+    logoBg: "#ffffff",
+    // Methanex teal-on-navy
+    bg: [4, 40, 60],
+    surface: [8, 60, 82],
+    ink: [230, 246, 250],
+    mute: [150, 200, 215],
+    accent: [0, 156, 166],      // Methanex teal
+    accent2: [120, 210, 220],
   },
   {
     key: "schneider",
     name: "SCHNEIDER ELECTRIC",
     role: "Expert Customer Support Engineer",
     years: "2023 — 2024",
-    tagline: "Inside the OEM.",
+    tagline: "Life Is On.",
     narrative:
       "Global L3 support at a $30B automation powerhouse. Mastered the platforms at their source — and supported customers on every continent.",
     bullets: [
@@ -72,19 +77,22 @@ const brands: Brand[] = [
       "Cross-region customer base",
       "Product-level expertise",
     ],
-    bg: [16, 16, 16],         // Schneider dark
-    surface: [26, 26, 26],
-    ink: [245, 245, 245],
-    mute: [170, 175, 170],
-    accent: [61, 205, 88],    // Schneider green
-    accent2: [255, 255, 255],
+    logo: schneiderLogo.url,
+    logoBg: "#ffffff",
+    // Schneider green-on-dark
+    bg: [12, 14, 12],
+    surface: [22, 26, 22],
+    ink: [245, 250, 245],
+    mute: [170, 180, 170],
+    accent: [61, 205, 88],      // Schneider green
+    accent2: [140, 230, 160],
   },
   {
     key: "advansys",
     name: "ADVANSYS",
     role: "Senior Application Design Engineer",
     years: "2024 — Present",
-    tagline: "Designing to fit.",
+    tagline: "Intelligent Solutions.",
     narrative:
       "Vendor-agnostic architectures for petrochem and hyperscale data centers. Bridging OEM technologies with the operational realities I lived at Methanex.",
     bullets: [
@@ -93,12 +101,15 @@ const brands: Brand[] = [
       "IEC 62443 cybersecurity",
       "End-to-end delivery",
     ],
-    bg: [8, 24, 48],          // Advansys deep blue
-    surface: [12, 38, 72],
-    ink: [245, 240, 232],
-    mute: [200, 190, 175],
-    accent: [242, 101, 34],   // Advansys orange
-    accent2: [255, 200, 120],
+    logo: advansysLogo.url,
+    logoBg: "#000000",
+    // Advansys black + electric blue
+    bg: [4, 6, 10],
+    surface: [14, 18, 26],
+    ink: [240, 244, 255],
+    mute: [150, 165, 190],
+    accent: [43, 123, 255],     // Advansys electric blue
+    accent2: [180, 200, 255],
   },
 ];
 
