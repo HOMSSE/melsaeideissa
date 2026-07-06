@@ -8,6 +8,7 @@ const editions = [
   { to: "/terminal", label: "v5 Terminal" },
   { to: "/physics", label: "v6 Physics" },
   { to: "/cube", label: "v7 Cube" },
+  { to: "/chroma", label: "v8 Chroma" },
 ];
 
 export const StyleToggle = () => {
