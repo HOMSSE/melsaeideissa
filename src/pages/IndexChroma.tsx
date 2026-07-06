@@ -6,6 +6,9 @@ import {
   certifications,
   recommendations,
 } from "@/data/profile";
+import methanexLogo from "@/assets/methanex-logo.png.asset.json";
+import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
+import advansysLogo from "@/assets/advansys-logo.png.asset.json";
 
 /**
  * v8 — CHROMA EDITION
