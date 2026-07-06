@@ -272,7 +272,7 @@ const IndexChroma = () => {
         <div ref={chaptersRef} style={{ height: `${brands.length * 100}vh` }} className="relative">
           <div className="sticky top-0 h-screen w-full flex items-center px-6 md:px-20">
             <div className="w-full grid md:grid-cols-[1fr_1fr] gap-10 md:gap-16 items-center">
-              {/* Left — giant brand mark */}
+              {/* Left — real brand logo plate */}
               <div key={`mark-${activeIdx}`} className="animate-fade-in">
                 <div
                   className="text-[10px] tracking-[0.5em] mb-4"
@@ -280,19 +280,32 @@ const IndexChroma = () => {
                 >
                   CHAPTER {String(activeIdx + 1).padStart(2, "0")} / 03 · {active.years}
                 </div>
-                <h2
-                  className="text-4xl md:text-7xl font-black leading-[0.9]"
+
+                {/* Logo plate — uses the brand's own background color for authenticity */}
+                <div
+                  className="relative w-full max-w-md aspect-[16/9] flex items-center justify-center overflow-hidden border"
                   style={{
-                    letterSpacing: "-0.03em",
-                    color: rgb(theme.ink),
-                    textShadow: `0 0 60px ${rgb(theme.accent, 0.4)}`,
+                    background: active.logoBg,
+                    borderColor: rgb(theme.accent, 0.5),
+                    boxShadow: `0 20px 60px ${rgb(theme.accent, 0.25)}, inset 0 0 0 1px rgba(255,255,255,0.04)`,
                   }}
                 >
-                  {active.name}
-                </h2>
+                  {/* corner ticks */}
+                  <span className="absolute top-2 left-2 w-3 h-3 border-t border-l" style={{ borderColor: rgb(theme.accent) }} />
+                  <span className="absolute top-2 right-2 w-3 h-3 border-t border-r" style={{ borderColor: rgb(theme.accent) }} />
+                  <span className="absolute bottom-2 left-2 w-3 h-3 border-b border-l" style={{ borderColor: rgb(theme.accent) }} />
+                  <span className="absolute bottom-2 right-2 w-3 h-3 border-b border-r" style={{ borderColor: rgb(theme.accent) }} />
+                  <img
+                    src={active.logo}
+                    alt={`${active.name} logo`}
+                    className="max-h-[70%] max-w-[80%] object-contain"
+                    loading="lazy"
+                  />
+                </div>
+
                 <div
-                  className="mt-4 text-lg md:text-2xl"
-                  style={{ color: rgb(theme.accent) }}
+                  className="mt-6 text-2xl md:text-3xl font-black"
+                  style={{ color: rgb(theme.accent), letterSpacing: "-0.02em" }}
                 >
                   {active.tagline}
                 </div>
@@ -304,7 +317,7 @@ const IndexChroma = () => {
                 </div>
 
                 {/* Color bar - signature of this brand */}
-                <div className="mt-8 flex gap-1 h-2 max-w-md">
+                <div className="mt-6 flex gap-1 h-2 max-w-md">
                   {[active.bg, active.surface, active.accent, active.accent2].map((c, ci) => (
                     <div
                       key={ci}
