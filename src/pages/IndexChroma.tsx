@@ -207,30 +207,28 @@ const IndexChroma = () => {
           </div>
         </div>
 
-        {/* Fixed brand indicator dots */}
-        <div className="fixed right-4 md:right-8 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-3">
+        {/* Fixed brand indicator — mini logo chips */}
+        <div className="fixed right-3 md:right-6 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-3">
           {brands.map((br, idx) => {
             const on = idx === activeIdx;
             return (
-              <div key={br.key} className="flex items-center gap-2 justify-end">
-                <span
-                  className="text-[9px] tracking-[0.3em] transition-opacity"
-                  style={{
-                    color: rgb(theme.ink),
-                    opacity: on ? 1 : 0.3,
-                    fontFamily: "'JetBrains Mono', monospace",
-                  }}
-                >
-                  {br.name}
-                </span>
-                <span
-                  className="block rounded-full transition-all"
-                  style={{
-                    width: on ? 10 : 6,
-                    height: on ? 10 : 6,
-                    background: rgb(on ? theme.accent : theme.mute, on ? 1 : 0.5),
-                    boxShadow: on ? `0 0 12px ${rgb(theme.accent, 0.8)}` : "none",
-                  }}
+              <div
+                key={br.key}
+                className="flex items-center justify-center transition-all"
+                style={{
+                  width: on ? 56 : 40,
+                  height: on ? 34 : 24,
+                  background: br.logoBg,
+                  border: `1px solid ${on ? rgb(theme.accent) : "rgba(255,255,255,0.15)"}`,
+                  opacity: on ? 1 : 0.55,
+                  boxShadow: on ? `0 0 20px ${rgb(theme.accent, 0.5)}` : "none",
+                }}
+                title={br.name}
+              >
+                <img
+                  src={br.logo}
+                  alt={br.name}
+                  className="max-h-[75%] max-w-[85%] object-contain"
                 />
               </div>
             );
