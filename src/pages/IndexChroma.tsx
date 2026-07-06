@@ -6,6 +6,9 @@ import {
   certifications,
   recommendations,
 } from "@/data/profile";
+import methanexLogo from "@/assets/methanex-logo.png.asset.json";
+import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
+import advansysLogo from "@/assets/advansys-logo.png.asset.json";
 
 /**
  * v8 — CHROMA EDITION
@@ -24,13 +27,15 @@ type Brand = {
   tagline: string;
   narrative: string;
   bullets: string[];
-  // color system (hex)
-  bg: [number, number, number];        // page background
-  surface: [number, number, number];   // panels
-  ink: [number, number, number];       // primary text
-  mute: [number, number, number];      // muted text
-  accent: [number, number, number];    // brand accent
-  accent2: [number, number, number];   // secondary accent
+  logo: string;
+  logoBg: string; // background behind the logo plate
+  // color system (rgb triplets)
+  bg: [number, number, number];
+  surface: [number, number, number];
+  ink: [number, number, number];
+  mute: [number, number, number];
+  accent: [number, number, number];
+  accent2: [number, number, number];
 };
 
 const brands: Brand[] = [
@@ -39,7 +44,7 @@ const brands: Brand[] = [
     name: "METHANEX",
     role: "Instrument & Control Engineer",
     years: "2015 — 2023",
-    tagline: "From the plant floor.",
+    tagline: "The power of agility.",
     narrative:
       "Eight years operating and maintaining mission-critical control systems at the world's largest methanol producer. Reliability wasn't a slide — it was the shift.",
     bullets: [
@@ -48,19 +53,22 @@ const brands: Brand[] = [
       "Alarm rationalization -75%",
       "SIL-3 ESD implementation",
     ],
-    bg: [0, 32, 66],          // Methanex navy
-    surface: [0, 48, 87],
-    ink: [232, 240, 250],
-    mute: [160, 190, 220],
-    accent: [227, 24, 55],    // Methanex red accent
-    accent2: [255, 255, 255],
+    logo: methanexLogo.url,
+    logoBg: "#ffffff",
+    // Methanex teal-on-navy
+    bg: [4, 40, 60],
+    surface: [8, 60, 82],
+    ink: [230, 246, 250],
+    mute: [150, 200, 215],
+    accent: [0, 156, 166],      // Methanex teal
+    accent2: [120, 210, 220],
   },
   {
     key: "schneider",
     name: "SCHNEIDER ELECTRIC",
     role: "Expert Customer Support Engineer",
     years: "2023 — 2024",
-    tagline: "Inside the OEM.",
+    tagline: "Life Is On.",
     narrative:
       "Global L3 support at a $30B automation powerhouse. Mastered the platforms at their source — and supported customers on every continent.",
     bullets: [
@@ -69,19 +77,22 @@ const brands: Brand[] = [
       "Cross-region customer base",
       "Product-level expertise",
     ],
-    bg: [16, 16, 16],         // Schneider dark
-    surface: [26, 26, 26],
-    ink: [245, 245, 245],
-    mute: [170, 175, 170],
-    accent: [61, 205, 88],    // Schneider green
-    accent2: [255, 255, 255],
+    logo: schneiderLogo.url,
+    logoBg: "#ffffff",
+    // Schneider green-on-dark
+    bg: [12, 14, 12],
+    surface: [22, 26, 22],
+    ink: [245, 250, 245],
+    mute: [170, 180, 170],
+    accent: [61, 205, 88],      // Schneider green
+    accent2: [140, 230, 160],
   },
   {
     key: "advansys",
     name: "ADVANSYS",
     role: "Senior Application Design Engineer",
     years: "2024 — Present",
-    tagline: "Designing to fit.",
+    tagline: "Intelligent Solutions.",
     narrative:
       "Vendor-agnostic architectures for petrochem and hyperscale data centers. Bridging OEM technologies with the operational realities I lived at Methanex.",
     bullets: [
@@ -90,12 +101,15 @@ const brands: Brand[] = [
       "IEC 62443 cybersecurity",
       "End-to-end delivery",
     ],
-    bg: [8, 24, 48],          // Advansys deep blue
-    surface: [12, 38, 72],
-    ink: [245, 240, 232],
-    mute: [200, 190, 175],
-    accent: [242, 101, 34],   // Advansys orange
-    accent2: [255, 200, 120],
+    logo: advansysLogo.url,
+    logoBg: "#000000",
+    // Advansys black + electric blue
+    bg: [4, 6, 10],
+    surface: [14, 18, 26],
+    ink: [240, 244, 255],
+    mute: [150, 165, 190],
+    accent: [43, 123, 255],     // Advansys electric blue
+    accent2: [180, 200, 255],
   },
 ];
 
@@ -193,30 +207,28 @@ const IndexChroma = () => {
           </div>
         </div>
 
-        {/* Fixed brand indicator dots */}
-        <div className="fixed right-4 md:right-8 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-3">
+        {/* Fixed brand indicator — mini logo chips */}
+        <div className="fixed right-3 md:right-6 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-3">
           {brands.map((br, idx) => {
             const on = idx === activeIdx;
             return (
-              <div key={br.key} className="flex items-center gap-2 justify-end">
-                <span
-                  className="text-[9px] tracking-[0.3em] transition-opacity"
-                  style={{
-                    color: rgb(theme.ink),
-                    opacity: on ? 1 : 0.3,
-                    fontFamily: "'JetBrains Mono', monospace",
-                  }}
-                >
-                  {br.name}
-                </span>
-                <span
-                  className="block rounded-full transition-all"
-                  style={{
-                    width: on ? 10 : 6,
-                    height: on ? 10 : 6,
-                    background: rgb(on ? theme.accent : theme.mute, on ? 1 : 0.5),
-                    boxShadow: on ? `0 0 12px ${rgb(theme.accent, 0.8)}` : "none",
-                  }}
+              <div
+                key={br.key}
+                className="flex items-center justify-center transition-all"
+                style={{
+                  width: on ? 56 : 40,
+                  height: on ? 34 : 24,
+                  background: br.logoBg,
+                  border: `1px solid ${on ? rgb(theme.accent) : "rgba(255,255,255,0.15)"}`,
+                  opacity: on ? 1 : 0.55,
+                  boxShadow: on ? `0 0 20px ${rgb(theme.accent, 0.5)}` : "none",
+                }}
+                title={br.name}
+              >
+                <img
+                  src={br.logo}
+                  alt={br.name}
+                  className="max-h-[75%] max-w-[85%] object-contain"
                 />
               </div>
             );
@@ -243,11 +255,35 @@ const IndexChroma = () => {
             className="mt-8 max-w-2xl text-lg md:text-xl"
             style={{ color: rgb(theme.mute) }}
           >
-            An instrumentation & control career told through the colors of the
-            companies that shaped it. Scroll — the page becomes each brand.
+            An instrumentation & control career told through the colors — and
+            logos — of the companies that shaped it. Scroll: the page becomes
+            each brand.
           </p>
+
+          {/* Hero logo trio */}
+          <div className="mt-12 flex flex-wrap items-center gap-4">
+            {brands.map((br) => (
+              <div
+                key={br.key}
+                className="flex items-center justify-center px-4 py-3"
+                style={{
+                  background: br.logoBg,
+                  border: `1px solid ${rgb(theme.accent, 0.3)}`,
+                  minWidth: 140,
+                  height: 60,
+                }}
+              >
+                <img
+                  src={br.logo}
+                  alt={br.name}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+
           <div
-            className="mt-16 text-[10px] tracking-[0.4em] animate-pulse"
+            className="mt-12 text-[10px] tracking-[0.4em] animate-pulse"
             style={{ color: rgb(theme.accent), fontFamily: "'JetBrains Mono', monospace" }}
           >
             ▼ SCROLL TO ENTER METHANEX
@@ -258,7 +294,7 @@ const IndexChroma = () => {
         <div ref={chaptersRef} style={{ height: `${brands.length * 100}vh` }} className="relative">
           <div className="sticky top-0 h-screen w-full flex items-center px-6 md:px-20">
             <div className="w-full grid md:grid-cols-[1fr_1fr] gap-10 md:gap-16 items-center">
-              {/* Left — giant brand mark */}
+              {/* Left — real brand logo plate */}
               <div key={`mark-${activeIdx}`} className="animate-fade-in">
                 <div
                   className="text-[10px] tracking-[0.5em] mb-4"
@@ -266,19 +302,32 @@ const IndexChroma = () => {
                 >
                   CHAPTER {String(activeIdx + 1).padStart(2, "0")} / 03 · {active.years}
                 </div>
-                <h2
-                  className="text-4xl md:text-7xl font-black leading-[0.9]"
+
+                {/* Logo plate — uses the brand's own background color for authenticity */}
+                <div
+                  className="relative w-full max-w-md aspect-[16/9] flex items-center justify-center overflow-hidden border"
                   style={{
-                    letterSpacing: "-0.03em",
-                    color: rgb(theme.ink),
-                    textShadow: `0 0 60px ${rgb(theme.accent, 0.4)}`,
+                    background: active.logoBg,
+                    borderColor: rgb(theme.accent, 0.5),
+                    boxShadow: `0 20px 60px ${rgb(theme.accent, 0.25)}, inset 0 0 0 1px rgba(255,255,255,0.04)`,
                   }}
                 >
-                  {active.name}
-                </h2>
+                  {/* corner ticks */}
+                  <span className="absolute top-2 left-2 w-3 h-3 border-t border-l" style={{ borderColor: rgb(theme.accent) }} />
+                  <span className="absolute top-2 right-2 w-3 h-3 border-t border-r" style={{ borderColor: rgb(theme.accent) }} />
+                  <span className="absolute bottom-2 left-2 w-3 h-3 border-b border-l" style={{ borderColor: rgb(theme.accent) }} />
+                  <span className="absolute bottom-2 right-2 w-3 h-3 border-b border-r" style={{ borderColor: rgb(theme.accent) }} />
+                  <img
+                    src={active.logo}
+                    alt={`${active.name} logo`}
+                    className="max-h-[70%] max-w-[80%] object-contain"
+                    loading="lazy"
+                  />
+                </div>
+
                 <div
-                  className="mt-4 text-lg md:text-2xl"
-                  style={{ color: rgb(theme.accent) }}
+                  className="mt-6 text-2xl md:text-3xl font-black"
+                  style={{ color: rgb(theme.accent), letterSpacing: "-0.02em" }}
                 >
                   {active.tagline}
                 </div>
@@ -290,7 +339,7 @@ const IndexChroma = () => {
                 </div>
 
                 {/* Color bar - signature of this brand */}
-                <div className="mt-8 flex gap-1 h-2 max-w-md">
+                <div className="mt-6 flex gap-1 h-2 max-w-md">
                   {[active.bg, active.surface, active.accent, active.accent2].map((c, ci) => (
                     <div
                       key={ci}
