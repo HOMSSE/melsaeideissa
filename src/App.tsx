@@ -33,6 +33,7 @@ const App = () => (
             <Route path="/terminal" element={<IndexTerminal />} />
             <Route path="/physics" element={<IndexPhysics />} />
             <Route path="/cube" element={<IndexCube />} />
+            <Route path="/chroma" element={<IndexChroma />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
