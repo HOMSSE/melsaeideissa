@@ -148,16 +148,40 @@ const IndexSpark = () => {
           from { opacity: 0; transform: translateY(60px); }
           to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes spark-drift {
+          0%, 100% { transform: translateY(0) translateX(0); }
+          33% { transform: translateY(-18px) translateX(10px); }
+          66% { transform: translateY(10px) translateX(-12px); }
+        }
+        @keyframes spark-tech-pulse {
+          0%, 100% { opacity: 0.25; }
+          50% { opacity: 0.45; }
+        }
         .spark-float { animation: spark-float 4s ease-in-out infinite; }
         .spark-pulse { animation: spark-pulse 2.4s ease-in-out infinite; }
         .spark-fade  { animation: spark-fade .8s ease-out both; }
         .spark-scale { animation: spark-scale .6s ease-out both; }
         .spark-slide { animation: spark-slide .9s ease-out both; }
+        .spark-drift { animation: spark-drift 10s ease-in-out infinite; }
+        .spark-tech-pulse { animation: spark-tech-pulse 6s ease-in-out infinite; }
         .d-100 { animation-delay: .1s; }
         .d-200 { animation-delay: .2s; }
         .d-300 { animation-delay: .3s; }
         .d-500 { animation-delay: .5s; }
         .d-700 { animation-delay: .7s; }
+        .industrial-blend {
+          mix-blend-mode: luminosity;
+          filter: contrast(1.05) brightness(0.55) saturate(0.6);
+        }
+        .spark-tech-grid {
+          background-image: radial-gradient(circle at 1px 1px, rgba(224, 182, 74, 0.22) 1px, transparent 0);
+          background-size: 60px 60px;
+        }
+        .spark-hero-vignette {
+          background:
+            radial-gradient(circle at center, transparent 0%, rgba(10, 22, 40, 0.85) 75%),
+            linear-gradient(180deg, rgba(10, 22, 40, 0.3) 0%, transparent 40%, rgba(10, 22, 40, 0.6) 100%);
+        }
       `}</style>
 
       <div className="spark-root min-h-screen">
