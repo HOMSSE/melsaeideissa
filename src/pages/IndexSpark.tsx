@@ -299,16 +299,16 @@ const IndexSpark = () => {
                   className="spark-card rounded-2xl p-8 spark-slide flex flex-col"
                   style={{ animationDelay: `${i * 0.15}s` }}
                 >
-                  {/* Real logo — transparent, tinted to accent for cohesion */}
+                  {/* Real logo — transparent, original brand colors */}
                   <div className="mb-6 flex items-center justify-center h-20 px-4">
                     <img
                       src={brandLogos[i]}
                       alt={`${v.company} logo`}
                       className="max-h-full max-w-full object-contain"
-                      style={{ filter: "brightness(0) invert(1)" }}
                       loading="lazy"
                     />
                   </div>
+
 
                   <div
                     className="text-[10px] tracking-[0.4em] uppercase mb-2"
