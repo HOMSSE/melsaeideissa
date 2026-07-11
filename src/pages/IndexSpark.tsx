@@ -170,23 +170,19 @@ const IndexSpark = () => {
             }}
           />
 
-          {/* floating orbs */}
+          {/* subtle floating orbs — single accent, restrained */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div
-              className="absolute top-1/4 left-[12%] w-4 h-4 rounded-full spark-float"
-              style={{ background: `${C.secondary}aa`, boxShadow: `0 0 30px ${C.secondary}` }}
+              className="absolute top-1/4 left-[12%] w-2.5 h-2.5 rounded-full spark-float"
+              style={{ background: `${C.secondary}aa`, boxShadow: `0 0 24px ${C.secondary}` }}
             />
             <div
-              className="absolute top-2/3 right-[18%] w-6 h-6 rounded-full spark-float d-500"
-              style={{ background: `${C.accent}88`, boxShadow: `0 0 40px ${C.accent}` }}
+              className="absolute top-2/3 right-[18%] w-3 h-3 rounded-full spark-float d-500"
+              style={{ background: `${C.secondary}66`, boxShadow: `0 0 26px ${C.secondary}` }}
             />
             <div
-              className="absolute top-1/2 left-3/4 w-3 h-3 rounded-full spark-float d-300"
-              style={{ background: `${C.primaryGlow}aa`, boxShadow: `0 0 25px ${C.primaryGlow}` }}
-            />
-            <div
-              className="absolute top-[15%] right-1/3 w-5 h-5 rounded-full spark-float d-700"
-              style={{ background: `${C.primary}88`, boxShadow: `0 0 30px ${C.primary}` }}
+              className="absolute top-1/2 left-3/4 w-2 h-2 rounded-full spark-float d-300"
+              style={{ background: `${C.ink}88` }}
             />
           </div>
 
