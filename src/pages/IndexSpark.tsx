@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import {
-  Sparkles,
   Rocket,
   Zap,
   ArrowRight,
