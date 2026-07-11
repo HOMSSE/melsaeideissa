@@ -287,21 +287,27 @@ const IndexSpark = () => {
               {vantagePoints.map((v, i) => (
                 <div
                   key={v.role}
-                  className="spark-card rounded-2xl p-8 spark-slide"
+                  className="spark-card rounded-2xl p-8 spark-slide flex flex-col"
                   style={{ animationDelay: `${i * 0.15}s` }}
                 >
-                  <div className="mb-6 relative w-fit">
-                    <div
-                      className="absolute inset-0 rounded-2xl blur-xl"
-                      style={{ background: `${C.primary}44` }}
+                  {/* Real logo plate — white bg for authenticity */}
+                  <div
+                    className="mb-6 rounded-xl flex items-center justify-center h-24 px-6"
+                    style={{
+                      background: "#ffffff",
+                      border: `1px solid ${C.secondary}33`,
+                    }}
+                  >
+                    <img
+                      src={brandLogos[i]}
+                      alt={`${v.company} logo`}
+                      className="max-h-full max-w-full object-contain"
+                      loading="lazy"
                     />
-                    <div className="relative spark-glass p-4 rounded-2xl">
-                      <v.icon className="h-8 w-8" style={{ color: C.secondary }} />
-                    </div>
                   </div>
                   <div
                     className="text-[10px] tracking-[0.4em] uppercase mb-2"
-                    style={{ color: C.accent }}
+                    style={{ color: C.secondary }}
                   >
                     0{i + 1} / 03 · {v.role}
                   </div>
