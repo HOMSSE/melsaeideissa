@@ -25,6 +25,7 @@ import {
 import methanexLogo from "@/assets/methanex-logo.png.asset.json";
 import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
 import advansysLogo from "@/assets/advansys-logo.png.asset.json";
+import awardImg from "@/assets/innovation-award.jpg.asset.json";
 
 /**
  * v9 — SPARK EDITION (refined)
@@ -88,7 +89,7 @@ const IndexSpark = () => {
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
-          animation: spark-text-flow 8s linear infinite;
+          animation: spark-text-flow 18s linear infinite;
         }
         @keyframes spark-text-flow {
           0% { background-position: 0% 50%; }
@@ -226,8 +227,8 @@ const IndexSpark = () => {
                     src={url}
                     alt="brand logo"
                     className="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
-                    style={{ filter: "brightness(0) invert(1)" }}
                   />
+
                 </div>
               ))}
             </div>
@@ -298,16 +299,16 @@ const IndexSpark = () => {
                   className="spark-card rounded-2xl p-8 spark-slide flex flex-col"
                   style={{ animationDelay: `${i * 0.15}s` }}
                 >
-                  {/* Real logo — transparent, tinted to accent for cohesion */}
+                  {/* Real logo — transparent, original brand colors */}
                   <div className="mb-6 flex items-center justify-center h-20 px-4">
                     <img
                       src={brandLogos[i]}
                       alt={`${v.company} logo`}
                       className="max-h-full max-w-full object-contain"
-                      style={{ filter: "brightness(0) invert(1)" }}
                       loading="lazy"
                     />
                   </div>
+
 
                   <div
                     className="text-[10px] tracking-[0.4em] uppercase mb-2"
@@ -466,23 +467,42 @@ const IndexSpark = () => {
               >
                 / Recognition
               </div>
-              <div className="relative w-fit mb-6">
-                <div
-                  className="absolute inset-0 rounded-2xl blur-2xl spark-pulse"
-                  style={{ background: `${C.secondary}77` }}
-                />
-                <div className="relative spark-glass rounded-2xl p-5">
-                  <Award className="h-10 w-10" style={{ color: C.secondary }} />
-                </div>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-black leading-tight">
+              <h2 className="text-4xl md:text-5xl font-black leading-tight mb-6">
                 <span className="spark-text-grad">Innovation Award 2025</span>
               </h2>
+              <div className="relative rounded-2xl overflow-hidden spark-shadow-hero group">
+                <div
+                  className="absolute -inset-4 rounded-3xl blur-2xl opacity-60 spark-pulse -z-10"
+                  style={{ background: `${C.secondary}55` }}
+                />
+                <img
+                  src={awardImg.url}
+                  alt="Mohamed Eissa — Advansys Innovation Award 2025 trophy"
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background: `linear-gradient(180deg, transparent 55%, ${C.bg}dd 100%)`,
+                  }}
+                />
+                <div className="absolute bottom-4 left-5 flex items-center gap-2">
+                  <Award className="h-5 w-5" style={{ color: C.secondary }} />
+                  <span
+                    className="text-[10px] tracking-[0.4em] uppercase font-semibold"
+                    style={{ color: C.ink }}
+                  >
+                    Advansys · 2025
+                  </span>
+                </div>
+              </div>
               <p className="mt-4" style={{ color: C.mute }}>
                 For pioneering process-control innovations reshaping operational
                 efficiency at scale.
               </p>
             </div>
+
 
             <div className="spark-card rounded-2xl p-8 spark-slide d-200">
               <h3 className="text-xl font-bold mb-6" style={{ color: C.ink }}>
