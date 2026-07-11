@@ -197,35 +197,16 @@ const IndexSpark = () => {
       <div className="spark-root min-h-screen">
         {/* ================= HERO ================= */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ background: C.bg }}>
-          {/* neon petrochemical plant silhouette */}
-          <div className="absolute inset-0 z-0 opacity-40 spark-neon-flicker pointer-events-none">
-            <svg className="w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-                  <feMerge>
-                    <feMergeNode in="coloredBlur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-              </defs>
-              {/* silos */}
-              <rect x="100" y="400" width="80" height="300" fill="none" stroke={C.secondary} strokeWidth="1" filter="url(#neonGlow)" opacity="0.5" />
-              <rect x="200" y="350" width="120" height="350" fill="none" stroke={C.secondary} strokeWidth="1.5" filter="url(#neonGlow)" />
-              <circle cx="260" cy="350" r="60" fill="none" stroke={C.secondary} strokeWidth="1" filter="url(#neonGlow)" opacity="0.3" />
-              {/* pipes */}
-              <path d="M0 600 H400 V550 H600 V650 H1200" fill="none" stroke="#3b82f6" strokeWidth="2" filter="url(#neonGlow)" opacity="0.4" />
-              <path d="M300 700 V450 H500 V300" fill="none" stroke={C.secondary} strokeWidth="1" filter="url(#neonGlow)" />
-              {/* distillation column */}
-              <rect x="850" y="200" width="60" height="500" fill="none" stroke={C.secondary} strokeWidth="2" filter="url(#neonGlow)" />
-              <line x1="850" y1="250" x2="910" y2="250" stroke={C.secondary} strokeWidth="1" filter="url(#neonGlow)" />
-              <line x1="850" y1="300" x2="910" y2="300" stroke={C.secondary} strokeWidth="1" filter="url(#neonGlow)" />
-              <line x1="850" y1="350" x2="910" y2="350" stroke={C.secondary} strokeWidth="1" filter="url(#neonGlow)" />
-              {/* data center rack abstraction */}
-              <rect x="1000" y="450" width="100" height="250" fill="none" stroke="#3b82f6" strokeWidth="1" filter="url(#neonGlow)" opacity="0.6" />
-              <path d="M1010 470 H1090 M1010 490 H1090 M1010 510 H1090" stroke="#3b82f6" strokeWidth="0.5" />
-            </svg>
+          {/* neon petrochemical plant illustration */}
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            <img
+              src={neonPlant}
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover object-bottom opacity-55 spark-neon-flicker"
+            />
           </div>
+
 
           {/* subtle gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-transparent to-[#0a1628]/80 z-[5] pointer-events-none" />
