@@ -84,10 +84,16 @@ const IndexSpark = () => {
           animation: spark-shift 18s ease infinite;
         }
         .spark-text-grad {
-          background: linear-gradient(90deg, ${C.ink} 0%, ${C.secondary} 55%, ${C.ink} 100%);
+          background: linear-gradient(90deg, ${C.ink} 0%, ${C.secondary} 25%, ${C.ink} 50%, ${C.secondary} 75%, ${C.ink} 100%);
+          background-size: 300% 100%;
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
+          animation: spark-text-flow 8s linear infinite;
+        }
+        @keyframes spark-text-flow {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 300% 50%; }
         }
         .spark-glass {
           background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
