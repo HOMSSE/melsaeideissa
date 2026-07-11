@@ -9,6 +9,7 @@ const editions = [
   { to: "/physics", label: "v6 Physics" },
   { to: "/cube", label: "v7 Cube" },
   { to: "/chroma", label: "v8 Chroma" },
+  { to: "/spark", label: "v9 Spark" },
 ];
 
 export const StyleToggle = () => {
