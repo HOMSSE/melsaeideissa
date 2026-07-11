@@ -96,25 +96,24 @@ const IndexSpark = () => {
           border: 1px solid rgba(255,255,255,0.14);
         }
         .spark-card {
-          background: linear-gradient(145deg, rgba(20,184,166,0.10), rgba(34,211,238,0.04));
+          background: linear-gradient(145deg, rgba(30,58,95,0.55), rgba(15,30,53,0.35));
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(94,234,212,0.18);
+          border: 1px solid rgba(201,169,97,0.18);
           transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
         }
         .spark-card:hover {
-          transform: translateY(-6px) scale(1.02);
+          transform: translateY(-4px);
           border-color: ${C.secondary}80;
-          box-shadow: 0 30px 80px -20px ${C.primary}66, 0 0 0 1px ${C.secondary}30;
+          box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6), 0 0 0 1px ${C.secondary}30;
         }
         .spark-btn-primary {
-          background: linear-gradient(90deg, ${C.primary}, ${C.accent}, ${C.secondary});
-          background-size: 200% 100%;
-          transition: background-position .5s ease, transform .3s ease, box-shadow .3s ease;
-          box-shadow: 0 20px 50px -12px ${C.primary}88;
+          background: ${C.secondary};
+          transition: background .3s ease, transform .3s ease, box-shadow .3s ease;
+          box-shadow: 0 20px 50px -12px ${C.secondary}66;
         }
         .spark-btn-primary:hover {
-          background-position: 100% 0;
-          transform: translateY(-2px) scale(1.03);
+          background: ${C.primaryGlow};
+          transform: translateY(-2px);
         }
         .spark-shadow-glow { box-shadow: 0 20px 60px -10px ${C.primary}66; }
         .spark-shadow-hero { box-shadow: 0 40px 90px -20px ${C.primary}88; }
