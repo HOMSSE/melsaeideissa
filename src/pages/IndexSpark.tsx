@@ -74,17 +74,17 @@ const IndexSpark = () => {
         }
         .spark-mesh {
           background:
-            radial-gradient(circle at 20% 30%, ${C.primary}55 0%, transparent 45%),
-            radial-gradient(circle at 82% 18%, ${C.secondary}44 0%, transparent 45%),
-            radial-gradient(circle at 40% 85%, ${C.accent}44 0%, transparent 50%);
+            radial-gradient(circle at 20% 30%, ${C.primary}88 0%, transparent 55%),
+            radial-gradient(circle at 82% 18%, ${C.secondary}22 0%, transparent 45%),
+            radial-gradient(circle at 40% 85%, ${C.primary}66 0%, transparent 55%);
         }
         .spark-hero-grad {
-          background: linear-gradient(135deg, ${C.primary} 0%, ${C.accent} 45%, ${C.secondary} 100%);
-          background-size: 400% 400%;
-          animation: spark-shift 12s ease infinite;
+          background: linear-gradient(135deg, ${C.bg} 0%, ${C.primary} 55%, ${C.bg2} 100%);
+          background-size: 300% 300%;
+          animation: spark-shift 18s ease infinite;
         }
         .spark-text-grad {
-          background: linear-gradient(90deg, ${C.primaryGlow}, ${C.accent}, ${C.secondary});
+          background: linear-gradient(90deg, ${C.ink} 0%, ${C.secondary} 55%, ${C.ink} 100%);
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
