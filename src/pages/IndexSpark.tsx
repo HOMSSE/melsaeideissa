@@ -237,27 +237,27 @@ const IndexSpark = () => {
           {/* typographic technology grid — edge labels */}
           <div className="absolute inset-0 flex flex-wrap content-between p-8 md:p-12 pointer-events-none select-none">
             <div className="w-full flex justify-between">
-              <span className="font-mono text-[10px] tracking-[0.3em] text-[#e0b64a]/35 uppercase spark-tech-pulse">
+              <span className="spark-mono text-[10px] tracking-[0.3em] text-[#e0b64a]/35 uppercase spark-tech-pulse">
                 DCS // SIS // SCADA
               </span>
-              <span className="font-mono text-[10px] tracking-[0.3em] text-[#e0b64a]/35 uppercase spark-tech-pulse" style={{ animationDelay: "-2s" }}>
+              <span className="spark-mono text-[10px] tracking-[0.3em] text-[#e0b64a]/35 uppercase spark-tech-pulse" style={{ animationDelay: "-2s" }}>
                 Triconex · Foxboro
               </span>
             </div>
             <div className="w-full flex justify-center gap-32 md:gap-48 opacity-20">
-              <span className="font-mono text-[10px] tracking-[0.5em] text-[#e0b64a] uppercase rotate-90 origin-center">
+              <span className="spark-mono text-[10px] tracking-[0.5em] text-[#e0b64a] uppercase rotate-90 origin-center">
                 AVEVA PI SYSTEM
               </span>
-              <span className="font-mono text-[10px] tracking-[0.5em] text-[#e0b64a] uppercase -rotate-90 origin-center">
+              <span className="spark-mono text-[10px] tracking-[0.5em] text-[#e0b64a] uppercase -rotate-90 origin-center">
                 MAXIMO CMMS
               </span>
             </div>
             <div className="w-full flex justify-between items-end">
               <div className="flex flex-col gap-1">
-                <span className="font-mono text-[10px] text-[#e0b64a]/55">LOC: METHANEX_SITE_A</span>
-                <span className="font-mono text-[10px] text-[#e0b64a]/55">SYS: SCHNEIDER_ELECTRIC</span>
+                <span className="spark-mono text-[10px] text-[#e0b64a]/55">LOC: METHANEX_SITE_A</span>
+                <span className="spark-mono text-[10px] text-[#e0b64a]/55">SYS: SCHNEIDER_ELECTRIC</span>
               </div>
-              <span className="font-mono text-[10px] tracking-[0.3em] text-[#e0b64a]/35 uppercase">
+              <span className="spark-mono text-[10px] tracking-[0.3em] text-[#e0b64a]/35 uppercase">
                 ADVANSYS_INTELLIGENT_SOLUTIONS
               </span>
             </div>
