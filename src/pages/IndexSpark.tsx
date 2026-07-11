@@ -158,6 +158,12 @@ const IndexSpark = () => {
           0%, 100% { opacity: 0.25; }
           50% { opacity: 0.45; }
         }
+        @keyframes spark-neon-flicker {
+          0%, 100% { opacity: 0.35; }
+          50% { opacity: 0.55; }
+          75% { opacity: 0.42; }
+        }
+        .spark-neon-flicker { animation: spark-neon-flicker 5s ease-in-out infinite; }
         .spark-float { animation: spark-float 4s ease-in-out infinite; }
         .spark-pulse { animation: spark-pulse 2.4s ease-in-out infinite; }
         .spark-fade  { animation: spark-fade .8s ease-out both; }
@@ -191,20 +197,41 @@ const IndexSpark = () => {
       <div className="spark-root min-h-screen">
         {/* ================= HERO ================= */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ background: C.bg }}>
-          {/* atmospheric industrial imagery — low opacity, color-matched to navy/gold palette */}
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-[0.16] industrial-blend"
-            style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1726111440333-ab02a5a36d5f?fm=jpg&q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0')",
-            }}
-          />
+          {/* neon petrochemical plant silhouette */}
+          <div className="absolute inset-0 z-0 opacity-40 spark-neon-flicker pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              {/* silos */}
+              <rect x="100" y="400" width="80" height="300" fill="none" stroke={C.secondary} strokeWidth="1" filter="url(#neonGlow)" opacity="0.5" />
+              <rect x="200" y="350" width="120" height="350" fill="none" stroke={C.secondary} strokeWidth="1.5" filter="url(#neonGlow)" />
+              <circle cx="260" cy="350" r="60" fill="none" stroke={C.secondary} strokeWidth="1" filter="url(#neonGlow)" opacity="0.3" />
+              {/* pipes */}
+              <path d="M0 600 H400 V550 H600 V650 H1200" fill="none" stroke="#3b82f6" strokeWidth="2" filter="url(#neonGlow)" opacity="0.4" />
+              <path d="M300 700 V450 H500 V300" fill="none" stroke={C.secondary} strokeWidth="1" filter="url(#neonGlow)" />
+              {/* distillation column */}
+              <rect x="850" y="200" width="60" height="500" fill="none" stroke={C.secondary} strokeWidth="2" filter="url(#neonGlow)" />
+              <line x1="850" y1="250" x2="910" y2="250" stroke={C.secondary} strokeWidth="1" filter="url(#neonGlow)" />
+              <line x1="850" y1="300" x2="910" y2="300" stroke={C.secondary} strokeWidth="1" filter="url(#neonGlow)" />
+              <line x1="850" y1="350" x2="910" y2="350" stroke={C.secondary} strokeWidth="1" filter="url(#neonGlow)" />
+              {/* data center rack abstraction */}
+              <rect x="1000" y="450" width="100" height="250" fill="none" stroke="#3b82f6" strokeWidth="1" filter="url(#neonGlow)" opacity="0.6" />
+              <path d="M1010 470 H1090 M1010 490 H1090 M1010 510 H1090" stroke="#3b82f6" strokeWidth="0.5" />
+            </svg>
+          </div>
 
-          {/* subtle technical grid */}
-          <div className="absolute inset-0 spark-tech-grid opacity-60" />
+          {/* subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-transparent to-[#0a1628]/80 z-[5] pointer-events-none" />
 
           {/* ambient gold orbs */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none overflow-hidden z-[6]">
             <div
               className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full spark-drift"
               style={{
@@ -234,37 +261,8 @@ const IndexSpark = () => {
             />
           </div>
 
-          {/* typographic technology grid — edge labels */}
-          <div className="absolute inset-0 flex flex-wrap content-between p-8 md:p-12 pointer-events-none select-none">
-            <div className="w-full flex justify-between">
-              <span className="spark-mono text-[10px] tracking-[0.3em] text-[#e0b64a]/35 uppercase spark-tech-pulse">
-                DCS // SIS // SCADA
-              </span>
-              <span className="spark-mono text-[10px] tracking-[0.3em] text-[#e0b64a]/35 uppercase spark-tech-pulse" style={{ animationDelay: "-2s" }}>
-                Triconex · Foxboro
-              </span>
-            </div>
-            <div className="w-full flex justify-center gap-32 md:gap-48 opacity-20">
-              <span className="spark-mono text-[10px] tracking-[0.5em] text-[#e0b64a] uppercase rotate-90 origin-center">
-                AVEVA PI SYSTEM
-              </span>
-              <span className="spark-mono text-[10px] tracking-[0.5em] text-[#e0b64a] uppercase -rotate-90 origin-center">
-                MAXIMO CMMS
-              </span>
-            </div>
-            <div className="w-full flex justify-between items-end">
-              <div className="flex flex-col gap-1">
-                <span className="spark-mono text-[10px] text-[#e0b64a]/55">LOC: METHANEX_SITE_A</span>
-                <span className="spark-mono text-[10px] text-[#e0b64a]/55">SYS: SCHNEIDER_ELECTRIC</span>
-              </div>
-              <span className="spark-mono text-[10px] tracking-[0.3em] text-[#e0b64a]/35 uppercase">
-                ADVANSYS_INTELLIGENT_SOLUTIONS
-              </span>
-            </div>
-          </div>
-
           {/* dark vignette to center focus on content */}
-          <div className="absolute inset-0 spark-hero-vignette" />
+          <div className="absolute inset-0 spark-hero-vignette z-[7]" />
 
           <div className="relative z-10 text-center px-4 max-w-6xl mx-auto spark-fade">
             <div
@@ -344,6 +342,15 @@ const IndexSpark = () => {
               />
             </div>
           </div>
+
+          {/* bottom neon accent line */}
+          <div
+            className="absolute bottom-0 left-0 w-full h-px z-10 pointer-events-none"
+            style={{
+              background: `linear-gradient(90deg, transparent 0%, ${C.secondary} 50%, transparent 100%)`,
+              opacity: 0.3,
+            }}
+          />
         </section>
 
         {/* ================= VANTAGE POINTS ================= */}
