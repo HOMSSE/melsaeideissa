@@ -23,26 +23,29 @@ import {
   recommendations,
   vantagePoints,
 } from "@/data/profile";
+import methanexLogo from "@/assets/methanex-logo.png.asset.json";
+import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
+import advansysLogo from "@/assets/advansys-logo.png.asset.json";
 
 /**
- * v9 — SPARK EDITION
- * Inspired by the animated-gradient-mesh + glass-morphism style, retooled
- * with Mohamed's amber / teal / cyan portfolio palette.
- *
- * All effects are scoped inside this page via a local <style> tag so no
- * global tokens/keyframes leak into the other editions.
+ * v9 — SPARK EDITION (refined)
+ * Restrained, professional palette — deep navy canvas with a single warm
+ * gold accent. Company logos appear in the vantage-point section.
  */
 
-// Palette
+// Palette — one accent, disciplined
 const C = {
-  bg: "#04121a",
-  ink: "#eafaf7",
-  mute: "#9ac7c3",
-  primary: "#14b8a6",   // teal
-  primaryGlow: "#5eead4",
-  secondary: "#f59e0b", // amber
-  accent: "#22d3ee",    // cyan
+  bg: "#0a1628",        // deep navy
+  bg2: "#0f1e35",       // slightly lifted panel
+  ink: "#eef3fb",       // near-white
+  mute: "#8b9bb5",      // muted slate
+  primary: "#1e3a5f",   // navy tone for surfaces
+  primaryGlow: "#c9a961", // warm gold (subdued)
+  secondary: "#e0b64a",  // warm gold accent (single hero color)
+  accent: "#c9a961",     // same gold family — no color soup
 };
+
+const brandLogos = [methanexLogo.url, schneiderLogo.url, advansysLogo.url];
 
 const IndexSpark = () => {
   return (
@@ -71,17 +74,17 @@ const IndexSpark = () => {
         }
         .spark-mesh {
           background:
-            radial-gradient(circle at 20% 30%, ${C.primary}55 0%, transparent 45%),
-            radial-gradient(circle at 82% 18%, ${C.secondary}44 0%, transparent 45%),
-            radial-gradient(circle at 40% 85%, ${C.accent}44 0%, transparent 50%);
+            radial-gradient(circle at 20% 30%, ${C.primary}88 0%, transparent 55%),
+            radial-gradient(circle at 82% 18%, ${C.secondary}22 0%, transparent 45%),
+            radial-gradient(circle at 40% 85%, ${C.primary}66 0%, transparent 55%);
         }
         .spark-hero-grad {
-          background: linear-gradient(135deg, ${C.primary} 0%, ${C.accent} 45%, ${C.secondary} 100%);
-          background-size: 400% 400%;
-          animation: spark-shift 12s ease infinite;
+          background: linear-gradient(135deg, ${C.bg} 0%, ${C.primary} 55%, ${C.bg2} 100%);
+          background-size: 300% 300%;
+          animation: spark-shift 18s ease infinite;
         }
         .spark-text-grad {
-          background: linear-gradient(90deg, ${C.primaryGlow}, ${C.accent}, ${C.secondary});
+          background: linear-gradient(90deg, ${C.ink} 0%, ${C.secondary} 55%, ${C.ink} 100%);
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
@@ -93,25 +96,24 @@ const IndexSpark = () => {
           border: 1px solid rgba(255,255,255,0.14);
         }
         .spark-card {
-          background: linear-gradient(145deg, rgba(20,184,166,0.10), rgba(34,211,238,0.04));
+          background: linear-gradient(145deg, rgba(30,58,95,0.55), rgba(15,30,53,0.35));
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(94,234,212,0.18);
+          border: 1px solid rgba(201,169,97,0.18);
           transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
         }
         .spark-card:hover {
-          transform: translateY(-6px) scale(1.02);
+          transform: translateY(-4px);
           border-color: ${C.secondary}80;
-          box-shadow: 0 30px 80px -20px ${C.primary}66, 0 0 0 1px ${C.secondary}30;
+          box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6), 0 0 0 1px ${C.secondary}30;
         }
         .spark-btn-primary {
-          background: linear-gradient(90deg, ${C.primary}, ${C.accent}, ${C.secondary});
-          background-size: 200% 100%;
-          transition: background-position .5s ease, transform .3s ease, box-shadow .3s ease;
-          box-shadow: 0 20px 50px -12px ${C.primary}88;
+          background: ${C.secondary};
+          transition: background .3s ease, transform .3s ease, box-shadow .3s ease;
+          box-shadow: 0 20px 50px -12px ${C.secondary}66;
         }
         .spark-btn-primary:hover {
-          background-position: 100% 0;
-          transform: translateY(-2px) scale(1.03);
+          background: ${C.primaryGlow};
+          transform: translateY(-2px);
         }
         .spark-shadow-glow { box-shadow: 0 20px 60px -10px ${C.primary}66; }
         .spark-shadow-hero { box-shadow: 0 40px 90px -20px ${C.primary}88; }
@@ -168,23 +170,19 @@ const IndexSpark = () => {
             }}
           />
 
-          {/* floating orbs */}
+          {/* subtle floating orbs — single accent, restrained */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div
-              className="absolute top-1/4 left-[12%] w-4 h-4 rounded-full spark-float"
-              style={{ background: `${C.secondary}aa`, boxShadow: `0 0 30px ${C.secondary}` }}
+              className="absolute top-1/4 left-[12%] w-2.5 h-2.5 rounded-full spark-float"
+              style={{ background: `${C.secondary}aa`, boxShadow: `0 0 24px ${C.secondary}` }}
             />
             <div
-              className="absolute top-2/3 right-[18%] w-6 h-6 rounded-full spark-float d-500"
-              style={{ background: `${C.accent}88`, boxShadow: `0 0 40px ${C.accent}` }}
+              className="absolute top-2/3 right-[18%] w-3 h-3 rounded-full spark-float d-500"
+              style={{ background: `${C.secondary}66`, boxShadow: `0 0 26px ${C.secondary}` }}
             />
             <div
-              className="absolute top-1/2 left-3/4 w-3 h-3 rounded-full spark-float d-300"
-              style={{ background: `${C.primaryGlow}aa`, boxShadow: `0 0 25px ${C.primaryGlow}` }}
-            />
-            <div
-              className="absolute top-[15%] right-1/3 w-5 h-5 rounded-full spark-float d-700"
-              style={{ background: `${C.primary}88`, boxShadow: `0 0 30px ${C.primary}` }}
+              className="absolute top-1/2 left-3/4 w-2 h-2 rounded-full spark-float d-300"
+              style={{ background: `${C.ink}88` }}
             />
           </div>
 
@@ -222,6 +220,24 @@ const IndexSpark = () => {
               <span style={{ color: C.accent }}>hyperscale data centers</span> — from
               the plant floor to global vendor L3 to integrator architectures.
             </p>
+
+            {/* Brand logo strip */}
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 spark-fade d-300">
+              {brandLogos.map((url, i) => (
+                <div
+                  key={i}
+                  className="flex items-center justify-center px-5 py-3 rounded-md"
+                  style={{
+                    background: "#ffffff",
+                    minWidth: 150,
+                    height: 56,
+                    border: `1px solid ${C.secondary}22`,
+                  }}
+                >
+                  <img src={url} alt="brand logo" className="max-h-full max-w-full object-contain" />
+                </div>
+              ))}
+            </div>
 
             {/* CTA */}
             <div className="mt-12 flex flex-col sm:flex-row gap-5 justify-center items-center spark-slide d-300">
@@ -285,21 +301,27 @@ const IndexSpark = () => {
               {vantagePoints.map((v, i) => (
                 <div
                   key={v.role}
-                  className="spark-card rounded-2xl p-8 spark-slide"
+                  className="spark-card rounded-2xl p-8 spark-slide flex flex-col"
                   style={{ animationDelay: `${i * 0.15}s` }}
                 >
-                  <div className="mb-6 relative w-fit">
-                    <div
-                      className="absolute inset-0 rounded-2xl blur-xl"
-                      style={{ background: `${C.primary}44` }}
+                  {/* Real logo plate — white bg for authenticity */}
+                  <div
+                    className="mb-6 rounded-xl flex items-center justify-center h-24 px-6"
+                    style={{
+                      background: "#ffffff",
+                      border: `1px solid ${C.secondary}33`,
+                    }}
+                  >
+                    <img
+                      src={brandLogos[i]}
+                      alt={`${v.company} logo`}
+                      className="max-h-full max-w-full object-contain"
+                      loading="lazy"
                     />
-                    <div className="relative spark-glass p-4 rounded-2xl">
-                      <v.icon className="h-8 w-8" style={{ color: C.secondary }} />
-                    </div>
                   </div>
                   <div
                     className="text-[10px] tracking-[0.4em] uppercase mb-2"
-                    style={{ color: C.accent }}
+                    style={{ color: C.secondary }}
                   >
                     0{i + 1} / 03 · {v.role}
                   </div>
