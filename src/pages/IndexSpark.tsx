@@ -227,8 +227,8 @@ const IndexSpark = () => {
                     src={url}
                     alt="brand logo"
                     className="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
-                    style={{ filter: "brightness(0) invert(1)" }}
                   />
+
                 </div>
               ))}
             </div>
