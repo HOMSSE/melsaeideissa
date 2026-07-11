@@ -186,35 +186,81 @@ const IndexSpark = () => {
 
       <div className="spark-root min-h-screen">
         {/* ================= HERO ================= */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-          {/* animated gradient */}
-          <div className="absolute inset-0 spark-hero-grad opacity-70" />
-          {/* mesh overlay */}
-          <div className="absolute inset-0 spark-mesh opacity-90" />
-          {/* dark vignette */}
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ background: C.bg }}>
+          {/* atmospheric industrial imagery — low opacity, color-matched to navy/gold palette */}
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 bg-cover bg-center opacity-[0.16] industrial-blend"
             style={{
-              background:
-                "radial-gradient(circle at center, transparent 0%, rgba(4,18,26,0.75) 80%)",
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1726111440333-ab02a5a36d5f?fm=jpg&q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0')",
             }}
           />
 
-          {/* subtle floating orbs — single accent, restrained */}
+          {/* subtle technical grid */}
+          <div className="absolute inset-0 spark-tech-grid opacity-60" />
+
+          {/* ambient gold orbs */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div
-              className="absolute top-1/4 left-[12%] w-2.5 h-2.5 rounded-full spark-float"
+              className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full spark-drift"
+              style={{
+                background: C.secondary,
+                filter: "blur(120px)",
+                opacity: 0.08,
+                mixBlendMode: "screen",
+              }}
+            />
+            <div
+              className="absolute bottom-1/4 right-1/3 w-80 h-80 rounded-full spark-drift d-500"
+              style={{
+                background: C.secondary,
+                filter: "blur(100px)",
+                opacity: 0.06,
+                mixBlendMode: "screen",
+                animationDelay: "-4s",
+              }}
+            />
+            <div
+              className="absolute top-2/3 left-[12%] w-3 h-3 rounded-full spark-float"
               style={{ background: `${C.secondary}aa`, boxShadow: `0 0 24px ${C.secondary}` }}
             />
             <div
-              className="absolute top-2/3 right-[18%] w-3 h-3 rounded-full spark-float d-500"
+              className="absolute top-1/3 right-[18%] w-2.5 h-2.5 rounded-full spark-float d-500"
               style={{ background: `${C.secondary}66`, boxShadow: `0 0 26px ${C.secondary}` }}
             />
-            <div
-              className="absolute top-1/2 left-3/4 w-2 h-2 rounded-full spark-float d-300"
-              style={{ background: `${C.ink}88` }}
-            />
           </div>
+
+          {/* typographic technology grid — edge labels */}
+          <div className="absolute inset-0 flex flex-wrap content-between p-8 md:p-12 pointer-events-none select-none">
+            <div className="w-full flex justify-between">
+              <span className="font-mono text-[10px] tracking-[0.3em] text-[#e0b64a]/35 uppercase spark-tech-pulse">
+                DCS // SIS // SCADA
+              </span>
+              <span className="font-mono text-[10px] tracking-[0.3em] text-[#e0b64a]/35 uppercase spark-tech-pulse" style={{ animationDelay: "-2s" }}>
+                Triconex · Foxboro
+              </span>
+            </div>
+            <div className="w-full flex justify-center gap-32 md:gap-48 opacity-20">
+              <span className="font-mono text-[10px] tracking-[0.5em] text-[#e0b64a] uppercase rotate-90 origin-center">
+                AVEVA PI SYSTEM
+              </span>
+              <span className="font-mono text-[10px] tracking-[0.5em] text-[#e0b64a] uppercase -rotate-90 origin-center">
+                MAXIMO CMMS
+              </span>
+            </div>
+            <div className="w-full flex justify-between items-end">
+              <div className="flex flex-col gap-1">
+                <span className="font-mono text-[10px] text-[#e0b64a]/55">LOC: METHANEX_SITE_A</span>
+                <span className="font-mono text-[10px] text-[#e0b64a]/55">SYS: SCHNEIDER_ELECTRIC</span>
+              </div>
+              <span className="font-mono text-[10px] tracking-[0.3em] text-[#e0b64a]/35 uppercase">
+                ADVANSYS_INTELLIGENT_SOLUTIONS
+              </span>
+            </div>
+          </div>
+
+          {/* dark vignette to center focus on content */}
+          <div className="absolute inset-0 spark-hero-vignette" />
 
           <div className="relative z-10 text-center px-4 max-w-6xl mx-auto spark-fade">
             <div
