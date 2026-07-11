@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import {
-  Sparkles,
   Rocket,
   Zap,
   ArrowRight,
@@ -84,10 +83,16 @@ const IndexSpark = () => {
           animation: spark-shift 18s ease infinite;
         }
         .spark-text-grad {
-          background: linear-gradient(90deg, ${C.ink} 0%, ${C.secondary} 55%, ${C.ink} 100%);
+          background: linear-gradient(90deg, ${C.ink} 0%, ${C.secondary} 25%, ${C.ink} 50%, ${C.secondary} 75%, ${C.ink} 100%);
+          background-size: 300% 100%;
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
+          animation: spark-text-flow 8s linear infinite;
+        }
+        @keyframes spark-text-flow {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 300% 50%; }
         }
         .spark-glass {
           background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
@@ -187,25 +192,13 @@ const IndexSpark = () => {
           </div>
 
           <div className="relative z-10 text-center px-4 max-w-6xl mx-auto spark-fade">
-            {/* Icon */}
-            <div className="mb-8 flex justify-center">
-              <div className="relative">
-                <div
-                  className="absolute inset-0 rounded-2xl blur-xl spark-pulse"
-                  style={{ background: `${C.secondary}55` }}
-                />
-                <div className="relative spark-glass p-4 rounded-2xl spark-shadow-glow">
-                  <Sparkles className="h-12 w-12 spark-float" style={{ color: C.secondary }} />
-                </div>
-              </div>
-            </div>
-
             <div
               className="text-[11px] tracking-[0.5em] uppercase mb-6 spark-fade d-100"
               style={{ color: C.primaryGlow }}
             >
               End User · Global Vendor · System Integrator
             </div>
+
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] mb-8 spark-scale">
               <span className="spark-text-grad">MOHAMED EISSA</span>
@@ -222,22 +215,23 @@ const IndexSpark = () => {
             </p>
 
             {/* Brand logo strip */}
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 spark-fade d-300">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-8 spark-fade d-300">
               {brandLogos.map((url, i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-center px-5 py-3 rounded-md"
-                  style={{
-                    background: "#ffffff",
-                    minWidth: 150,
-                    height: 56,
-                    border: `1px solid ${C.secondary}22`,
-                  }}
+                  className="flex items-center justify-center px-2"
+                  style={{ minWidth: 140, height: 48 }}
                 >
-                  <img src={url} alt="brand logo" className="max-h-full max-w-full object-contain" />
+                  <img
+                    src={url}
+                    alt="brand logo"
+                    className="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
+                    style={{ filter: "brightness(0) invert(1)" }}
+                  />
                 </div>
               ))}
             </div>
+
 
             {/* CTA */}
             <div className="mt-12 flex flex-col sm:flex-row gap-5 justify-center items-center spark-slide d-300">
@@ -304,21 +298,17 @@ const IndexSpark = () => {
                   className="spark-card rounded-2xl p-8 spark-slide flex flex-col"
                   style={{ animationDelay: `${i * 0.15}s` }}
                 >
-                  {/* Real logo plate — white bg for authenticity */}
-                  <div
-                    className="mb-6 rounded-xl flex items-center justify-center h-24 px-6"
-                    style={{
-                      background: "#ffffff",
-                      border: `1px solid ${C.secondary}33`,
-                    }}
-                  >
+                  {/* Real logo — transparent, tinted to accent for cohesion */}
+                  <div className="mb-6 flex items-center justify-center h-20 px-4">
                     <img
                       src={brandLogos[i]}
                       alt={`${v.company} logo`}
                       className="max-h-full max-w-full object-contain"
+                      style={{ filter: "brightness(0) invert(1)" }}
                       loading="lazy"
                     />
                   </div>
+
                   <div
                     className="text-[10px] tracking-[0.4em] uppercase mb-2"
                     style={{ color: C.secondary }}
