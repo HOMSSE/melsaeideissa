@@ -89,7 +89,7 @@ const IndexSpark = () => {
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
-          animation: spark-text-flow 8s linear infinite;
+          animation: spark-text-flow 18s linear infinite;
         }
         @keyframes spark-text-flow {
           0% { background-position: 0% 50%; }
