@@ -216,22 +216,23 @@ const IndexSpark = () => {
             </p>
 
             {/* Brand logo strip */}
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 spark-fade d-300">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-8 spark-fade d-300">
               {brandLogos.map((url, i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-center px-5 py-3 rounded-md"
-                  style={{
-                    background: "#ffffff",
-                    minWidth: 150,
-                    height: 56,
-                    border: `1px solid ${C.secondary}22`,
-                  }}
+                  className="flex items-center justify-center px-2"
+                  style={{ minWidth: 140, height: 48 }}
                 >
-                  <img src={url} alt="brand logo" className="max-h-full max-w-full object-contain" />
+                  <img
+                    src={url}
+                    alt="brand logo"
+                    className="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
+                    style={{ filter: "brightness(0) invert(1)" }}
+                  />
                 </div>
               ))}
             </div>
+
 
             {/* CTA */}
             <div className="mt-12 flex flex-col sm:flex-row gap-5 justify-center items-center spark-slide d-300">
