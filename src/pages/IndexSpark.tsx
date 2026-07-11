@@ -193,25 +193,13 @@ const IndexSpark = () => {
           </div>
 
           <div className="relative z-10 text-center px-4 max-w-6xl mx-auto spark-fade">
-            {/* Icon */}
-            <div className="mb-8 flex justify-center">
-              <div className="relative">
-                <div
-                  className="absolute inset-0 rounded-2xl blur-xl spark-pulse"
-                  style={{ background: `${C.secondary}55` }}
-                />
-                <div className="relative spark-glass p-4 rounded-2xl spark-shadow-glow">
-                  <Sparkles className="h-12 w-12 spark-float" style={{ color: C.secondary }} />
-                </div>
-              </div>
-            </div>
-
             <div
               className="text-[11px] tracking-[0.5em] uppercase mb-6 spark-fade d-100"
               style={{ color: C.primaryGlow }}
             >
               End User · Global Vendor · System Integrator
             </div>
+
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] mb-8 spark-scale">
               <span className="spark-text-grad">MOHAMED EISSA</span>
