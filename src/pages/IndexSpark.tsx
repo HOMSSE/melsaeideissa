@@ -26,6 +26,8 @@ import methanexLogo from "@/assets/methanex-logo.png.asset.json";
 import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
 import advansysLogo from "@/assets/advansys-logo.png.asset.json";
 import awardImg from "@/assets/innovation-award.jpg.asset.json";
+import neonPlant from "@/assets/spark-neon-plant.jpg";
+
 
 /**
  * v9 — SPARK EDITION (refined)
