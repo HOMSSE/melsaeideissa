@@ -342,6 +342,15 @@ const IndexSpark = () => {
               />
             </div>
           </div>
+
+          {/* bottom neon accent line */}
+          <div
+            className="absolute bottom-0 left-0 w-full h-px z-10 pointer-events-none"
+            style={{
+              background: `linear-gradient(90deg, transparent 0%, ${C.secondary} 50%, transparent 100%)`,
+              opacity: 0.3,
+            }}
+          />
         </section>
 
         {/* ================= VANTAGE POINTS ================= */}
