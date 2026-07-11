@@ -23,26 +23,29 @@ import {
   recommendations,
   vantagePoints,
 } from "@/data/profile";
+import methanexLogo from "@/assets/methanex-logo.png.asset.json";
+import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
+import advansysLogo from "@/assets/advansys-logo.png.asset.json";
 
 /**
- * v9 — SPARK EDITION
- * Inspired by the animated-gradient-mesh + glass-morphism style, retooled
- * with Mohamed's amber / teal / cyan portfolio palette.
- *
- * All effects are scoped inside this page via a local <style> tag so no
- * global tokens/keyframes leak into the other editions.
+ * v9 — SPARK EDITION (refined)
+ * Restrained, professional palette — deep navy canvas with a single warm
+ * gold accent. Company logos appear in the vantage-point section.
  */
 
-// Palette
+// Palette — one accent, disciplined
 const C = {
-  bg: "#04121a",
-  ink: "#eafaf7",
-  mute: "#9ac7c3",
-  primary: "#14b8a6",   // teal
-  primaryGlow: "#5eead4",
-  secondary: "#f59e0b", // amber
-  accent: "#22d3ee",    // cyan
+  bg: "#0a1628",        // deep navy
+  bg2: "#0f1e35",       // slightly lifted panel
+  ink: "#eef3fb",       // near-white
+  mute: "#8b9bb5",      // muted slate
+  primary: "#1e3a5f",   // navy tone for surfaces
+  primaryGlow: "#c9a961", // warm gold (subdued)
+  secondary: "#e0b64a",  // warm gold accent (single hero color)
+  accent: "#c9a961",     // same gold family — no color soup
 };
+
+const brandLogos = [methanexLogo.url, schneiderLogo.url, advansysLogo.url];
 
 const IndexSpark = () => {
   return (
