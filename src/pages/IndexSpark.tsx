@@ -60,6 +60,7 @@ const IndexSpark = () => {
 
       {/* Scoped styles + keyframes so this page is fully self-contained */}
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
         .spark-root {
           --p: ${C.primary};
           --pg: ${C.primaryGlow};
