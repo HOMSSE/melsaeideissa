@@ -13,6 +13,8 @@ import IndexPhysics from "./pages/IndexPhysics";
 import IndexCube from "./pages/IndexCube";
 import IndexChroma from "./pages/IndexChroma";
 import IndexSpark from "./pages/IndexSpark";
+import IndexControlRoom from "./pages/IndexControlRoom";
+import IndexThreeHats from "./pages/IndexThreeHats";
 import NotFound from "./pages/NotFound";
 import StyleToggle from "./components/StyleToggle";
 
@@ -36,6 +38,8 @@ const App = () => (
             <Route path="/cube" element={<IndexCube />} />
             <Route path="/chroma" element={<IndexChroma />} />
             <Route path="/spark" element={<IndexSpark />} />
+            <Route path="/controlroom" element={<IndexControlRoom />} />
+            <Route path="/threehats" element={<IndexThreeHats />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
