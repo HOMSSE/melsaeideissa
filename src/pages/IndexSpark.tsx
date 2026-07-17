@@ -188,8 +188,8 @@ const IndexSpark = () => {
         }
         .spark-hero-vignette {
           background:
-            radial-gradient(circle at center, transparent 0%, rgba(10, 22, 40, 0.85) 75%),
-            linear-gradient(180deg, rgba(10, 22, 40, 0.3) 0%, transparent 40%, rgba(10, 22, 40, 0.6) 100%);
+            radial-gradient(circle at center, transparent 0%, rgba(10, 22, 40, 0.55) 70%),
+            linear-gradient(180deg, rgba(10, 22, 40, 0.2) 0%, transparent 45%, rgba(10, 22, 40, 0.45) 100%);
         }
         .spark-mono {
           font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -205,14 +205,15 @@ const IndexSpark = () => {
               src={neonPlant}
               alt=""
               aria-hidden="true"
-              className="w-full h-full object-cover object-bottom opacity-40"
+              className="w-full h-full object-cover object-bottom opacity-[0.72]"
+              style={{ filter: "contrast(1.15) brightness(0.95)" }}
             />
-            <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 90%, transparent 0%, #0a1628 75%)" }} />
+            <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 100%, transparent 0%, #0a1628 65%)" }} />
           </div>
 
 
           {/* subtle gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-transparent to-[#0a1628]/80 z-[5] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/90 via-[#0a1628]/20 to-[#0a1628]/60 z-[5] pointer-events-none" />
 
           {/* ambient gold orbs */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden z-[6]">
