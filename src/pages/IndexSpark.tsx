@@ -188,8 +188,22 @@ const IndexSpark = () => {
         }
         .spark-hero-vignette {
           background:
-            radial-gradient(circle at center, transparent 0%, rgba(10, 22, 40, 0.55) 70%),
-            linear-gradient(180deg, rgba(10, 22, 40, 0.2) 0%, transparent 45%, rgba(10, 22, 40, 0.45) 100%);
+            radial-gradient(circle at center, transparent 0%, rgba(10, 22, 40, 0.32) 78%),
+            linear-gradient(180deg, rgba(10, 22, 40, 0.08) 0%, transparent 42%, rgba(10, 22, 40, 0.18) 100%);
+        }
+        .spark-plant-line {
+          opacity: 0.96;
+          filter: contrast(1.75) brightness(1.45) saturate(1.08) drop-shadow(0 0 10px rgba(224, 182, 74, 0.34));
+        }
+        .spark-plant-glow {
+          opacity: 0.46;
+          filter: blur(2px) contrast(2) brightness(1.8) saturate(1.1);
+          mix-blend-mode: screen;
+        }
+        .spark-plant-readability {
+          background:
+            linear-gradient(180deg, rgba(10, 22, 40, 0.12) 0%, rgba(10, 22, 40, 0.06) 45%, rgba(10, 22, 40, 0.2) 100%),
+            radial-gradient(ellipse at 50% 62%, transparent 0%, transparent 58%, rgba(10, 22, 40, 0.44) 100%);
         }
         .spark-mono {
           font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -205,15 +219,20 @@ const IndexSpark = () => {
               src={neonPlant}
               alt=""
               aria-hidden="true"
-              className="w-full h-full object-cover object-bottom opacity-[0.72]"
-              style={{ filter: "contrast(1.15) brightness(0.95)" }}
+              className="spark-plant-glow absolute inset-0 w-full h-full object-cover object-bottom"
             />
-            <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 100%, transparent 0%, #0a1628 65%)" }} />
+            <img
+              src={neonPlant}
+              alt=""
+              aria-hidden="true"
+              className="spark-plant-line absolute inset-0 w-full h-full object-cover object-bottom"
+            />
+            <div className="spark-plant-readability absolute inset-0" />
           </div>
 
 
           {/* subtle gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/90 via-[#0a1628]/20 to-[#0a1628]/60 z-[5] pointer-events-none" />
+          <div className="absolute inset-0 z-[5] pointer-events-none" style={{ background: "linear-gradient(180deg, rgba(10,22,40,0.42) 0%, rgba(10,22,40,0.08) 42%, rgba(10,22,40,0.34) 100%)" }} />
 
           {/* ambient gold orbs */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden z-[6]">
