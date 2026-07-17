@@ -188,8 +188,8 @@ const IndexSpark = () => {
         }
         .spark-hero-vignette {
           background:
-            radial-gradient(circle at center, transparent 0%, rgba(10, 22, 40, 0.85) 75%),
-            linear-gradient(180deg, rgba(10, 22, 40, 0.3) 0%, transparent 40%, rgba(10, 22, 40, 0.6) 100%);
+            radial-gradient(circle at center, transparent 0%, rgba(10, 22, 40, 0.55) 70%),
+            linear-gradient(180deg, rgba(10, 22, 40, 0.2) 0%, transparent 45%, rgba(10, 22, 40, 0.45) 100%);
         }
         .spark-mono {
           font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
