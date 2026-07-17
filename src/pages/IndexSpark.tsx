@@ -205,14 +205,15 @@ const IndexSpark = () => {
               src={neonPlant}
               alt=""
               aria-hidden="true"
-              className="w-full h-full object-cover object-bottom opacity-40"
+              className="w-full h-full object-cover object-bottom opacity-[0.72]"
+              style={{ filter: "contrast(1.15) brightness(0.95)" }}
             />
-            <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 90%, transparent 0%, #0a1628 75%)" }} />
+            <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 100%, transparent 0%, #0a1628 65%)" }} />
           </div>
 
 
           {/* subtle gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-transparent to-[#0a1628]/80 z-[5] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/90 via-[#0a1628]/20 to-[#0a1628]/60 z-[5] pointer-events-none" />
 
           {/* ambient gold orbs */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden z-[6]">
