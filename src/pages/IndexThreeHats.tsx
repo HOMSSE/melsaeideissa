@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import refineryAsset from "@/assets/refinery-plant-blueprint.png.asset.json";
 import powerAsset from "@/assets/power-plant-blueprint.png.asset.json";
-import waterAsset from "@/assets/datacenter-blueprint.png.asset.json";
+import waterAsset from "@/assets/datacenter-blueprint-labeled.png.asset.json";
 import awardAsset from "@/assets/innovation-award.jpg.asset.json";
 import methanexLogo from "@/assets/methanex-logo.png.asset.json";
 import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
@@ -68,9 +68,9 @@ const hats: Hat[] = [
     companyDetail: "Senior Application Design Engineer",
     logo: advansysLogo.url,
     blueprint: waterAsset.url,
-    bg: "radial-gradient(1200px 800px at 50% 30%, #2a1f0a 0%, #1a1206 55%, #0a0703 100%)",
-    accent: "#f5b642",
-    accentSoft: "rgba(245,182,66,0.15)",
+    bg: "radial-gradient(1200px 800px at 50% 30%, #0a1030 0%, #05081c 55%, #02030a 100%)",
+    accent: "#22d3ee",
+    accentSoft: "rgba(34,211,238,0.15)",
     narrative:
       "Now designing SCADA systems for hyperscale data centers. Bridging vendor technology with real-world client needs — and this year, recognized with an Innovation Award for that work.",
     products: ["WinCC OA SCADA", "AVEVA System Platform", "Data Center SCADA", "Custom Applications"],
