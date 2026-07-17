@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import refineryAsset from "@/assets/refinery-blueprint.jpg.asset.json";
-import powerAsset from "@/assets/power-blueprint.jpg.asset.json";
-import waterAsset from "@/assets/water-blueprint.png.asset.json";
+import refineryAsset from "@/assets/refinery-plant-blueprint.png.asset.json";
+import powerAsset from "@/assets/power-plant-blueprint.png.asset.json";
+import waterAsset from "@/assets/datacenter-blueprint.png.asset.json";
 import awardAsset from "@/assets/innovation-award.jpg.asset.json";
 import methanexLogo from "@/assets/methanex-logo.png.asset.json";
 import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
@@ -120,24 +120,27 @@ export default function IndexThreeHats() {
       {/* Ambient blueprint that changes with the active hat */}
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-0"
-        style={{ opacity: 0.35 }}
+        className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
       >
         {hats.map((h, i) => (
           <img
             key={h.key}
             src={h.blueprint}
             alt=""
-            className="absolute inset-0 h-full w-full object-contain object-center transition-opacity duration-[1500ms]"
+            className="absolute top-1/2 right-0 h-[130vh] w-auto max-w-none -translate-y-1/2 translate-x-[12%] transition-opacity duration-[1500ms]"
             style={{
-              opacity: i === activeHat ? 1 : 0,
+              opacity: i === activeHat ? 0.85 : 0,
               mixBlendMode: "screen",
-              filter: `drop-shadow(0 0 40px ${h.accent}66)`,
-              transform: "translate(20%, -10%) scale(1.1)",
+              filter: `drop-shadow(0 0 40px ${h.accent}55) brightness(1.05) contrast(1.05)`,
+              WebkitMaskImage:
+                "radial-gradient(ellipse 60% 65% at 55% 50%, #000 40%, rgba(0,0,0,0.65) 65%, transparent 90%)",
+              maskImage:
+                "radial-gradient(ellipse 60% 65% at 55% 50%, #000 40%, rgba(0,0,0,0.65) 65%, transparent 90%)",
             }}
           />
         ))}
       </div>
+
 
       {/* Fixed side stepper */}
       <nav className="fixed left-4 top-1/2 z-30 hidden -translate-y-1/2 flex-col gap-4 md:flex">
