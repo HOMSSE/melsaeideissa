@@ -205,8 +205,9 @@ const IndexSpark = () => {
               src={neonPlant}
               alt=""
               aria-hidden="true"
-              className="w-full h-full object-cover object-bottom opacity-55 spark-neon-flicker"
+              className="w-full h-full object-cover object-bottom opacity-40"
             />
+            <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 90%, transparent 0%, #0a1628 75%)" }} />
           </div>
 
 
