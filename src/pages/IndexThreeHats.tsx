@@ -256,7 +256,7 @@ export default function IndexThreeHats() {
               <h2 className="mt-6 text-4xl font-semibold sm:text-5xl" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 As{" "}
                 {h.key === "enduser" ? (
-                  <span className="methanex-enduser-flow">{h.role}</span>
+                  <span style={{ color: "rgb(0,167,205)" }}>{h.role}</span>
                 ) : (
                   <span style={{ color: h.accent }}>{h.role}</span>
                 )}
