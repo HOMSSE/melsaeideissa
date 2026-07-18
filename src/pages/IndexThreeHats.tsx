@@ -276,7 +276,7 @@ export default function IndexThreeHats() {
 
       {/* HERO */}
       <section className="relative z-10 flex min-h-[92vh] items-center px-6 pt-24">
-        <div className="mx-auto max-w-5xl">
+        <div className="mr-auto max-w-2xl">
           <h1
             className="text-[clamp(2.8rem,8vw,6rem)] font-semibold leading-[1]"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
