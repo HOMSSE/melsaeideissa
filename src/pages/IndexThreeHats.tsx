@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import refineryAsset from "@/assets/refinery-plant-blueprint.png.asset.json";
-import powerAsset from "@/assets/power-plant-blueprint.png.asset.json";
 import waterAsset from "@/assets/datacenter-blueprint-labeled.png.asset.json";
+import dashboardsAsset from "@/assets/dashboards-blueprint.png.asset.json";
 import awardAsset from "@/assets/innovation-award.jpg.asset.json";
 import methanexLogo from "@/assets/methanex-logo-original.png.asset.json";
 import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
@@ -53,7 +53,7 @@ const hats: Hat[] = [
     company: "Schneider Electric",
     companyDetail: "Expert Customer Support · Global team",
     logo: schneiderLogo.url,
-    blueprint: powerAsset.url,
+    blueprint: waterAsset.url,
     bg: "radial-gradient(1200px 800px at 70% 20%, #0f2818 0%, #06180f 55%, #030a08 100%)",
     accent: "#7ee6a8",
     accentSoft: "rgba(126,230,168,0.15)",
@@ -67,7 +67,7 @@ const hats: Hat[] = [
     company: "Advansys Intelligent Solutions",
     companyDetail: "Senior Application Design Engineer",
     logo: advansysLogo.url,
-    blueprint: waterAsset.url,
+    blueprint: dashboardsAsset.url,
     bg: "radial-gradient(1200px 800px at 50% 30%, #0a1030 0%, #05081c 55%, #02030a 100%)",
     accent: "#22d3ee",
     accentSoft: "rgba(34,211,238,0.15)",
