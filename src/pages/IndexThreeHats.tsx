@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import refineryAsset from "@/assets/refinery-plant-blueprint.png.asset.json";
 import waterAsset from "@/assets/datacenter-blueprint-labeled.png.asset.json";
-import dashboardsAsset from "@/assets/dashboards-blueprint.png.asset.json";
+import dashboardsAsset from "@/assets/advansys-dashboard-portrait.png.asset.json";
 import awardAsset from "@/assets/innovation-award.jpg.asset.json";
 import methanexLogo from "@/assets/methanex-logo-original.png.asset.json";
 import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
