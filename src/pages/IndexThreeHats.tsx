@@ -318,8 +318,8 @@ export default function IndexThreeHats() {
 
           <p className="mt-6 max-w-xl text-lg text-white/75">
             From maintaining the plant, to joining a global vendor and supporting its customers, to now
-            designing the applications — Mohamed Eissa applies the same instrumentation
-            expertise across three vantage points.
+            designing the applications — Mohamed Eissa brings a 360° view of the field, shaped by the
+            different priorities, pressures, and perspectives each side lives with every day.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
