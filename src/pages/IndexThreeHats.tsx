@@ -6,12 +6,22 @@ import awardAsset from "@/assets/innovation-award.jpg.asset.json";
 import methanexLogo from "@/assets/methanex-logo-original.png.asset.json";
 import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
 import advansysLogo from "@/assets/advansys-logo.png.asset.json";
+import letterPage1 from "@/assets/methanex-letter-page1.jpg.asset.json";
+import letterPage2 from "@/assets/methanex-letter-page2.jpg.asset.json";
 import {
   certifications,
   trainings,
   recommendations,
   skills,
+  methanexLetter,
 } from "@/data/profile";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { ChevronDown, FileText } from "lucide-react";
 
 import SEO from "@/components/SEO";
 
