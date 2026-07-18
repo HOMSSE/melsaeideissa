@@ -29,8 +29,7 @@ const App = () => (
         <BrowserRouter>
           <StyleToggle />
           <Routes>
-            <Route path="/" element={<IndexThreeHats />} />
-            <Route path="/original" element={<Index />} />
+            <Route path="/" element={<Index />} />
             <Route path="/editorial" element={<IndexEditorial />} />
             <Route path="/shader" element={<IndexShader />} />
             <Route path="/scroll3d" element={<IndexScroll3D />} />
