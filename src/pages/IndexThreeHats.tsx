@@ -70,7 +70,7 @@ const hats: Hat[] = [
     accent: "#7ee6a8",
     accentSoft: "rgba(126,230,168,0.15)",
     narrative:
-      "Moved to the source. As an Expert Customer Support engineer on the global customer support team, resolved DCS issues for customers in the EMEA region. Deep-mastered the software -System Advisor- I once operated.",
+      "Moved to the source. As an Expert Customer Support engineer on the global customer support team, resolved DCS issues for customers in the EMEA region. Deep-mastered the software -System Advisor- I once used.",
     products: ["Foxboro DCS", "System Advisor", "AVEVA System Platform", "Global Customer Support"],
   },
   {
