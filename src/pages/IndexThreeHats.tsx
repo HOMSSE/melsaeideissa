@@ -538,7 +538,10 @@ export default function IndexThreeHats() {
               />
             ))}
           </div>
-          <h2 className="mt-8 text-4xl font-semibold sm:text-5xl" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2
+            className="mt-8 text-4xl font-semibold sm:text-5xl epi-gradient-text"
+            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+          >
             The three hats compound.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
