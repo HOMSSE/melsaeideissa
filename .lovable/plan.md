@@ -1,33 +1,30 @@
-## Three targeted tweaks to `src/pages/IndexThreeHats.tsx`
+# Replace Innovation Award Image Across the Site
 
-### 1. Recolor the Innovation Award section
-Currently uses amber/orange (`#f5b642` border, background, glow, kicker text) which clashes with the site's cool cyan/teal/green palette.
+## Current State
+- The active award image is `src/assets/innovation-award.jpg` (2.2 MB, beige-wall photo, award off-center).
+- A CDN asset pointer exists at `src/assets/innovation-award.jpg.asset.json`.
+- Most pages import the CDN pointer (`IndexThreeHats`, `IndexSpark`, `IndexControlRoom`), but two legacy pages import the local JPG directly (`Index`, `IndexEditorial`).
+- The uploaded replacement is `/mnt/user-uploads/جائزة_الإبداع.jpeg` — a cleaner, centered product-style shot of the same trophy on a neutral light background.
 
-Change to the site's existing accent palette (Advansys cyan `#22d3ee`, since the award is from Advansys):
-- Border → `rgba(34,211,238,0.35)`
-- Background → `linear-gradient(135deg, rgba(34,211,238,0.10), rgba(0,0,0,0.4))`
-- Image glow → `0 0 50px rgba(34,211,238,0.35)`
-- Kicker text ("Innovation Award · 2025") → `#22d3ee`
+## Plan
 
-Everything else in the section (typography, layout, image) stays the same.
+1. **Upload the replacement image to Lovable assets**
+   - Source: `/mnt/user-uploads/جائزة_الإبداع.jpeg`
+   - Target filename: `innovation-award-2025.jpg`
+   - Output: new `src/assets/innovation-award.jpg.asset.json` with the fresh CDN URL.
 
-### 2. Move hero text further left so it doesn't overlap the blueprint
-Today the hero uses `mx-auto max-w-5xl`, which centers the text column and lets it collide with the right-side blueprint on wide screens.
+2. **Align all page imports to use the CDN asset pointer**
+   - Update `src/pages/Index.tsx` to import `innovation-award.jpg.asset.json` instead of the local JPG.
+   - Update `src/pages/IndexEditorial.tsx` to import `innovation-award.jpg.asset.json` instead of the local JPG.
+   - Existing imports in `IndexThreeHats`, `IndexSpark`, and `IndexControlRoom` already use the asset pointer and will pick up the new URL automatically.
 
-Change the hero inner container to `mr-auto max-w-2xl` and tighten paragraph width. Result: headline + paragraph + role pills all sit in the left ~40% of the viewport, leaving the blueprint clear on the right. No change to font sizes or copy.
+3. **Remove the old local binary**
+   - Delete `src/assets/innovation-award.jpg` so the site no longer falls back to the old photo.
 
-### 3. Confine the Advansys blueprint to the right side (like Methanex & Schneider)
-The dashboards blueprint is wider than the refinery/datacenter images, so at `h-[130vh] w-auto` it spills across the whole viewport. The radial mask is image-relative, not viewport-relative, so it doesn't clip it.
+4. **Verify**
+   - Run `bun run build` to confirm all imports resolve.
+   - Check the Innovation Award section in the live preview to confirm the new image renders clearly.
 
-Wrap each blueprint `<img>` in a viewport-anchored container:
-```tsx
-<div className="absolute right-0 top-0 h-full w-[62vw] overflow-hidden">
-  <img ... />
-</div>
-```
-This clips any blueprint to the right ~62% of the viewport regardless of the source image's aspect ratio, giving all three hats the same "background on the right" behavior. The existing radial mask and `mix-blend-mode: screen` are preserved so edges still dissolve softly.
-
-## Guardrails
-- No other sections, routes, files, or copy touched.
-- Word constellation, aurora, hat stepper, section content unchanged.
-- Build should stay green.
+## Scope
+- Only the Innovation Award image and its references are changed.
+- No layout, text, colors, or other sections will be modified unless the new image's aspect ratio forces a minor sizing tweak.
