@@ -14,6 +14,7 @@ import {
   recommendations,
   skills,
   methanexLetter,
+  schneiderExperience,
 } from "@/data/profile";
 import {
   Dialog,
