@@ -903,7 +903,7 @@ export default function IndexThreeHats() {
             style={{ color: "rgba(255,255,255,0.7)" }}
           >
             <Linkedin className="h-4 w-4" />
-            <span>Read the full profile and more recommendations on LinkedIn</span>
+            <span>Read the full profile on LinkedIn</span>
             <ExternalLink className="h-3.5 w-3.5" />
           </a>
         </div>
