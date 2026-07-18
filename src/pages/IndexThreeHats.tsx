@@ -7,7 +7,6 @@ import methanexLogo from "@/assets/methanex-logo-original.png.asset.json";
 import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
 import advansysLogo from "@/assets/advansys-logo.png.asset.json";
 import {
-  technicalSkills,
   projects,
   certifications,
   trainings,
@@ -475,43 +474,9 @@ export default function IndexThreeHats() {
         </div>
       </section>
 
-      {/* TECH & PROJECTS */}
+      {/* SKILLS & PROJECTS */}
       <section className="relative z-10 mx-auto max-w-6xl px-6 py-24">
         <h2 className="text-3xl font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-          Instrumentation stack
-        </h2>
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {Object.entries(technicalSkills).map(([cat, items]) => (
-            <div
-              key={cat}
-              className="rounded-3xl border p-6"
-              style={{
-                borderColor: "rgba(34,211,238,0.35)",
-                background: "linear-gradient(135deg, rgba(34,211,238,0.10), rgba(0,0,0,0.4))",
-              }}
-            >
-              <div className="text-lg font-semibold">{cat}</div>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {items.map((it) => (
-                  <span
-                    key={it}
-                    className="rounded-full border px-3 py-1 text-xs"
-                    style={{
-                      borderColor: "rgba(34,211,238,0.30)",
-                      color: "rgba(255,255,255,0.9)",
-                      background: "rgba(34,211,238,0.08)",
-                      fontFamily: "'JetBrains Mono', ui-monospace, monospace",
-                    }}
-                  >
-                    {it}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <h2 className="mt-20 text-3xl font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Skills
         </h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
