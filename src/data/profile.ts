@@ -84,8 +84,14 @@ export const certifications: {
   {
     title: "Certified Functional Safety Professional",
     issuer: "exida",
-    year: "2022",
+    year: "2022 – 2025",
     icon: ShieldIcon,
+  },
+  {
+    title: "Certified WinCC OA Basic Training",
+    issuer: "Siemens",
+    year: "",
+    icon: SettingsIcon,
   },
 ];
 
