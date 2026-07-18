@@ -470,9 +470,6 @@ export default function IndexThreeHats() {
                     >
                       {methanexLetter.title} — {methanexLetter.company}
                     </h3>
-                    <p className="mt-1 text-sm text-white/60">
-                      Signed by {methanexLetter.signatory}, {methanexLetter.signatoryTitle}
-                    </p>
                   </div>
                   <ChevronDown
                     size={22}
