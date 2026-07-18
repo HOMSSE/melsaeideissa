@@ -558,6 +558,15 @@ export default function IndexThreeHats() {
 
       <style>{`
         @keyframes hatFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+        @keyframes auroraDrift {
+          0%,100% { transform: translate3d(0,0,0) scale(1); }
+          33% { transform: translate3d(3%,-2%,0) scale(1.05); }
+          66% { transform: translate3d(-2%,3%,0) scale(0.98); }
+        }
+        @keyframes constDrift {
+          0%,100% { transform: translate3d(0,0,0); }
+          50% { transform: translate3d(0,-8px,0); }
+        }
       `}</style>
     </div>
   );
