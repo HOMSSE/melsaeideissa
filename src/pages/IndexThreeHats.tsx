@@ -79,6 +79,7 @@ const hats: Hat[] = [
 
 export default function IndexThreeHats() {
   const [activeHat, setActiveHat] = useState(0);
+  const [pastHats, setPastHats] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -96,6 +97,12 @@ export default function IndexThreeHats() {
         }
       });
       setActiveHat(bestIdx);
+
+      const epilogue = document.getElementById("epilogue");
+      if (epilogue) {
+        const top = epilogue.getBoundingClientRect().top;
+        setPastHats(top < window.innerHeight * 0.6);
+      }
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
@@ -108,7 +115,9 @@ export default function IndexThreeHats() {
     <div
       className="min-h-screen text-white transition-[background] duration-[1500ms] ease-out"
       style={{
-        background: hat.bg,
+        background: pastHats
+          ? "radial-gradient(1200px 800px at 50% 0%, #0d1220 0%, #070a12 60%, #04060c 100%)"
+          : hat.bg,
         fontFamily: "'Plus Jakarta Sans', sans-serif",
       }}
     >
@@ -120,7 +129,8 @@ export default function IndexThreeHats() {
       {/* Ambient blueprint that changes with the active hat */}
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+        className="pointer-events-none fixed inset-0 z-0 overflow-hidden transition-opacity duration-[1500ms]"
+        style={{ opacity: pastHats ? 0 : 1 }}
       >
         {hats.map((h, i) => (
           <img
@@ -143,7 +153,10 @@ export default function IndexThreeHats() {
 
 
       {/* Fixed side stepper */}
-      <nav className="fixed left-4 top-1/2 z-30 hidden -translate-y-1/2 flex-col gap-4 md:flex">
+      <nav
+        className="fixed left-4 top-1/2 z-30 hidden -translate-y-1/2 flex-col gap-4 transition-opacity duration-700 md:flex"
+        style={{ opacity: pastHats ? 0.35 : 1 }}
+      >
         {hats.map((h, i) => (
           <a
             key={h.key}
@@ -294,7 +307,7 @@ export default function IndexThreeHats() {
       ))}
 
       {/* CONVERGENCE */}
-      <section className="relative z-10 px-6 py-32">
+      <section id="epilogue" className="relative z-10 px-6 py-32">
         <div className="mx-auto max-w-5xl text-center">
           <div className="flex justify-center gap-4">
             {hats.map((h) => (
