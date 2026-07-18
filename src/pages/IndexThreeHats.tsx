@@ -57,7 +57,7 @@ const hats: Hat[] = [
     accentSoft: "rgba(94,234,212,0.15)",
     narrative:
       "Maintained DCS, SIS and machinery protection and condition monitoring systems from inside the plant. Learned that safety and quality are not checkboxes — they are the foundation of every reliable operation. Owned Foxboro I/A, Triconex ESD and Bently Nevada 3500 through daily operations, shutdowns and turnarounds.",
-    products: ["Foxboro DCS", "Triconex ESD", "Bently Nevada 3500", "AVEVA PI"],
+    products: ["Foxboro DCS", "Triconex ESD", "Bently Nevada 3500", "System Advisor"],
   },
   {
     key: "vendor",
