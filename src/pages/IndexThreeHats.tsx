@@ -679,6 +679,27 @@ export default function IndexThreeHats() {
           0%,100% { transform: translate3d(0,0,0); }
           50% { transform: translate3d(0,-8px,0); }
         }
+        @keyframes epiConicSpin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes epiBlobA {
+          0%,100% { transform: translate3d(0,0,0) scale(1); }
+          50% { transform: translate3d(8%,6%,0) scale(1.15); }
+        }
+        @keyframes epiBlobB {
+          0%,100% { transform: translate3d(0,0,0) scale(1); }
+          50% { transform: translate3d(-10%,8%,0) scale(1.2); }
+        }
+        @keyframes epiBlobC {
+          0%,100% { transform: translate3d(0,0,0) scale(1); }
+          50% { transform: translate3d(6%,-10%,0) scale(1.1); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          [style*="epiConicSpin"], [style*="epiBlobA"], [style*="epiBlobB"], [style*="epiBlobC"], [style*="auroraDrift"], [style*="constDrift"] {
+            animation: none !important;
+          }
+        }
       `}</style>
     </div>
   );
