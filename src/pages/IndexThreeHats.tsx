@@ -495,18 +495,6 @@ export default function IndexThreeHats() {
 
       <style>{`
         @keyframes hatFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
-        .methanex-enduser-flow {
-          background: linear-gradient(90deg, rgb(0,167,205) 0%, #5eead4 25%, rgb(0,167,205) 50%, #5eead4 75%, rgb(0,167,205) 100%);
-          background-size: 300% 100%;
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-          animation: methanexEndUserFlow 18s linear infinite;
-        }
-        @keyframes methanexEndUserFlow {
-          0% { background-position: 0% 50%; }
-          100% { background-position: 300% 50%; }
-        }
       `}</style>
     </div>
   );
