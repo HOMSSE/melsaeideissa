@@ -254,7 +254,12 @@ export default function IndexThreeHats() {
                 <img src={h.logo} alt={h.company} className="h-full w-auto max-w-[320px] object-contain" />
               </div>
               <h2 className="mt-6 text-4xl font-semibold sm:text-5xl" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                As <span style={{ color: h.key === "enduser" ? "rgb(23, 175, 205)" : h.accent }}>{h.role}</span>
+                As{" "}
+                {h.key === "enduser" ? (
+                  <span className="methanex-enduser-flow">{h.role}</span>
+                ) : (
+                  <span style={{ color: h.accent }}>{h.role}</span>
+                )}
               </h2>
               <div className="mt-1 text-sm text-white/60">{h.companyDetail}</div>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/80">
