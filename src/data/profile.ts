@@ -56,7 +56,7 @@ export const schneiderExperience = {
     },
     {
       title: "Expert Customer Support Engineer (Global Customer Support)",
-      date: "01/09/2023 – 30/11/2024",
+      date: "\n",
       items: [
         "Providing advanced technical support to customers and field service personnel via email, Microsoft Teams and other communication channels for the EMEA region.",
         "Working on System Advisor cases from the EMEA region including hot cases (customers included Aramco, Novartis Pharma, Infineum Italia, PDO, KNPC, and others).",
