@@ -605,7 +605,23 @@ export default function IndexThreeHats() {
           0%,100% { transform: translate3d(0,0,0); }
           50% { transform: translate3d(0,-8px,0); }
         }
+        @keyframes constLight {
+          0%, 86%, 100% {
+            color: #e6f3ff;
+            opacity: var(--base-opacity, 0.1);
+            text-shadow: none;
+          }
+          92% {
+            color: var(--lit-color, #22d3ee);
+            opacity: 0.85;
+            text-shadow: 0 0 12px color-mix(in srgb, var(--lit-color, #22d3ee) 55%, transparent);
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          span[style*="constLight"] { animation: none !important; }
+        }
       `}</style>
+
     </div>
   );
 }
