@@ -88,6 +88,8 @@ const hats: Hat[] = [
   },
 ];
 
+const LINKEDIN_URL = "https://www.linkedin.com/in/mohamedeeissa";
+
 export default function IndexThreeHats() {
   const [activeHat, setActiveHat] = useState(0);
   const [pastHats, setPastHats] = useState(false);
