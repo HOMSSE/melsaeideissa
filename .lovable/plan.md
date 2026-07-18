@@ -1,30 +1,48 @@
-# Replace Innovation Award Image Across the Site
 
-## Current State
-- The active award image is `src/assets/innovation-award.jpg` (2.2 MB, beige-wall photo, award off-center).
-- A CDN asset pointer exists at `src/assets/innovation-award.jpg.asset.json`.
-- Most pages import the CDN pointer (`IndexThreeHats`, `IndexSpark`, `IndexControlRoom`), but two legacy pages import the local JPG directly (`Index`, `IndexEditorial`).
-- The uploaded replacement is `/mnt/user-uploads/جائزة_الإبداع.jpeg` — a cleaner, centered product-style shot of the same trophy on a neutral light background.
+## Goal
+Surface Mohamed's official Methanex experience letter inside the Methanex (End User) section of v11, without cluttering the hero narrative.
 
-## Plan
+## Approach
+Hybrid: **extracted text as primary**, **original scans as proof**.
 
-1. **Upload the replacement image to Lovable assets**
-   - Source: `/mnt/user-uploads/جائزة_الإبداع.jpeg`
-   - Target filename: `innovation-award-2025.jpg`
-   - Output: new `src/assets/innovation-award.jpg.asset.json` with the fresh CDN URL.
+## What to build
 
-2. **Align all page imports to use the CDN asset pointer**
-   - Update `src/pages/Index.tsx` to import `innovation-award.jpg.asset.json` instead of the local JPG.
-   - Update `src/pages/IndexEditorial.tsx` to import `innovation-award.jpg.asset.json` instead of the local JPG.
-   - Existing imports in `IndexThreeHats`, `IndexSpark`, and `IndexControlRoom` already use the asset pointer and will pick up the new URL automatically.
+### 1. New "Experience Letter" card in the Methanex section
+- Placed after the existing Methanex narrative block, styled like the Innovation Award card (rounded border, cyan-tinted gradient, subtle glow).
+- Collapsed by default. Header shows:
+  - Small "Official Letter" eyebrow label
+  - Title: "Experience Letter — The Egyptian Methanex Methanol Company"
+  - Signed by: "Yassine Mahmoud, HR Manager"
+  - A "Read letter" toggle button (chevron)
+- Expands inline with a smooth height transition to reveal the full text.
 
-3. **Remove the old local binary**
-   - Delete `src/assets/innovation-award.jpg` so the site no longer falls back to the old photo.
+### 2. Extracted letter content
+Text organized into short, scannable paragraphs matching the two uploaded pages:
+- Role & systems worked on (Foxboro IA DCS, Triconex ESD, Bently Nevada 3500 MMS)
+- Engineering: DCS/SIS logic modifications, Wonderware, MOC lifecycle, policies & procedures
+- Project supervision: DCS upgrade, Emerson 6200 positioners — installation, testing, commissioning
+- Maintenance: preventive/corrective on Bently Nevada 3500, Triconex, Foxboro; RC compliance
+- Day-to-day support: troubleshooting, event/upset reviews, LOPA sessions, FAT for DCS upgrades, alarm rationalization, cybersecurity support
+- CMMS Maximo work orders + Meridian document management + MOC
+- Turnarounds/shutdowns, incident investigations, RCA, permits, interlock bypasses, high-risk job risk assessments
 
-4. **Verify**
-   - Run `bun run build` to confirm all imports resolve.
-   - Check the Innovation Award section in the live preview to confirm the new image renders clearly.
+### 3. "View original" affordance
+Below the extracted text:
+- Two thumbnail tiles of the scanned pages (page 1, page 2)
+- Click opens a lightbox (existing shadcn `Dialog`) with the full-resolution scan, arrow keys to navigate between the two pages
+- Uploaded scans registered as Lovable Assets (not committed as raw binaries)
 
-## Scope
-- Only the Innovation Award image and its references are changed.
-- No layout, text, colors, or other sections will be modified unless the new image's aspect ratio forces a minor sizing tweak.
+### 4. Accessibility & SEO
+- Text lives in the DOM (indexable), not inside an image
+- Semantic `<article>` with `<h3>` for the letter title
+- Alt text on the scanned image thumbnails ("Methanex experience letter, page 1/2, signed by HR Manager")
+
+## Files touched
+- `src/pages/IndexThreeHats.tsx` — add the letter card + lightbox
+- `src/data/profile.ts` — add `methanexLetter` object (paragraphs array, signatory, scan asset refs)
+- `src/assets/methanex-letter-page1.jpg.asset.json` + `page2` — created via `lovable-assets` from `/mnt/user-uploads/`
+
+## Out of scope
+- No redesign of the Methanex section layout
+- No changes to other hat sections
+- No download button (the scans open in a lightbox; a download link can be added later if needed)
