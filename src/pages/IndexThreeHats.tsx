@@ -133,21 +133,25 @@ export default function IndexThreeHats() {
         style={{ opacity: pastHats ? 0 : 1 }}
       >
         {hats.map((h, i) => (
-          <img
+          <div
             key={h.key}
-            src={h.blueprint}
-            alt=""
-            className="absolute top-1/2 right-0 h-[130vh] w-auto max-w-none -translate-y-1/2 translate-x-[12%] transition-opacity duration-[1500ms]"
-            style={{
-              opacity: i === activeHat ? 0.85 : 0,
-              mixBlendMode: "screen",
-              filter: `drop-shadow(0 0 40px ${h.accent}55) brightness(1.05) contrast(1.05)`,
-              WebkitMaskImage:
-                "radial-gradient(ellipse 60% 65% at 55% 50%, #000 40%, rgba(0,0,0,0.65) 65%, transparent 90%)",
-              maskImage:
-                "radial-gradient(ellipse 60% 65% at 55% 50%, #000 40%, rgba(0,0,0,0.65) 65%, transparent 90%)",
-            }}
-          />
+            className="absolute right-0 top-0 h-full w-[62vw] overflow-hidden"
+          >
+            <img
+              src={h.blueprint}
+              alt=""
+              className="absolute top-1/2 right-0 h-[130vh] w-auto max-w-none -translate-y-1/2 translate-x-[12%] transition-opacity duration-[1500ms]"
+              style={{
+                opacity: i === activeHat ? 0.85 : 0,
+                mixBlendMode: "screen",
+                filter: `drop-shadow(0 0 40px ${h.accent}55) brightness(1.05) contrast(1.05)`,
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 60% 65% at 55% 50%, #000 40%, rgba(0,0,0,0.65) 65%, transparent 90%)",
+                maskImage:
+                  "radial-gradient(ellipse 60% 65% at 55% 50%, #000 40%, rgba(0,0,0,0.65) 65%, transparent 90%)",
+              }}
+            />
+          </div>
         ))}
       </div>
 
