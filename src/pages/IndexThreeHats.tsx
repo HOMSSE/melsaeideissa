@@ -790,6 +790,20 @@ export default function IndexThreeHats() {
             </blockquote>
           ))}
         </div>
+
+        <div className="mt-10 text-center">
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm transition-colors hover:text-[#22d3ee]"
+            style={{ color: "rgba(255,255,255,0.7)" }}
+          >
+            <Linkedin className="h-4 w-4" />
+            <span>Read the full profile and more recommendations on LinkedIn</span>
+            <ExternalLink className="h-3.5 w-3.5" />
+          </a>
+        </div>
       </section>
 
 
