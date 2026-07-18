@@ -616,7 +616,7 @@ export default function IndexThreeHats() {
           ))}
         </div>
 
-        <h2 className="mt-20 text-3xl font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        <h2 className="mt-20 text-3xl font-semibold epi-gradient-text" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Projects
         </h2>
         <div className="mt-8 grid gap-5 md:grid-cols-2">
