@@ -206,7 +206,7 @@ export default function IndexThreeHats() {
               Three hats.
             </span>
             <br />
-            Ten years.
+            Eleven years.
           </h1>
 
           <p className="mt-6 max-w-xl text-lg text-white/75">
