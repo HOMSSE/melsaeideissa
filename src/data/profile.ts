@@ -49,6 +49,7 @@ export const schneiderExperience = {
   roles: [
     {
       title: "Senior Application Design Engineer",
+      date: "",
       items: [
         "Using Aveva System Platform to create SCADA systems for monitoring different systems for Data Centers.",
       ],
