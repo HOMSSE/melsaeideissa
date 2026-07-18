@@ -84,7 +84,7 @@ const hats: Hat[] = [
     accent: "#22d3ee",
     accentSoft: "rgba(34,211,238,0.15)",
     narrative:
-      "Now designing SCADA systems. Bridging vendor technology with real-world client needs — and in 2025, recognized with an Innovation Award.",
+      "Designing SCADA systems. Bridging vendor technology with real-world client needs — and in 2025, recognized with an Innovation Award.",
     products: ["WinCC OA SCADA", "AVEVA System Platform", "Unified Operations Center for Data Centers", "Aveva Reports for Operations"],
   },
 ];
