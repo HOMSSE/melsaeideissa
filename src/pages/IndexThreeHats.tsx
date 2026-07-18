@@ -472,8 +472,11 @@ export default function IndexThreeHats() {
           {Object.entries(technicalSkills).map(([cat, items]) => (
             <div
               key={cat}
-              className="rounded-xl border p-6"
-              style={{ borderColor: "rgba(255,255,255,0.12)", background: "rgba(0,0,0,0.4)" }}
+              className="rounded-3xl border p-6"
+              style={{
+                borderColor: "rgba(34,211,238,0.35)",
+                background: "linear-gradient(135deg, rgba(34,211,238,0.10), rgba(0,0,0,0.4))",
+              }}
             >
               <div className="text-lg font-semibold">{cat}</div>
               <div className="mt-3 flex flex-wrap gap-2">
@@ -482,8 +485,9 @@ export default function IndexThreeHats() {
                     key={it}
                     className="rounded-full border px-3 py-1 text-xs"
                     style={{
-                      borderColor: "rgba(255,255,255,0.2)",
-                      color: "rgba(255,255,255,0.85)",
+                      borderColor: "rgba(34,211,238,0.30)",
+                      color: "rgba(255,255,255,0.9)",
+                      background: "rgba(34,211,238,0.08)",
                       fontFamily: "'JetBrains Mono', ui-monospace, monospace",
                     }}
                   >
@@ -502,8 +506,11 @@ export default function IndexThreeHats() {
           {projects.map((p) => (
             <article
               key={p.title}
-              className="rounded-xl border p-6"
-              style={{ borderColor: "rgba(255,255,255,0.12)", background: "rgba(0,0,0,0.4)" }}
+              className="rounded-3xl border p-6"
+              style={{
+                borderColor: "rgba(34,211,238,0.35)",
+                background: "linear-gradient(135deg, rgba(34,211,238,0.10), rgba(0,0,0,0.4))",
+              }}
             >
               <h3 className="text-xl font-semibold">{p.title}</h3>
               <p className="mt-3 text-sm text-white/75">{p.description}</p>
@@ -511,9 +518,10 @@ export default function IndexThreeHats() {
                 {p.technologies.map((t) => (
                   <span
                     key={t}
-                    className="rounded-full border px-2.5 py-1 text-[10px] uppercase tracking-widest text-[#f5b642]"
+                    className="rounded-full border px-2.5 py-1 text-[10px] uppercase tracking-widest text-[#22d3ee]"
                     style={{
-                      borderColor: "rgba(245,182,66,0.4)",
+                      borderColor: "rgba(34,211,238,0.35)",
+                      background: "rgba(34,211,238,0.08)",
                       fontFamily: "'JetBrains Mono', ui-monospace, monospace",
                     }}
                   >
