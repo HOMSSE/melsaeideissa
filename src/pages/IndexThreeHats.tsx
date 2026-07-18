@@ -484,7 +484,7 @@ export default function IndexThreeHats() {
                       className="text-[10px] uppercase tracking-[0.3em]"
                       style={{ color: h.accent, fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
                     >
-                      Official Letter
+                      ROLE DETAILS
                     </div>
                     <h3
                       className="mt-1 text-xl font-semibold text-white/95 sm:text-2xl"
