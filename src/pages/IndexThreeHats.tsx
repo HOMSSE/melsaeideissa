@@ -153,7 +153,10 @@ export default function IndexThreeHats() {
 
 
       {/* Fixed side stepper */}
-      <nav className="fixed left-4 top-1/2 z-30 hidden -translate-y-1/2 flex-col gap-4 md:flex">
+      <nav
+        className="fixed left-4 top-1/2 z-30 hidden -translate-y-1/2 flex-col gap-4 transition-opacity duration-700 md:flex"
+        style={{ opacity: pastHats ? 0.35 : 1 }}
+      >
         {hats.map((h, i) => (
           <a
             key={h.key}
