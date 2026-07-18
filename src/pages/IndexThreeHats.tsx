@@ -46,7 +46,7 @@ const hats: Hat[] = [
     accent: "#5eead4",
     accentSoft: "rgba(94,234,212,0.15)",
     narrative:
-      "Ran DCS, SIS and rotating-machinery systems from inside the plant. Felt uptime as revenue, not as a KPI. Owned Foxboro I/A, Triconex ESD and Bently Nevada 3500 through daily operations, shutdowns and turnarounds.",
+      "Maintained DCS, SIS and machinery protection and condition monitoring systems from inside the plant. Felt uptime as revenue, not as a KPI. Owned Foxboro I/A, Triconex ESD and Bently Nevada 3500 through daily operations, shutdowns and turnarounds.",
     products: ["Foxboro I/A DCS", "Triconex ESD", "Bently Nevada 3500", "AVEVA PI"],
   },
   {
@@ -60,7 +60,7 @@ const hats: Hat[] = [
     accent: "#7ee6a8",
     accentSoft: "rgba(126,230,168,0.15)",
     narrative:
-      "Moved to the source. As an Expert Customer Support engineer on the global team, resolved DCS and SIS issues for customers on multiple continents. Deep-mastered the platforms I once operated.",
+      "Moved to the source. As an Expert Customer Support engineer on the global customer support team, resolved DCS and SIS issues for customers in the EMEA region. Deep-mastered the platforms I once operated.",
     products: ["Foxboro DCS", "System Advisor", "AVEVA System Platform", "Global Customer Support"],
   },
   {
@@ -305,8 +305,9 @@ export default function IndexThreeHats() {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg text-white/75">
-            Mohamed Eissa has run the plant, supported the vendor, and now
-            designs the systems. Same instrumentation. Three vantage points.
+            From maintaining the plant to supporting the vendor and now
+            designing the systems, Mohamed Eissa applies the same instrumentation
+            expertise across three vantage points.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
