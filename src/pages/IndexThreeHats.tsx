@@ -216,40 +216,50 @@ export default function IndexThreeHats() {
       </div>
 
 
-      {/* Fixed side stepper */}
+      {/* Top-left hat indicator pill */}
       <nav
-        className="fixed left-4 top-1/2 z-30 hidden -translate-y-1/2 flex-col gap-4 transition-opacity duration-700 md:flex"
-        style={{ opacity: pastHats ? 0.35 : 1 }}
+        className="fixed left-3 top-3 z-30 flex items-center gap-1.5 rounded-full border px-2.5 py-1.5 backdrop-blur-md transition-opacity duration-700 sm:left-4 sm:top-4 sm:gap-2 sm:px-3 sm:py-2"
+        style={{
+          opacity: pastHats ? 0.35 : 1,
+          borderColor: "rgba(255,255,255,0.12)",
+          background: "rgba(8,12,20,0.55)",
+          fontFamily: "'JetBrains Mono', ui-monospace, monospace",
+        }}
+        aria-label="Section progress"
       >
-        {hats.map((h, i) => (
-          <a
-            key={h.key}
-            href={`#hat-${h.key}`}
-            className="group flex items-center gap-3"
-            style={{
-              fontFamily: "'JetBrains Mono', ui-monospace, monospace",
-            }}
-          >
-            <span
-              className="h-[2px] transition-all duration-500"
-              style={{
-                width: i === activeHat ? 32 : 12,
-                background: i === activeHat ? h.accent : "rgba(255,255,255,0.3)",
-                boxShadow: i === activeHat ? `0 0 10px ${h.accent}` : "none",
-              }}
-            />
-            <span
-              className="text-[10px] uppercase tracking-widest transition-opacity"
-              style={{
-                color: i === activeHat ? h.accent : "rgba(255,255,255,0.4)",
-                opacity: i === activeHat ? 1 : 0.6,
-              }}
+        {hats.map((h, i) => {
+          const isActive = i === activeHat;
+          return (
+            <a
+              key={h.key}
+              href={`#hat-${h.key}`}
+              className="group flex items-center gap-1.5 rounded-full px-1.5 py-1 transition-all"
+              aria-current={isActive ? "true" : undefined}
+              title={h.role}
             >
-              {h.role}
-            </span>
-          </a>
-        ))}
+              <span
+                className="block h-[3px] rounded-full transition-all duration-500"
+                style={{
+                  width: isActive ? 26 : 12,
+                  background: isActive ? h.accent : "rgba(255,255,255,0.28)",
+                  boxShadow: isActive ? `0 0 8px ${h.accent}` : "none",
+                }}
+              />
+              <span
+                className={`text-[9px] uppercase tracking-[0.18em] transition-opacity sm:text-[10px] ${
+                  isActive ? "inline" : "hidden sm:inline"
+                }`}
+                style={{
+                  color: isActive ? h.accent : "rgba(255,255,255,0.45)",
+                }}
+              >
+                {h.role}
+              </span>
+            </a>
+          );
+        })}
       </nav>
+
 
       {/* HERO */}
       <section className="relative z-10 flex min-h-[92vh] items-center px-6 pt-24">
