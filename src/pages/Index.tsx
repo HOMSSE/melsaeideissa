@@ -26,7 +26,7 @@ import {
   ServerIcon,
   UsersIcon
 } from "lucide-react";
-import innovationAward from "@/assets/innovation-award.jpg";
+import innovationAwardAsset from "@/assets/innovation-award.jpg.asset.json";
 import SEO from "@/components/SEO";
 
 const personJsonLd = {
@@ -479,7 +479,7 @@ const Index = () => {
                 <div className="grid md:grid-cols-2 gap-0">
                   <div className="relative aspect-square md:aspect-auto overflow-hidden">
                     <img 
-                      src={innovationAward} 
+                      src={innovationAwardAsset.url} 
                       alt="Innovation Award 2025 from Advansys Intelligent Solutions" 
                       className="w-full h-full object-cover"
                     />

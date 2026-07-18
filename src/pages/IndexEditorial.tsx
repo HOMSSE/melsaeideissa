@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
-import innovationAward from "@/assets/innovation-award.jpg";
+import innovationAwardAsset from "@/assets/innovation-award.jpg.asset.json";
 import {
   technicalSkills,
   projects,
@@ -529,7 +529,7 @@ const IndexEditorial = () => {
           <div className="col-span-12 md:col-span-5 relative">
             <div className="absolute -top-4 -left-4 w-full h-full border border-[#c9a84c]/40 pointer-events-none" />
             <img
-              src={innovationAward}
+              src={innovationAwardAsset.url}
               alt="Innovation Award 2025 — Advansys Intelligent Solutions"
               className="relative w-full h-auto object-cover grayscale-[15%]"
               loading="lazy"
