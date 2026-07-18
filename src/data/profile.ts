@@ -92,14 +92,60 @@ export const certifications: {
 export const trainings: {
   title: string;
   issuer: string;
-  year: string;
+  year?: string;
   icon: LucideIcon;
+  url?: string;
+  location?: string;
 }[] = [
   {
+    title: "IEC 61511: Functional Safety Analysis, Design, and Operation",
+    issuer: "exida",
+    url: "https://www.exida.com",
+    icon: ShieldIcon,
+  },
+  {
+    title: "WinCC OA Basic Training",
+    issuer: "Siemens",
+    icon: SettingsIcon,
+  },
+  {
     title: "ISA/IEC 62443 Cybersecurity Fundamentals",
-    issuer: "ISA",
-    year: "2023",
+    issuer: "ISA (International Society of Automation)",
+    url: "https://www.isa.org",
     icon: ZapIcon,
+  },
+  {
+    title: "Effective Alarm Management — The Practitioners Course",
+    issuer: "AHC Engineering Consultancy",
+    icon: BellIcon,
+  },
+  {
+    title: "Managing Risk, Recognizing What Can Hurt Us",
+    issuer: "Paul Balmert (Master Trainer)",
+    url: "http://www.balmert.com/team.html",
+    icon: AlertTriangleIcon,
+  },
+  {
+    title: "HAZWOPER Awareness Level Responder",
+    issuer: "Ross A. Gourlay",
+    icon: BookOpenIcon,
+  },
+  {
+    title: "5001 — Control Software Configuration Essential",
+    issuer: "Schneider Electric",
+    location: "Houston, TX Learning Center",
+    icon: CpuIcon,
+  },
+  {
+    title: "8902 — TRICON System / TriStation 1131 Configuration and Implementation",
+    issuer: "Schneider Electric",
+    location: "Webster, TX Learning Center",
+    icon: ServerIcon,
+  },
+  {
+    title: "and many others…",
+    issuer: "Continuous learning",
+    icon: MoreHorizontalIcon,
   },
 ];
 
