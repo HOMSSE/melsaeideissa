@@ -315,31 +315,46 @@ export default function IndexThreeHats() {
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             {/* Left: role card */}
             <div>
-              <div
-                className="text-[10px] uppercase tracking-[0.3em]"
-                style={{ color: h.accent, fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
-              >
-                Hat · 0{i + 1} of 03
-              </div>
               <div className="mt-6 inline-flex h-24 items-center rounded-xl bg-white px-2 py-1.5 shadow-lg">
                 <img src={h.logo} alt={h.company} className="h-full w-auto max-w-[320px] object-contain" />
               </div>
-              <h2 className="mt-6 text-4xl font-semibold sm:text-5xl" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                As{" "}
-                {h.key === "enduser" ? (
-                  <span style={{ color: "rgb(94,202,223)" }}>{h.role}</span>
-                ) : h.key === "vendor" ? (
-                  <span style={{ color: "rgb(0,167,79)" }}>{h.role}</span>
-                ) : h.key === "integrator" ? (
-                  <span style={{ color: "rgb(29,54,158)" }}>{h.role}</span>
-                ) : (
-                  <span style={{ color: h.accent }}>{h.role}</span>
-                )}
-              </h2>
-              <div className="mt-1 text-sm text-white/60">{h.companyDetail}</div>
-              <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/80">
-                {h.narrative}
-              </p>
+              <div
+                className="mt-6 rounded-2xl p-6 backdrop-blur-md sm:p-8"
+                style={{
+                  background: "rgba(2,3,10,0.55)",
+                  borderLeft: `3px solid ${h.accent}`,
+                  boxShadow: `0 20px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05)`,
+                }}
+              >
+                <div
+                  className="text-[10px] uppercase tracking-[0.3em]"
+                  style={{ color: h.accent, fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
+                >
+                  Hat · 0{i + 1} of 03
+                </div>
+                <h2
+                  className="mt-4 text-4xl font-semibold text-white/95 sm:text-5xl"
+                  style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    textShadow: "0 2px 20px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  As{" "}
+                  {h.key === "enduser" ? (
+                    <span style={{ color: "rgb(94,202,223)" }}>{h.role}</span>
+                  ) : h.key === "vendor" ? (
+                    <span style={{ color: "rgb(0,167,79)" }}>{h.role}</span>
+                  ) : h.key === "integrator" ? (
+                    <span style={{ color: "rgb(29,54,158)" }}>{h.role}</span>
+                  ) : (
+                    <span style={{ color: h.accent }}>{h.role}</span>
+                  )}
+                </h2>
+                <div className="mt-1 text-sm text-white/75">{h.companyDetail}</div>
+                <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/90">
+                  {h.narrative}
+                </p>
+              </div>
             </div>
 
             {/* Right: product constellation */}

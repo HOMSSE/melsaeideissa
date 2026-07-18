@@ -1,30 +1,26 @@
+## Problem
+In the Advansys ("System Integrator") section of v11, the left text column — "As System Integrator", "Senior Application Design Engineer", and the narrative paragraph — overlaps the detailed dashboards blueprint background. The background detail competes with the text, making it hard to read. The right-hand "Products & platforms" card already has a blurred, semi-transparent backing; the left text column does not.
 
 ## Goal
-Eliminate the overlap between the fixed left-side role stepper ("End User / Global Vendor / System Integrator") and the main content by relocating it to the top-left of the viewport in a compact horizontal format.
+Make the left text column clearly readable without hiding or ruining the blueprint background.
+
+## Proposed approach
+Add a subtle readability layer to the left text column only, tuned so the blueprint still shows through:
+
+1. Wrap the left text column content in a compact card/panel.
+2. Give it a very dark, low-opacity background (`rgba(2,3,10,0.55)` or similar) plus `backdrop-blur-md`.
+3. Add a thin accent border on the left using the section's `h.accent` color.
+4. Keep generous padding so text has breathing room.
+5. Slightly increase text contrast: use `text-white/95` for headings and `text-white/85` for body copy in that column.
+6. Add a subtle text shadow to the large heading for extra legibility over busy background areas.
+7. Do NOT change the background image opacity or the global section background, so the beautiful blueprint remains intact.
 
 ## Scope
-Only the fixed side-stepper `<nav>` inside `src/pages/IndexThreeHats.tsx`. All other occurrences of "End User", "Global Vendor", and "System Integrator" elsewhere on the page (hero pills, hat section titles, narrative text) stay exactly as they are.
-
-## Design
-Replace the vertical left-center stepper with a horizontal "hat indicator" pill anchored top-left:
-
-- Position: `fixed top-4 left-4 z-30` (below any future header, above content).
-- Container: subtle rounded pill with dark translucent background + backdrop blur + thin border, so it reads as a floating chip rather than page text — this is what prevents visual collision with body copy underneath.
-- Contents: three tiny horizontal segments (like a 3-step progress bar), each labeled with its role in small uppercase mono type.
-  - Active segment: full role label visible, colored with the active hat accent, wider bar, glow.
-  - Inactive segments: shorter bar, muted label (still readable but low-contrast), no glow.
-- Click behavior: each segment remains an anchor link to `#hat-enduser` / `#hat-vendor` / `#hat-integrator` (unchanged).
-- Responsive: shown on all sizes (currently `hidden md:flex`); on mobile it collapses to just the 3 bars + active label only, so it stays narrow.
-- Fade: keeps the existing `opacity: pastHats ? 0.35 : 1` behavior so it recedes in the epilogue.
-
-## Why this works
-- Moving out of the vertical center removes the overlap entirely — nothing sits on top of paragraph text anymore.
-- A bordered/blurred pill visually separates the indicator from the page, so even when it sits over the hero headline it reads as UI chrome, not stray labels.
-- Horizontal layout at the top is a familiar progress-indicator pattern, so users immediately understand "3 chapters, you are on 1 of 3".
-
-## Files to change
-- `src/pages/IndexThreeHats.tsx` — replace the `<nav className="fixed left-4 top-1/2 ...">` block with the new top-left pill. No other edits.
+- File: `src/pages/IndexThreeHats.tsx`
+- Change only the left text column markup/styling inside the `{hats.map(...)}` hat sections.
+- No changes to data, other sections, routes, or assets.
 
 ## Verification
-- Scroll the page from hero through all three hat sections and into the epilogue; confirm no overlap with body text at any scroll position and that the active segment updates correctly.
-- Check the other occurrences of the three role names elsewhere on the page are visually unchanged.
+- Build the project.
+- Scroll to the Advansys section and confirm the text is crisp while the dashboards blueprint is still visible behind it.
+- Quickly check the Methanex and Schneider sections to ensure the same treatment looks consistent there too.
