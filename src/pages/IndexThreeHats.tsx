@@ -3,7 +3,7 @@ import refineryAsset from "@/assets/refinery-plant-blueprint.png.asset.json";
 import powerAsset from "@/assets/power-plant-blueprint.png.asset.json";
 import waterAsset from "@/assets/datacenter-blueprint-labeled.png.asset.json";
 import awardAsset from "@/assets/innovation-award.jpg.asset.json";
-import methanexLogo from "@/assets/methanex-logo.png.asset.json";
+import methanexLogo from "@/assets/methanex-logo-original.png.asset.json";
 import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
 import advansysLogo from "@/assets/advansys-logo.png.asset.json";
 import {
