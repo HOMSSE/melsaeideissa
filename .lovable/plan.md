@@ -1,17 +1,8 @@
-Update the hero subtitle in `src/pages/IndexThreeHats.tsx` so it accurately reflects that the user was part of the vendor organization supporting customers, not supporting the vendor itself.
-
-Current text (lines 319-323):
-```
-From maintaining the plant to supporting the vendor and now
-designing the systems, Mohamed Eissa applies the same instrumentation
-expertise across three vantage points.
-```
+Replace the phrase "Felt uptime as revenue, not as a KPI" in the Methanex section of `src/pages/IndexThreeHats.tsx` with a line that reflects the safety-and-quality theme.
 
 Proposed replacement:
-```
-From maintaining the plant, to joining a global vendor and supporting its customers, to now
-designing the systems — Mohamed Eissa applies the same instrumentation
-expertise across three vantage points.
-```
+> "Learned that safety and quality are not checkboxes — they are the foundation of every reliable operation."
 
-This keeps the existing structure and tone while correcting the role description.
+This keeps the first-person, field-honed voice of the section while shifting the emphasis from business KPIs to the safety/quality mindset gained as an end user.
+
+Scope: one line change only; no other text touched.
