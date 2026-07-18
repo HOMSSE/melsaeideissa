@@ -115,7 +115,9 @@ export default function IndexThreeHats() {
     <div
       className="min-h-screen text-white transition-[background] duration-[1500ms] ease-out"
       style={{
-        background: hat.bg,
+        background: pastHats
+          ? "radial-gradient(1200px 800px at 50% 0%, #0d1220 0%, #070a12 60%, #04060c 100%)"
+          : hat.bg,
         fontFamily: "'Plus Jakarta Sans', sans-serif",
       }}
     >
