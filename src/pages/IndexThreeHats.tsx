@@ -650,7 +650,7 @@ export default function IndexThreeHats() {
 
       {/* CERTS */}
       <section className="relative z-10 mx-auto max-w-6xl px-6 py-24">
-        <h2 className="text-3xl font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        <h2 className="text-3xl font-semibold epi-gradient-text" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Certifications
         </h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
