@@ -8,6 +8,12 @@ import {
   ServerIcon,
   ShieldIcon,
   ZapIcon,
+  BookOpenIcon,
+  BellIcon,
+  AlertTriangleIcon,
+  SettingsIcon,
+  CpuIcon,
+  MoreHorizontalIcon,
   type LucideIcon,
 } from "lucide-react";
 
