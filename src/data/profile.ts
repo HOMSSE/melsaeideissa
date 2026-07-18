@@ -81,6 +81,14 @@ export const certifications: {
     year: "2022",
     icon: ShieldIcon,
   },
+];
+
+export const trainings: {
+  title: string;
+  issuer: string;
+  year: string;
+  icon: LucideIcon;
+}[] = [
   {
     title: "ISA/IEC 62443 Cybersecurity Fundamentals",
     issuer: "ISA",

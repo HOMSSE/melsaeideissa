@@ -10,6 +10,7 @@ import {
   technicalSkills,
   projects,
   certifications,
+  trainings,
   recommendations,
 } from "@/data/profile";
 import SEO from "@/components/SEO";
@@ -190,7 +191,7 @@ export default function IndexThreeHats() {
             { t: "AVEVA System Platform", x: 62, y: 8, s: 18, o: 0.10, d: 2 },
             { t: "Foxboro I/A", x: 78, y: 22, s: 26, o: 0.12, d: 4 },
             { t: "Triconex ESD", x: 14, y: 28, s: 20, o: 0.11, d: 1 },
-            { t: "AVEVA PI", x: 45, y: 18, s: 16, o: 0.09, d: 3 },
+            { t: "Management Of Change", x: 45, y: 18, s: 16, o: 0.09, d: 3 },
             { t: "Bently Nevada 3500", x: 30, y: 42, s: 17, o: 0.10, d: 5 },
             { t: "IEC 61511", x: 72, y: 48, s: 24, o: 0.12, d: 2 },
             { t: "CFSP", x: 10, y: 55, s: 32, o: 0.13, d: 6 },
@@ -201,12 +202,12 @@ export default function IndexThreeHats() {
             { t: "SCADA", x: 8, y: 82, s: 30, o: 0.12, d: 5 },
             { t: "DCS", x: 82, y: 82, s: 30, o: 0.12, d: 2 },
             { t: "SIS", x: 65, y: 72, s: 18, o: 0.10, d: 6 },
-            { t: "Historian", x: 48, y: 34, s: 15, o: 0.09, d: 1 },
+            { t: "Preventive Maintenance", x: 48, y: 34, s: 15, o: 0.09, d: 1 },
             { t: "Redundancy", x: 25, y: 90, s: 16, o: 0.09, d: 3 },
             { t: "HMI", x: 92, y: 35, s: 26, o: 0.12, d: 4 },
             { t: "Fail-safe", x: 58, y: 92, s: 17, o: 0.10, d: 5 },
             { t: "Tristation", x: 3, y: 42, s: 15, o: 0.09, d: 2 },
-            { t: "Quality", x: 68, y: 30, s: 20, o: 0.10, d: 0 },
+            { t: "Control Processors", x: 68, y: 30, s: 20, o: 0.10, d: 0 },
             { t: "Maximo", x: 12, y: 72, s: 18, o: 0.10, d: 6 },
           ].map((n, i) => {
             const litColors = ["#5ecadf", "#22d3ee", "#00a74f"]; // Methanex blue, Advansys cyan, Schneider green
@@ -571,10 +572,37 @@ export default function IndexThreeHats() {
         </div>
       </section>
 
+      {/* TRAININGS */}
+      <section className="relative z-10 mx-auto max-w-6xl px-6 py-24">
+        <h2 className="text-3xl font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          Trainings
+        </h2>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {trainings.map((c) => (
+            <div
+              key={c.title}
+              className="flex items-center gap-4 rounded-3xl border p-5"
+              style={{
+                borderColor: "rgba(34,211,238,0.35)",
+                background: "linear-gradient(135deg, rgba(34,211,238,0.10), rgba(0,0,0,0.4))",
+              }}
+            >
+              <c.icon className="h-8 w-8" style={{ color: "#22d3ee" }} />
+              <div>
+                <div className="font-semibold">{c.title}</div>
+                <div className="text-xs text-white/60">
+                  {c.issuer} · {c.year}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* RECS */}
       <section className="relative z-10 mx-auto max-w-6xl px-6 py-24">
         <h2 className="text-3xl font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-          Recommendations
+          LinkedIn Recommendations
         </h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {recommendations.map((r) => (
@@ -601,7 +629,7 @@ export default function IndexThreeHats() {
                   <div className="text-xs text-white/60">{r.title}</div>
                 </div>
               </div>
-              <div className="mt-4 space-y-3 text-sm text-white/85">
+              <div className="mt-4 space-y-3 text-base text-white/85">
                 {r.body.map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
