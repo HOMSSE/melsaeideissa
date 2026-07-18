@@ -162,9 +162,9 @@ export default function IndexThreeHats() {
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(600px 400px at 20% 30%, rgba(94,234,212,0.12), transparent 60%),
-              radial-gradient(700px 500px at 80% 40%, rgba(126,230,168,0.10), transparent 60%),
-              radial-gradient(650px 450px at 50% 80%, rgba(34,211,238,0.10), transparent 60%)
+              radial-gradient(700px 500px at 15% 20%, rgba(94,202,223,0.18), transparent 60%),
+              radial-gradient(800px 600px at 85% 45%, rgba(0,167,79,0.14), transparent 60%),
+              radial-gradient(750px 550px at 50% 90%, rgba(34,211,238,0.16), transparent 60%)
             `,
             filter: "blur(40px)",
             animation: "auroraDrift 32s ease-in-out infinite",
