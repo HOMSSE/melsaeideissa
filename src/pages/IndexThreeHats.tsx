@@ -129,7 +129,8 @@ export default function IndexThreeHats() {
       {/* Ambient blueprint that changes with the active hat */}
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+        className="pointer-events-none fixed inset-0 z-0 overflow-hidden transition-opacity duration-[1500ms]"
+        style={{ opacity: pastHats ? 0 : 1 }}
       >
         {hats.map((h, i) => (
           <img
