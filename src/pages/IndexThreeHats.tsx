@@ -136,14 +136,16 @@ export default function IndexThreeHats() {
           <div
             key={h.key}
             className={`absolute right-0 top-0 h-full overflow-hidden ${
-              i === 2 ? "w-[92vw]" : "w-[62vw]"
+              i === 2 ? "w-[95vw]" : "w-[62vw]"
             }`}
           >
             <img
               src={h.blueprint}
               alt=""
-              className={`absolute top-1/2 w-auto max-w-none -translate-y-1/2 transition-opacity duration-[1500ms] ${
-                i === 2 ? "right-[-6vw] h-[115vh]" : "right-0 h-full"
+              className={`absolute top-1/2 max-w-none -translate-y-1/2 transition-opacity duration-[1500ms] ${
+                i === 2
+                  ? "right-[-8vw] h-auto w-full"
+                  : "right-0 h-full w-auto"
               }`}
               style={{
                 opacity: i === activeHat ? 0.85 : 0,
