@@ -268,3 +268,20 @@ export const careerJourney = [
   "Instrument & Control Engineer at Methanex Corporation (2015-2023)",
   "ISA/IEC 62443 Cybersecurity Fundamentals Certified",
 ];
+
+export const methanexLetter = {
+  title: "Experience Letter",
+  company: "The Egyptian Methanex Methanol Company S.A.E.",
+  signatory: "Yassine Mahmoud",
+  signatoryTitle: "HR Manager",
+  paragraphs: [
+    "In his role as a Control System Engineer, Mohamed utilized Foxboro I/A DCS, Triconex ESD, and Bently Nevada 3500 MMS for control system engineering and maintenance activities. He was responsible for managing spare parts for control systems and diligently monitoring their lifecycle. Mohamed engineered, implemented, and tested modifications related to DCS logic, SIS logic, Wonderware, and Bently Nevada 3500 throughout the MOC lifecycle. He also contributed to the review and update of control systems policies and procedures.",
+    "Mohamed developed, reviewed, and provided comments on detailed design documentation for instrumentation and control systems projects. He supervised the installation, testing, and commissioning of new components for the Distributed Control System (DCS) upgrade, as well as the installation, testing, and commissioning of Emerson 6200 positioner upgrades.",
+    "In terms of maintenance, Mohamed performed preventive and corrective maintenance for control systems hardware and software. He replaced defective modules for Bently Nevada 3500, Triconex, and Foxboro systems. Safety was a priority in his role, ensuring safe execution of assigned activities in compliance with the company's Responsible Care® guidelines and procedures.",
+    "Beyond engineering responsibilities, Mohamed provided day-to-day technical support to operations, maintenance, and engineering teams — troubleshooting, enhancing, and resolving process control issues. He reviewed project proposals and detailed design packages from control systems vendors and investigated plant upsets and sequence-of-event reports. He also conducted technical evaluations of control systems and instrumentation purchases and participated in LOPA study sessions.",
+    "Mohamed contributed to Factory Acceptance Tests (FAT) for DCS upgrades, performed periodic health checks for control systems software and hardware, participated in alarm rationalization studies and periodic alarm management meetings, inspected received instrumentation and control materials at the warehouse, and supported cybersecurity activities for control systems.",
+    "Using the Maximo CMMS, Mohamed issued work orders, purchase requests, and material withdrawals from the warehouse, and actively participated in lifecycle management activities for control systems hardware. He was involved in two turnarounds and numerous plant shutdowns, providing support and contributing to plant startup activities. He also conducted incident investigations and validated logic through root cause analysis.",
+    "Collaboration with vendors was a crucial aspect of Mohamed's role. He utilized the Meridian document management system to update documents as part of the management of change process and extracted backups for control systems data. He was responsible for preparing work permits, applying interlock bypasses, and guiding, supervising, and supporting technicians during maintenance and project activities.",
+    "Mohamed also participated in testing activities for the Maximo CMMS during the upgrade process and led or participated in risk assessments for high-risk jobs.",
+  ],
+} as const;
