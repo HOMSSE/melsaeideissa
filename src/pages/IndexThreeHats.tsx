@@ -250,8 +250,8 @@ export default function IndexThreeHats() {
               >
                 Hat · 0{i + 1} of 03
               </div>
-              <div className="mt-6 inline-flex h-20 items-center rounded-xl bg-white px-5 py-3 shadow-lg">
-                <img src={h.logo} alt={h.company} className="max-h-14 max-w-[220px] object-contain" />
+              <div className="mt-6 inline-flex h-20 items-center rounded-xl bg-white px-3 py-2 shadow-lg">
+                <img src={h.logo} alt={h.company} className="h-full w-auto max-w-[260px] object-contain" />
               </div>
               <h2 className="mt-6 text-4xl font-semibold sm:text-5xl" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 As <span style={{ color: h.accent }}>{h.role}</span>
