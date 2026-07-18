@@ -7,12 +7,12 @@ import methanexLogo from "@/assets/methanex-logo-original.png.asset.json";
 import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
 import advansysLogo from "@/assets/advansys-logo.png.asset.json";
 import {
-  projects,
   certifications,
   trainings,
   recommendations,
   skills,
 } from "@/data/profile";
+
 import SEO from "@/components/SEO";
 
 /* v11 — Three Hats
