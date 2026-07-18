@@ -254,7 +254,12 @@ export default function IndexThreeHats() {
                 <img src={h.logo} alt={h.company} className="h-full w-auto max-w-[320px] object-contain" />
               </div>
               <h2 className="mt-6 text-4xl font-semibold sm:text-5xl" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                As <span style={{ color: h.key === "enduser" ? "rgb(23, 175, 205)" : h.accent }}>{h.role}</span>
+                As{" "}
+                {h.key === "enduser" ? (
+                  <span className="methanex-enduser-flow">{h.role}</span>
+                ) : (
+                  <span style={{ color: h.accent }}>{h.role}</span>
+                )}
               </h2>
               <div className="mt-1 text-sm text-white/60">{h.companyDetail}</div>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/80">
@@ -490,6 +495,18 @@ export default function IndexThreeHats() {
 
       <style>{`
         @keyframes hatFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+        .methanex-enduser-flow {
+          background: linear-gradient(90deg, rgb(0,167,205) 0%, #5eead4 25%, rgb(0,167,205) 50%, #5eead4 75%, rgb(0,167,205) 100%);
+          background-size: 300% 100%;
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          animation: methanexEndUserFlow 18s linear infinite;
+        }
+        @keyframes methanexEndUserFlow {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 300% 50%; }
+        }
       `}</style>
     </div>
   );
