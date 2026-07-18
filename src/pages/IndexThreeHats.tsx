@@ -133,21 +133,25 @@ export default function IndexThreeHats() {
         style={{ opacity: pastHats ? 0 : 1 }}
       >
         {hats.map((h, i) => (
-          <img
+          <div
             key={h.key}
-            src={h.blueprint}
-            alt=""
-            className="absolute top-1/2 right-0 h-[130vh] w-auto max-w-none -translate-y-1/2 translate-x-[12%] transition-opacity duration-[1500ms]"
-            style={{
-              opacity: i === activeHat ? 0.85 : 0,
-              mixBlendMode: "screen",
-              filter: `drop-shadow(0 0 40px ${h.accent}55) brightness(1.05) contrast(1.05)`,
-              WebkitMaskImage:
-                "radial-gradient(ellipse 60% 65% at 55% 50%, #000 40%, rgba(0,0,0,0.65) 65%, transparent 90%)",
-              maskImage:
-                "radial-gradient(ellipse 60% 65% at 55% 50%, #000 40%, rgba(0,0,0,0.65) 65%, transparent 90%)",
-            }}
-          />
+            className="absolute right-0 top-0 h-full w-[62vw] overflow-hidden"
+          >
+            <img
+              src={h.blueprint}
+              alt=""
+              className="absolute top-1/2 right-0 h-[130vh] w-auto max-w-none -translate-y-1/2 translate-x-[12%] transition-opacity duration-[1500ms]"
+              style={{
+                opacity: i === activeHat ? 0.85 : 0,
+                mixBlendMode: "screen",
+                filter: `drop-shadow(0 0 40px ${h.accent}55) brightness(1.05) contrast(1.05)`,
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 60% 65% at 55% 50%, #000 40%, rgba(0,0,0,0.65) 65%, transparent 90%)",
+                maskImage:
+                  "radial-gradient(ellipse 60% 65% at 55% 50%, #000 40%, rgba(0,0,0,0.65) 65%, transparent 90%)",
+              }}
+            />
+          </div>
         ))}
       </div>
 
@@ -272,7 +276,7 @@ export default function IndexThreeHats() {
 
       {/* HERO */}
       <section className="relative z-10 flex min-h-[92vh] items-center px-6 pt-24">
-        <div className="mx-auto max-w-5xl">
+        <div className="mr-auto max-w-2xl">
           <h1
             className="text-[clamp(2.8rem,8vw,6rem)] font-semibold leading-[1]"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
@@ -434,18 +438,18 @@ export default function IndexThreeHats() {
         <div
           className="mx-auto grid max-w-5xl gap-8 rounded-3xl border p-8 md:grid-cols-[280px_1fr] md:items-center"
           style={{
-            borderColor: "rgba(245,182,66,0.4)",
-            background: "linear-gradient(135deg, rgba(245,182,66,0.15), rgba(0,0,0,0.4))",
+            borderColor: "rgba(34,211,238,0.35)",
+            background: "linear-gradient(135deg, rgba(34,211,238,0.10), rgba(0,0,0,0.4))",
           }}
         >
           <img
             src={awardAsset.url}
             alt="Innovation Award 2025"
             className="w-full rounded-2xl"
-            style={{ boxShadow: "0 0 50px rgba(245,182,66,0.4)" }}
+            style={{ boxShadow: "0 0 50px rgba(34,211,238,0.35)" }}
           />
           <div>
-            <div className="text-[10px] uppercase tracking-[0.3em] text-[#f5b642]" style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}>
+            <div className="text-[10px] uppercase tracking-[0.3em] text-[#22d3ee]" style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}>
               Innovation Award · 2025
             </div>
             <h3 className="mt-3 text-3xl font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>

@@ -1,27 +1,33 @@
-## Goal
-In the epilogue section after Advansys (background tech-name constellation: WinCC OA, AVEVA, Foxboro, Triconex, CFSP, SIL 3, IEC 61511, Dashboard, Alarm Management, Safety, Quality, Maximo), animate the words so one or two at a time briefly light up in a brand accent color, then fade back to their default faint tone while the next word(s) light up. Creates a subtle "living" constellation without becoming distracting.
+## Three targeted tweaks to `src/pages/IndexThreeHats.tsx`
 
-## Approach — `src/pages/IndexThreeHats.tsx` only
+### 1. Recolor the Innovation Award section
+Currently uses amber/orange (`#f5b642` border, background, glow, kicker text) which clashes with the site's cool cyan/teal/green palette.
 
-1. **Default state stays as-is** — words remain the current faint white/low-opacity tone so overall calm background is preserved.
+Change to the site's existing accent palette (Advansys cyan `#22d3ee`, since the award is from Advansys):
+- Border → `rgba(34,211,238,0.35)`
+- Background → `linear-gradient(135deg, rgba(34,211,238,0.10), rgba(0,0,0,0.4))`
+- Image glow → `0 0 50px rgba(34,211,238,0.35)`
+- Kicker text ("Innovation Award · 2025") → `#22d3ee`
 
-2. **Rotating highlight cycle**:
-   - At any moment, 1–2 words are "lit" in one of the three brand colors: Methanex blue `#1d369e`, Schneider green (current site green), Advansys cyan `#22d3ee`.
-   - Each lit word: fades in over ~600ms, holds ~1.2s, fades out over ~600ms.
-   - Next word(s) begin lighting slightly before the previous fade completes, so the effect is continuous but gentle.
-   - Full cycle across all words takes ~25–35s, then loops. Colors rotate through the three brand accents so no single color dominates.
+Everything else in the section (typography, layout, image) stays the same.
 
-3. **Implementation**:
-   - Add a per-word CSS custom property `--lit-color` and an `animation-delay` staggered per index.
-   - Single shared keyframe animates `color` and `text-shadow` (soft glow in the lit color) from default → lit → default.
-   - Pure CSS, no JS state, no re-renders. Respects `prefers-reduced-motion` by disabling the animation and keeping the static faint state.
+### 2. Move hero text further left so it doesn't overlap the blueprint
+Today the hero uses `mx-auto max-w-5xl`, which centers the text column and lets it collide with the right-side blueprint on wide screens.
 
-4. **Guardrails**:
-   - Font size, position, opacity baseline, drift animation, and word list unchanged.
-   - Glow kept subtle (low blur, low opacity) so text elsewhere in the epilogue remains the focal point.
-   - No changes to any other section, route, or file.
+Change the hero inner container to `mr-auto max-w-2xl` and tighten paragraph width. Result: headline + paragraph + role pills all sit in the left ~40% of the viewport, leaving the blueprint clear on the right. No change to font sizes or copy.
 
-## Verification
-- Build passes.
-- Scrolling into the epilogue: background words gently pulse through brand colors one/two at a time, rest stay faint, overall feel remains calm and professional.
-- `prefers-reduced-motion` disables the color cycle.
+### 3. Confine the Advansys blueprint to the right side (like Methanex & Schneider)
+The dashboards blueprint is wider than the refinery/datacenter images, so at `h-[130vh] w-auto` it spills across the whole viewport. The radial mask is image-relative, not viewport-relative, so it doesn't clip it.
+
+Wrap each blueprint `<img>` in a viewport-anchored container:
+```tsx
+<div className="absolute right-0 top-0 h-full w-[62vw] overflow-hidden">
+  <img ... />
+</div>
+```
+This clips any blueprint to the right ~62% of the viewport regardless of the source image's aspect ratio, giving all three hats the same "background on the right" behavior. The existing radial mask and `mix-blend-mode: screen` are preserved so edges still dissolve softly.
+
+## Guardrails
+- No other sections, routes, files, or copy touched.
+- Word constellation, aurora, hat stepper, section content unchanged.
+- Build should stay green.
