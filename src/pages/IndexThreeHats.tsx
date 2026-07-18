@@ -438,18 +438,18 @@ export default function IndexThreeHats() {
         <div
           className="mx-auto grid max-w-5xl gap-8 rounded-3xl border p-8 md:grid-cols-[280px_1fr] md:items-center"
           style={{
-            borderColor: "rgba(245,182,66,0.4)",
-            background: "linear-gradient(135deg, rgba(245,182,66,0.15), rgba(0,0,0,0.4))",
+            borderColor: "rgba(34,211,238,0.35)",
+            background: "linear-gradient(135deg, rgba(34,211,238,0.10), rgba(0,0,0,0.4))",
           }}
         >
           <img
             src={awardAsset.url}
             alt="Innovation Award 2025"
             className="w-full rounded-2xl"
-            style={{ boxShadow: "0 0 50px rgba(245,182,66,0.4)" }}
+            style={{ boxShadow: "0 0 50px rgba(34,211,238,0.35)" }}
           />
           <div>
-            <div className="text-[10px] uppercase tracking-[0.3em] text-[#f5b642]" style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}>
+            <div className="text-[10px] uppercase tracking-[0.3em] text-[#22d3ee]" style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}>
               Innovation Award · 2025
             </div>
             <h3 className="mt-3 text-3xl font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
