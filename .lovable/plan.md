@@ -1,32 +1,33 @@
-
 ## Goal
-The sections after Advansys (epilogue: "The three hats compound", Innovation Award, Stack, Projects, Certs, Recommendations, Contact) currently sit on a near-black canvas that feels too dark and disconnected from the rest of v11. Make it feel like a natural continuation of the site — same family of colors, but calmer than the hat sections. No busy imagery, no rainbow.
+Make the epilogue background (everything after Advansys — "three hats compound", Innovation Award, Stack, Projects, Certs, Recommendations, Contact) feel more alive and colorful, borrowing the smooth animated-gradient energy of the "dumyati-digital-spark" project — but strictly in v11's palette (Methanex blue, Schneider green, Advansys cyan on deep navy). Keep it professional and calm: ambient motion, not a light show.
 
-## Approach — in `src/pages/IndexThreeHats.tsx` only
+## Approach — `src/pages/IndexThreeHats.tsx` only
 
-1. **Lift the base tone** of the epilogue background from near-black to a soft deep navy (e.g. `#0b1220` → `#0e1524`), so it reads as "night sky" rather than "void".
+1. **Animated aurora mesh** behind the epilogue
+   - Replace the current static radial glows with 3 large blurred blobs (Methanex blue `#0080c7`, Schneider green `#3dcd58`, Advansys cyan `#22d3ee`) at ~15–20% opacity.
+   - Animate their position and scale via CSS keyframes on 20–30s loops, offset so they drift and cross-fade continuously — the "smooth changing color" feel.
+   - `filter: blur(120px)` and `mix-blend-mode: screen` so overlaps produce new hues without ever going neon.
 
-2. **Add a very soft three-brand aurora** (already present as a whisper) and rebalance it:
-   - Methanex blue, Schneider green, Advansys cyan as three large, low-opacity radial glows at ~8–12% opacity.
-   - Positioned top-left / bottom-right / center so they never crowd the text.
-   - Slower drift so it feels ambient, not animated.
+2. **Slow conic-gradient sweep** as a second layer
+   - A single full-viewport conic gradient cycling through the three brand colors at ~8% opacity, rotating on a 60s loop. Adds the subtle hue shift the reference has, without competing with content.
 
-3. **Keep the tech-name constellation** but reduce its density and slow it further so it becomes texture, not content.
+3. **Keep and tune the tech-name constellation**
+   - Reduce opacity slightly so the aurora reads first; keep the drift.
 
-4. **Tint the epilogue typography subtly** so the palette carries into the words without becoming colorful:
-   - Section eyebrow labels ("Innovation Award", "Technology Stack", "Selected Projects", "Certifications", "Recommendations", "Contact") use a soft cyan/teal accent instead of white.
-   - Key phrase highlights inside the "three hats compound" paragraph (the words *Operator*, *Vendor*, *Integrator*) tinted in Methanex blue / Schneider green / Advansys cyan respectively — one accent word each, rest stays white.
-   - Card borders shift from pure white/10 to a faint cyan/10 so cards feel warmer.
+4. **Interactive spotlight (optional, low-key)**
+   - A soft cyan radial glow (~200px, 10% opacity) that follows the cursor within the epilogue only. Adds the "alive" feel of the reference. Throttled with `requestAnimationFrame`, disabled on touch/reduced-motion.
 
-5. **Soften card surfaces** to match: `bg-white/[0.03]` with `backdrop-blur-sm` and a 1px cyan-tinted border, so cards float on the aurora instead of sitting on black.
+5. **Respect `prefers-reduced-motion`**
+   - Freeze the blobs, conic sweep, and cursor spotlight; keep the static colored gradient so the section still looks rich.
 
-6. **Add a gentle top gradient divider** between the Advansys section and the epilogue so the transition reads as a sunrise-into-night-sky rather than a hard cut.
+6. **Card surfaces**
+   - Keep current `bg-white/[0.03]` + cyan-tinted border, but nudge to `bg-white/[0.04]` with `backdrop-blur-md` so cards stay legible on top of the more colorful backdrop.
 
 ## Out of scope
-- No changes to the three hat sections (Methanex/Schneider/Advansys).
-- No new assets, no new routes, no changes to data or copy.
-- Other v-versions untouched.
+- No changes to the three hat sections (Methanex/Schneider/Advansys) or their assets.
+- No new routes, no data/copy changes, no changes to other v-versions.
+- No new dependencies (pure CSS + a tiny rAF handler).
 
 ## Verification
 - Build passes.
-- Scroll from Advansys into the epilogue: transition feels continuous, background reads deep-navy with faint colored glow, text is crisp, three accent words carry the brand palette.
+- Scroll past Advansys: background shows slow, smooth color drift in the three brand colors; text stays crisp; cursor spotlight feels subtle; reduced-motion users see a static colored gradient instead of animation.

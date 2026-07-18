@@ -109,6 +109,37 @@ export default function IndexThreeHats() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Cursor spotlight in epilogue
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+    const el = document.getElementById("epi-spotlight");
+    if (!el) return;
+    let raf = 0;
+    let tx = 0, ty = 0;
+    const onMove = (e: MouseEvent) => {
+      tx = e.clientX;
+      ty = e.clientY;
+      el.style.opacity = "1";
+      if (!raf) {
+        raf = requestAnimationFrame(() => {
+          el.style.left = `${tx}px`;
+          el.style.top = `${ty}px`;
+          raf = 0;
+        });
+      }
+    };
+    const onLeave = () => { el.style.opacity = "0"; };
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseleave", onLeave);
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseleave", onLeave);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   const hat = hats[activeHat];
 
   return (
@@ -151,50 +182,102 @@ export default function IndexThreeHats() {
         ))}
       </div>
 
-      {/* Epilogue ambient: three-color aurora + drifting tech constellation */}
+      {/* Epilogue ambient: animated aurora blobs + conic sweep + cursor spotlight + drifting tech constellation */}
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-0 overflow-hidden transition-opacity duration-[1500ms]"
         style={{ opacity: pastHats ? 1 : 0 }}
       >
-        {/* Aurora: slow-morphing blend of the three hat accents */}
+        {/* Slow conic hue sweep — subtle brand-color rotation */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-[-20%]"
           style={{
-            background: `
-              radial-gradient(700px 500px at 15% 20%, rgba(94,202,223,0.18), transparent 60%),
-              radial-gradient(800px 600px at 85% 45%, rgba(0,167,79,0.14), transparent 60%),
-              radial-gradient(750px 550px at 50% 90%, rgba(34,211,238,0.16), transparent 60%)
-            `,
-            filter: "blur(40px)",
-            animation: "auroraDrift 32s ease-in-out infinite",
+            background:
+              "conic-gradient(from 0deg at 50% 50%, rgba(0,128,199,0.10), rgba(61,205,88,0.09), rgba(34,211,238,0.11), rgba(0,128,199,0.10))",
+            filter: "blur(80px)",
+            animation: "epiConicSpin 90s linear infinite",
+            mixBlendMode: "screen",
+          }}
+        />
+        {/* Three floating aurora blobs in brand colors */}
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: "55vw",
+            height: "55vw",
+            left: "-10%",
+            top: "-15%",
+            background: "radial-gradient(circle, rgba(0,128,199,0.55), transparent 70%)",
+            filter: "blur(120px)",
+            mixBlendMode: "screen",
+            animation: "epiBlobA 28s ease-in-out infinite",
+          }}
+        />
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: "50vw",
+            height: "50vw",
+            right: "-12%",
+            top: "20%",
+            background: "radial-gradient(circle, rgba(61,205,88,0.42), transparent 70%)",
+            filter: "blur(120px)",
+            mixBlendMode: "screen",
+            animation: "epiBlobB 34s ease-in-out infinite",
+          }}
+        />
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: "60vw",
+            height: "60vw",
+            left: "15%",
+            bottom: "-20%",
+            background: "radial-gradient(circle, rgba(34,211,238,0.48), transparent 70%)",
+            filter: "blur(120px)",
+            mixBlendMode: "screen",
+            animation: "epiBlobC 24s ease-in-out infinite",
+          }}
+        />
+        {/* Cursor spotlight */}
+        <div
+          id="epi-spotlight"
+          className="absolute w-[420px] h-[420px] rounded-full -translate-x-1/2 -translate-y-1/2"
+          style={{
+            left: "50%",
+            top: "50%",
+            background: "radial-gradient(circle, rgba(34,211,238,0.18), transparent 65%)",
+            filter: "blur(20px)",
+            mixBlendMode: "screen",
+            transition: "opacity 400ms ease",
+            opacity: 0,
           }}
         />
         {/* Tech constellation */}
         <div className="absolute inset-0" style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}>
           {[
-            { t: "WinCC OA", x: 8, y: 12, s: 22, o: 0.11, d: 0 },
-            { t: "AVEVA System Platform", x: 62, y: 8, s: 18, o: 0.10, d: 2 },
-            { t: "Foxboro I/A", x: 78, y: 22, s: 26, o: 0.12, d: 4 },
-            { t: "Triconex ESD", x: 14, y: 28, s: 20, o: 0.11, d: 1 },
-            { t: "AVEVA PI", x: 45, y: 18, s: 16, o: 0.09, d: 3 },
-            { t: "Bently Nevada 3500", x: 30, y: 42, s: 17, o: 0.10, d: 5 },
-            { t: "IEC 61511", x: 72, y: 48, s: 24, o: 0.12, d: 2 },
-            { t: "CFSP", x: 10, y: 55, s: 32, o: 0.13, d: 6 },
-            { t: "SIL 3", x: 88, y: 62, s: 20, o: 0.11, d: 1 },
-            { t: "Dashboard", x: 22, y: 68, s: 22, o: 0.11, d: 4 },
-            { t: "Alarm Management", x: 55, y: 58, s: 16, o: 0.09, d: 3 },
-            { t: "Safety", x: 40, y: 78, s: 34, o: 0.13, d: 0 },
-            { t: "SCADA", x: 8, y: 82, s: 30, o: 0.12, d: 5 },
-            { t: "DCS", x: 82, y: 82, s: 30, o: 0.12, d: 2 },
-            { t: "SIS", x: 65, y: 72, s: 18, o: 0.10, d: 6 },
-            { t: "Historian", x: 48, y: 34, s: 15, o: 0.09, d: 1 },
-            { t: "Redundancy", x: 25, y: 90, s: 16, o: 0.09, d: 3 },
-            { t: "HMI", x: 92, y: 35, s: 26, o: 0.12, d: 4 },
-            { t: "Fail-safe", x: 58, y: 92, s: 17, o: 0.10, d: 5 },
-            { t: "Tristation", x: 3, y: 42, s: 15, o: 0.09, d: 2 },
-            { t: "Quality", x: 68, y: 30, s: 20, o: 0.10, d: 0 },
-            { t: "Maximo", x: 12, y: 72, s: 18, o: 0.10, d: 6 },
+            { t: "WinCC OA", x: 8, y: 12, s: 22, o: 0.09, d: 0 },
+            { t: "AVEVA System Platform", x: 62, y: 8, s: 18, o: 0.08, d: 2 },
+            { t: "Foxboro I/A", x: 78, y: 22, s: 26, o: 0.10, d: 4 },
+            { t: "Triconex ESD", x: 14, y: 28, s: 20, o: 0.09, d: 1 },
+            { t: "AVEVA PI", x: 45, y: 18, s: 16, o: 0.07, d: 3 },
+            { t: "Bently Nevada 3500", x: 30, y: 42, s: 17, o: 0.08, d: 5 },
+            { t: "IEC 61511", x: 72, y: 48, s: 24, o: 0.10, d: 2 },
+            { t: "CFSP", x: 10, y: 55, s: 32, o: 0.11, d: 6 },
+            { t: "SIL 3", x: 88, y: 62, s: 20, o: 0.09, d: 1 },
+            { t: "Dashboard", x: 22, y: 68, s: 22, o: 0.09, d: 4 },
+            { t: "Alarm Management", x: 55, y: 58, s: 16, o: 0.07, d: 3 },
+            { t: "Safety", x: 40, y: 78, s: 34, o: 0.11, d: 0 },
+            { t: "SCADA", x: 8, y: 82, s: 30, o: 0.10, d: 5 },
+            { t: "DCS", x: 82, y: 82, s: 30, o: 0.10, d: 2 },
+            { t: "SIS", x: 65, y: 72, s: 18, o: 0.08, d: 6 },
+            { t: "Historian", x: 48, y: 34, s: 15, o: 0.07, d: 1 },
+            { t: "Redundancy", x: 25, y: 90, s: 16, o: 0.07, d: 3 },
+            { t: "HMI", x: 92, y: 35, s: 26, o: 0.10, d: 4 },
+            { t: "Fail-safe", x: 58, y: 92, s: 17, o: 0.08, d: 5 },
+            { t: "Tristation", x: 3, y: 42, s: 15, o: 0.07, d: 2 },
+            { t: "Quality", x: 68, y: 30, s: 20, o: 0.08, d: 0 },
+            { t: "Maximo", x: 12, y: 72, s: 18, o: 0.08, d: 6 },
           ].map((n, i) => (
             <span
               key={i}
@@ -595,6 +678,27 @@ export default function IndexThreeHats() {
         @keyframes constDrift {
           0%,100% { transform: translate3d(0,0,0); }
           50% { transform: translate3d(0,-8px,0); }
+        }
+        @keyframes epiConicSpin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes epiBlobA {
+          0%,100% { transform: translate3d(0,0,0) scale(1); }
+          50% { transform: translate3d(8%,6%,0) scale(1.15); }
+        }
+        @keyframes epiBlobB {
+          0%,100% { transform: translate3d(0,0,0) scale(1); }
+          50% { transform: translate3d(-10%,8%,0) scale(1.2); }
+        }
+        @keyframes epiBlobC {
+          0%,100% { transform: translate3d(0,0,0) scale(1); }
+          50% { transform: translate3d(6%,-10%,0) scale(1.1); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          [style*="epiConicSpin"], [style*="epiBlobA"], [style*="epiBlobB"], [style*="epiBlobC"], [style*="auroraDrift"], [style*="constDrift"] {
+            animation: none !important;
+          }
         }
       `}</style>
     </div>
