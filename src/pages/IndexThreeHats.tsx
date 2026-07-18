@@ -61,7 +61,7 @@ const hats: Hat[] = [
     accentSoft: "rgba(126,230,168,0.15)",
     narrative:
       "Moved to the source. As an Expert Customer Support engineer on the global team, resolved DCS and SIS issues for customers on multiple continents. Deep-mastered the platforms I once operated.",
-    products: ["Foxboro Evo", "Triconex Tristation", "AVEVA System Platform", "Global CSE Team"],
+    products: ["Foxboro DCS", "System Advisor", "AVEVA System Platform", "Global Customer Support"],
   },
   {
     key: "integrator",
@@ -75,7 +75,7 @@ const hats: Hat[] = [
     accentSoft: "rgba(34,211,238,0.15)",
     narrative:
       "Now designing SCADA systems for hyperscale data centers. Bridging vendor technology with real-world client needs — and this year, recognized with an Innovation Award for that work.",
-    products: ["WinCC OA SCADA", "AVEVA System Platform", "Data Center SCADA", "Custom Applications"],
+    products: ["WinCC OA SCADA", "AVEVA System Platform", "Unified Operations Center for Data Centers", "Aveva Reports for Operations"],
   },
 ];
 
@@ -467,8 +467,8 @@ export default function IndexThreeHats() {
               Advansys Intelligent Solutions
             </h3>
             <p className="mt-4 text-white/80">
-              Recognized for turning a decade of field experience into original,
-              engineered solutions.
+              Recognized for submitting business-related ideas that turned field
+              experience into original, engineered solutions.
             </p>
           </div>
         </div>
