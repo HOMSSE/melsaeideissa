@@ -746,10 +746,28 @@ export default function IndexThreeHats() {
           0%,100% { transform: translate3d(0,0,0) scale(1); }
           50% { transform: translate3d(6%,-10%,0) scale(1.1); }
         }
+        @keyframes epiGradientShift {
+          0%,100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        @keyframes epiOrbFloat {
+          0%,100% { transform: translate3d(0,0,0) scale(1); }
+          50% { transform: translate3d(8px,-14px,0) scale(1.08); }
+        }
+        .epi-gradient-text {
+          background-image: linear-gradient(90deg, #0080c7, #3dcd58, #22d3ee, #0080c7);
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          -webkit-text-fill-color: transparent;
+          animation: epiGradientShift 18s ease infinite;
+        }
         @media (prefers-reduced-motion: reduce) {
-          [style*="epiConicSpin"], [style*="epiBlobA"], [style*="epiBlobB"], [style*="epiBlobC"], [style*="auroraDrift"], [style*="constDrift"] {
+          [style*="epiConicSpin"], [style*="epiBlobA"], [style*="epiBlobB"], [style*="epiBlobC"], [style*="epiGradientShift"], [style*="epiOrbFloat"], [style*="auroraDrift"], [style*="constDrift"] {
             animation: none !important;
           }
+          .epi-gradient-text { animation: none !important; }
         }
       `}</style>
     </div>
