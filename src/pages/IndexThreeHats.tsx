@@ -561,6 +561,107 @@ export default function IndexThreeHats() {
               </article>
             </div>
           )}
+
+          {h.key === "vendor" && (
+            <div className="mx-auto mt-16 max-w-6xl">
+              <article
+                className="overflow-hidden rounded-2xl border backdrop-blur-md"
+                style={{
+                  borderColor: h.accent + "55",
+                  background: `linear-gradient(160deg, ${h.accentSoft}, rgba(2,6,14,0.65))`,
+                  boxShadow: `0 20px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05)`,
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setSchneiderOpen((v) => !v)}
+                  className="flex w-full items-center gap-5 p-6 text-left transition-colors hover:bg-white/[0.03] sm:p-8"
+                  aria-expanded={schneiderOpen}
+                  aria-controls="schneider-roles-body"
+                >
+                  <span
+                    className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border"
+                    style={{
+                      borderColor: h.accent + "66",
+                      background: "rgba(0,0,0,0.35)",
+                      color: h.accent,
+                    }}
+                  >
+                    <FileText size={22} />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <div
+                      className="text-[10px] uppercase tracking-[0.3em]"
+                      style={{ color: h.accent, fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
+                    >
+                      {schneiderExperience.title}
+                    </div>
+                    <h3
+                      className="mt-1 text-xl font-semibold text-white/95 sm:text-2xl"
+                      style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                    >
+                      Schneider Electric — Roles & Responsibilities
+                    </h3>
+                  </div>
+                  <ChevronDown
+                    size={22}
+                    className="flex-shrink-0 transition-transform duration-500"
+                    style={{
+                      color: h.accent,
+                      transform: schneiderOpen ? "rotate(180deg)" : "rotate(0deg)",
+                    }}
+                  />
+                </button>
+
+                <div
+                  id="schneider-roles-body"
+                  className="grid transition-[grid-template-rows] duration-700 ease-out"
+                  style={{ gridTemplateRows: schneiderOpen ? "1fr" : "0fr" }}
+                >
+                  <div className="overflow-hidden">
+                    <div
+                      className="border-t px-6 pb-8 pt-6 sm:px-8"
+                      style={{ borderColor: h.accent + "22" }}
+                    >
+                      <div className="space-y-8">
+                        {schneiderExperience.roles.map((role, idx) => (
+                          <div key={idx}>
+                            <div className="flex flex-wrap items-baseline gap-3">
+                              <h4
+                                className="text-lg font-semibold text-white/95 sm:text-xl"
+                                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                              >
+                                {role.title}
+                              </h4>
+                              {role.date && (
+                                <span
+                                  className="text-xs uppercase tracking-widest"
+                                  style={{ color: h.accent, fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
+                                >
+                                  {role.date}
+                                </span>
+                              )}
+                            </div>
+                            <ul className="mt-4 space-y-3">
+                              {role.items.map((item, i) => (
+                                <li key={i} className="flex items-start gap-3 text-base leading-relaxed text-white/85 sm:text-[17px]">
+                                  <span
+                                    className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full"
+                                    style={{ background: h.accent, boxShadow: `0 0 6px ${h.accent}` }}
+                                  />
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          )}
         </section>
       ))}
 
