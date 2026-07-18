@@ -116,7 +116,7 @@ export default function IndexThreeHats() {
       className="min-h-screen text-white transition-[background] duration-[1500ms] ease-out"
       style={{
         background: pastHats
-          ? "radial-gradient(1200px 800px at 50% 0%, #0d1220 0%, #070a12 60%, #04060c 100%)"
+          ? "linear-gradient(180deg, #0a1428 0%, #0d1a2e 40%, #0e1a2b 100%)"
           : hat.bg,
         fontFamily: "'Plus Jakarta Sans', sans-serif",
       }}
@@ -162,9 +162,9 @@ export default function IndexThreeHats() {
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(600px 400px at 20% 30%, rgba(94,234,212,0.12), transparent 60%),
-              radial-gradient(700px 500px at 80% 40%, rgba(126,230,168,0.10), transparent 60%),
-              radial-gradient(650px 450px at 50% 80%, rgba(34,211,238,0.10), transparent 60%)
+              radial-gradient(700px 500px at 15% 20%, rgba(94,202,223,0.18), transparent 60%),
+              radial-gradient(800px 600px at 85% 45%, rgba(0,167,79,0.14), transparent 60%),
+              radial-gradient(750px 550px at 50% 90%, rgba(34,211,238,0.16), transparent 60%)
             `,
             filter: "blur(40px)",
             animation: "auroraDrift 32s ease-in-out infinite",
@@ -410,10 +410,12 @@ export default function IndexThreeHats() {
           <h2 className="mt-8 text-4xl font-semibold sm:text-5xl" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             The three hats compound.
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/75">
-            Operator instinct. Vendor depth. Integrator design sense. Together
-            they produce control systems that hold up in the field — because the
-            field is where they were born.
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
+            <span style={{ color: "rgb(94,202,223)" }}>Operator instinct.</span>{" "}
+            <span style={{ color: "rgb(0,167,79)" }}>Vendor depth.</span>{" "}
+            <span style={{ color: "rgb(34,211,238)" }}>Integrator design sense.</span>{" "}
+            Together they produce control systems that hold up in the field — because
+            the field is where they were born.
           </p>
         </div>
       </section>
