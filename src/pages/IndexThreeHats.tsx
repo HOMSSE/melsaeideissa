@@ -79,6 +79,7 @@ const hats: Hat[] = [
 
 export default function IndexThreeHats() {
   const [activeHat, setActiveHat] = useState(0);
+  const [pastHats, setPastHats] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -96,6 +97,12 @@ export default function IndexThreeHats() {
         }
       });
       setActiveHat(bestIdx);
+
+      const epilogue = document.getElementById("epilogue");
+      if (epilogue) {
+        const top = epilogue.getBoundingClientRect().top;
+        setPastHats(top < window.innerHeight * 0.6);
+      }
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
