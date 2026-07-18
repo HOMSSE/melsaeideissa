@@ -60,7 +60,7 @@ const hats: Hat[] = [
     accent: "#7ee6a8",
     accentSoft: "rgba(126,230,168,0.15)",
     narrative:
-      "Moved to the source. As an Expert Customer Support engineer on the global customer support team, resolved DCS and SIS issues for customers in the EMEA region. Deep-mastered the platforms I once operated.",
+      "Moved to the source. As an Expert Customer Support engineer on the global customer support team, resolved DCS issues for customers in the EMEA region. Deep-mastered the software -System Advisor- I once operated.",
     products: ["Foxboro DCS", "System Advisor", "AVEVA System Platform", "Global Customer Support"],
   },
   {
@@ -74,7 +74,7 @@ const hats: Hat[] = [
     accent: "#22d3ee",
     accentSoft: "rgba(34,211,238,0.15)",
     narrative:
-      "Now designing SCADA systems for hyperscale data centers. Bridging vendor technology with real-world client needs — and this year, recognized with an Innovation Award for that work.",
+      "Now designing SCADA systems. Bridging vendor technology with real-world client needs — and in 2025, recognized with an Innovation Award.",
     products: ["WinCC OA SCADA", "AVEVA System Platform", "Unified Operations Center for Data Centers", "Aveva Reports for Operations"],
   },
 ];
@@ -468,8 +468,8 @@ export default function IndexThreeHats() {
               Advansys Intelligent Solutions
             </h3>
             <p className="mt-4 text-white/80">
-              Recognized for submitting business-related ideas that turned field
-              experience into original, engineered solutions.
+              Recognized for identifying and submitting business ideas with revenue
+              potential for the company.
             </p>
           </div>
         </div>
