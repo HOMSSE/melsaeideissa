@@ -21,7 +21,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { ChevronDown, FileText } from "lucide-react";
+import { ChevronDown, FileText, Linkedin, ExternalLink } from "lucide-react";
 
 import SEO from "@/components/SEO";
 
