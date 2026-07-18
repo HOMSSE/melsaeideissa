@@ -95,6 +95,7 @@ export default function IndexThreeHats() {
   const [activeHat, setActiveHat] = useState(0);
   const [pastHats, setPastHats] = useState(false);
   const [letterOpen, setLetterOpen] = useState(false);
+  const [schneiderOpen, setSchneiderOpen] = useState(false);
   const [lightbox, setLightbox] = useState<number | null>(null);
   const letterPages = [letterPage1.url, letterPage2.url];
 
