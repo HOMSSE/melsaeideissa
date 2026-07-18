@@ -188,6 +188,27 @@ export default function IndexThreeHats() {
         className="pointer-events-none fixed inset-0 z-0 overflow-hidden transition-opacity duration-[1500ms]"
         style={{ opacity: pastHats ? 1 : 0 }}
       >
+        {/* Layer B — static mesh wash (three radial gradients in brand colors) */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(circle at 18% 28%, rgba(0,128,199,0.35) 0%, transparent 55%), radial-gradient(circle at 82% 22%, rgba(61,205,88,0.28) 0%, transparent 55%), radial-gradient(circle at 50% 85%, rgba(34,211,238,0.32) 0%, transparent 55%)",
+            filter: "blur(40px)",
+          }}
+        />
+        {/* Layer A — animated 3-color gradient shift (slow, professional) */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(120deg, #0080c7 0%, #3dcd58 45%, #22d3ee 100%)",
+            backgroundSize: "400% 400%",
+            animation: "epiGradientShift 22s ease infinite",
+            opacity: 0.18,
+            mixBlendMode: "screen",
+          }}
+        />
         {/* Slow conic hue sweep — subtle brand-color rotation */}
         <div
           className="absolute inset-[-20%]"
@@ -199,6 +220,33 @@ export default function IndexThreeHats() {
             mixBlendMode: "screen",
           }}
         />
+        {/* Layer C — floating brand-color orbs */}
+        {[
+          { c: "0,128,199", x: 12, y: 18, s: 90, d: 0, dur: 9 },
+          { c: "61,205,88", x: 78, y: 24, s: 70, d: 1.2, dur: 11 },
+          { c: "34,211,238", x: 30, y: 62, s: 110, d: 0.6, dur: 10 },
+          { c: "0,128,199", x: 68, y: 74, s: 60, d: 1.8, dur: 12 },
+          { c: "34,211,238", x: 88, y: 48, s: 80, d: 0.3, dur: 9.5 },
+          { c: "61,205,88", x: 6, y: 82, s: 70, d: 2.2, dur: 10.5 },
+          { c: "34,211,238", x: 50, y: 10, s: 55, d: 1.5, dur: 11.5 },
+          { c: "0,128,199", x: 42, y: 90, s: 65, d: 0.9, dur: 12.5 },
+        ].map((o, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full"
+            style={{
+              left: `${o.x}%`,
+              top: `${o.y}%`,
+              width: `${o.s}px`,
+              height: `${o.s}px`,
+              background: `radial-gradient(circle, rgba(${o.c},0.55), transparent 70%)`,
+              filter: "blur(20px)",
+              mixBlendMode: "screen",
+              animation: `epiOrbFloat ${o.dur}s ease-in-out ${o.d}s infinite`,
+              willChange: "transform",
+            }}
+          />
+        ))}
         {/* Three floating aurora blobs in brand colors */}
         <div
           className="absolute rounded-full"
