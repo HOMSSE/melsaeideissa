@@ -10,6 +10,7 @@ import {
   technicalSkills,
   projects,
   certifications,
+  trainings,
   recommendations,
 } from "@/data/profile";
 import SEO from "@/components/SEO";
@@ -190,7 +191,7 @@ export default function IndexThreeHats() {
             { t: "AVEVA System Platform", x: 62, y: 8, s: 18, o: 0.10, d: 2 },
             { t: "Foxboro I/A", x: 78, y: 22, s: 26, o: 0.12, d: 4 },
             { t: "Triconex ESD", x: 14, y: 28, s: 20, o: 0.11, d: 1 },
-            { t: "AVEVA PI", x: 45, y: 18, s: 16, o: 0.09, d: 3 },
+            { t: "Management Of Change", x: 45, y: 18, s: 16, o: 0.09, d: 3 },
             { t: "Bently Nevada 3500", x: 30, y: 42, s: 17, o: 0.10, d: 5 },
             { t: "IEC 61511", x: 72, y: 48, s: 24, o: 0.12, d: 2 },
             { t: "CFSP", x: 10, y: 55, s: 32, o: 0.13, d: 6 },
@@ -201,12 +202,12 @@ export default function IndexThreeHats() {
             { t: "SCADA", x: 8, y: 82, s: 30, o: 0.12, d: 5 },
             { t: "DCS", x: 82, y: 82, s: 30, o: 0.12, d: 2 },
             { t: "SIS", x: 65, y: 72, s: 18, o: 0.10, d: 6 },
-            { t: "Historian", x: 48, y: 34, s: 15, o: 0.09, d: 1 },
+            { t: "Preventive Maintenance", x: 48, y: 34, s: 15, o: 0.09, d: 1 },
             { t: "Redundancy", x: 25, y: 90, s: 16, o: 0.09, d: 3 },
             { t: "HMI", x: 92, y: 35, s: 26, o: 0.12, d: 4 },
             { t: "Fail-safe", x: 58, y: 92, s: 17, o: 0.10, d: 5 },
             { t: "Tristation", x: 3, y: 42, s: 15, o: 0.09, d: 2 },
-            { t: "Quality", x: 68, y: 30, s: 20, o: 0.10, d: 0 },
+            { t: "Control Processors", x: 68, y: 30, s: 20, o: 0.10, d: 0 },
             { t: "Maximo", x: 12, y: 72, s: 18, o: 0.10, d: 6 },
           ].map((n, i) => {
             const litColors = ["#5ecadf", "#22d3ee", "#00a74f"]; // Methanex blue, Advansys cyan, Schneider green
