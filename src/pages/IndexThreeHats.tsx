@@ -341,6 +341,24 @@ export default function IndexThreeHats() {
               </a>
             ))}
           </div>
+
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mt-8 inline-flex items-center gap-3 rounded-full border px-5 py-2.5 text-sm font-medium transition-all hover:gap-4"
+            style={{
+              borderColor: "rgba(34,211,238,0.45)",
+              color: "#22d3ee",
+              background: "rgba(34,211,238,0.08)",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+            }}
+            aria-label="View Mohamed Eissa's LinkedIn profile"
+          >
+            <Linkedin className="h-4 w-4" />
+            <span>View LinkedIn profile</span>
+            <ExternalLink className="h-3.5 w-3.5 opacity-60 transition-opacity group-hover:opacity-100" />
+          </a>
         </div>
       </section>
 
