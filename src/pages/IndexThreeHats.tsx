@@ -8,6 +8,7 @@ import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
 import advansysLogo from "@/assets/advansys-logo.png.asset.json";
 import letterPage1 from "@/assets/methanex-letter-page1.jpg.asset.json";
 import letterPage2 from "@/assets/methanex-letter-page2.jpg.asset.json";
+import linkedinLogo from "@/assets/linkedin-logo.png.asset.json";
 import {
   certifications,
   trainings,
