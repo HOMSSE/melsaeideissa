@@ -410,10 +410,12 @@ export default function IndexThreeHats() {
           <h2 className="mt-8 text-4xl font-semibold sm:text-5xl" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             The three hats compound.
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/75">
-            Operator instinct. Vendor depth. Integrator design sense. Together
-            they produce control systems that hold up in the field — because the
-            field is where they were born.
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
+            <span style={{ color: "rgb(94,202,223)" }}>Operator instinct.</span>{" "}
+            <span style={{ color: "rgb(0,167,79)" }}>Vendor depth.</span>{" "}
+            <span style={{ color: "rgb(34,211,238)" }}>Integrator design sense.</span>{" "}
+            Together they produce control systems that hold up in the field — because
+            the field is where they were born.
           </p>
         </div>
       </section>
