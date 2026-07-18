@@ -1,26 +1,32 @@
-## Problem
-In the Advansys ("System Integrator") section of v11, the left text column — "As System Integrator", "Senior Application Design Engineer", and the narrative paragraph — overlaps the detailed dashboards blueprint background. The background detail competes with the text, making it hard to read. The right-hand "Products & platforms" card already has a blurred, semi-transparent backing; the left text column does not.
 
 ## Goal
-Make the left text column clearly readable without hiding or ruining the blueprint background.
+The sections after Advansys (epilogue: "The three hats compound", Innovation Award, Stack, Projects, Certs, Recommendations, Contact) currently sit on a near-black canvas that feels too dark and disconnected from the rest of v11. Make it feel like a natural continuation of the site — same family of colors, but calmer than the hat sections. No busy imagery, no rainbow.
 
-## Proposed approach
-Add a subtle readability layer to the left text column only, tuned so the blueprint still shows through:
+## Approach — in `src/pages/IndexThreeHats.tsx` only
 
-1. Wrap the left text column content in a compact card/panel.
-2. Give it a very dark, low-opacity background (`rgba(2,3,10,0.55)` or similar) plus `backdrop-blur-md`.
-3. Add a thin accent border on the left using the section's `h.accent` color.
-4. Keep generous padding so text has breathing room.
-5. Slightly increase text contrast: use `text-white/95` for headings and `text-white/85` for body copy in that column.
-6. Add a subtle text shadow to the large heading for extra legibility over busy background areas.
-7. Do NOT change the background image opacity or the global section background, so the beautiful blueprint remains intact.
+1. **Lift the base tone** of the epilogue background from near-black to a soft deep navy (e.g. `#0b1220` → `#0e1524`), so it reads as "night sky" rather than "void".
 
-## Scope
-- File: `src/pages/IndexThreeHats.tsx`
-- Change only the left text column markup/styling inside the `{hats.map(...)}` hat sections.
-- No changes to data, other sections, routes, or assets.
+2. **Add a very soft three-brand aurora** (already present as a whisper) and rebalance it:
+   - Methanex blue, Schneider green, Advansys cyan as three large, low-opacity radial glows at ~8–12% opacity.
+   - Positioned top-left / bottom-right / center so they never crowd the text.
+   - Slower drift so it feels ambient, not animated.
+
+3. **Keep the tech-name constellation** but reduce its density and slow it further so it becomes texture, not content.
+
+4. **Tint the epilogue typography subtly** so the palette carries into the words without becoming colorful:
+   - Section eyebrow labels ("Innovation Award", "Technology Stack", "Selected Projects", "Certifications", "Recommendations", "Contact") use a soft cyan/teal accent instead of white.
+   - Key phrase highlights inside the "three hats compound" paragraph (the words *Operator*, *Vendor*, *Integrator*) tinted in Methanex blue / Schneider green / Advansys cyan respectively — one accent word each, rest stays white.
+   - Card borders shift from pure white/10 to a faint cyan/10 so cards feel warmer.
+
+5. **Soften card surfaces** to match: `bg-white/[0.03]` with `backdrop-blur-sm` and a 1px cyan-tinted border, so cards float on the aurora instead of sitting on black.
+
+6. **Add a gentle top gradient divider** between the Advansys section and the epilogue so the transition reads as a sunrise-into-night-sky rather than a hard cut.
+
+## Out of scope
+- No changes to the three hat sections (Methanex/Schneider/Advansys).
+- No new assets, no new routes, no changes to data or copy.
+- Other v-versions untouched.
 
 ## Verification
-- Build the project.
-- Scroll to the Advansys section and confirm the text is crisp while the dashboards blueprint is still visible behind it.
-- Quickly check the Methanex and Schneider sections to ensure the same treatment looks consistent there too.
+- Build passes.
+- Scroll from Advansys into the epilogue: transition feels continuous, background reads deep-navy with faint colored glow, text is crisp, three accent words carry the brand palette.
