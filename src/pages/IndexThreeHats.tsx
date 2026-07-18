@@ -109,6 +109,37 @@ export default function IndexThreeHats() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Cursor spotlight in epilogue
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+    const el = document.getElementById("epi-spotlight");
+    if (!el) return;
+    let raf = 0;
+    let tx = 0, ty = 0;
+    const onMove = (e: MouseEvent) => {
+      tx = e.clientX;
+      ty = e.clientY;
+      el.style.opacity = "1";
+      if (!raf) {
+        raf = requestAnimationFrame(() => {
+          el.style.left = `${tx}px`;
+          el.style.top = `${ty}px`;
+          raf = 0;
+        });
+      }
+    };
+    const onLeave = () => { el.style.opacity = "0"; };
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseleave", onLeave);
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseleave", onLeave);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   const hat = hats[activeHat];
 
   return (
