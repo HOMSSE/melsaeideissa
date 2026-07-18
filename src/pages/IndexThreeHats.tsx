@@ -474,65 +474,6 @@ export default function IndexThreeHats() {
         </div>
       </section>
 
-      {/* SKILLS & PROJECTS */}
-      <section className="relative z-10 mx-auto max-w-6xl px-6 py-24">
-        <h2 className="text-3xl font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-          Skills
-        </h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {skills.map((s) => (
-            <div
-              key={s.title}
-              className="flex items-start gap-4 rounded-3xl border p-5"
-              style={{
-                borderColor: "rgba(34,211,238,0.35)",
-                background: "linear-gradient(135deg, rgba(34,211,238,0.10), rgba(0,0,0,0.4))",
-              }}
-            >
-              <s.icon className="mt-0.5 h-8 w-8 shrink-0" style={{ color: "#22d3ee" }} />
-              <div className="min-w-0">
-                <div className="font-semibold">{s.title}</div>
-                <div className="mt-1 text-xs text-white/60">{s.subtitle}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <h2 className="mt-20 text-3xl font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-          Projects
-        </h2>
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
-          {projects.map((p) => (
-            <article
-              key={p.title}
-              className="rounded-3xl border p-6"
-              style={{
-                borderColor: "rgba(34,211,238,0.35)",
-                background: "linear-gradient(135deg, rgba(34,211,238,0.10), rgba(0,0,0,0.4))",
-              }}
-            >
-              <h3 className="text-xl font-semibold">{p.title}</h3>
-              <p className="mt-3 text-sm text-white/75">{p.description}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {p.technologies.map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-full border px-2.5 py-1 text-[10px] uppercase tracking-widest text-[#22d3ee]"
-                    style={{
-                      borderColor: "rgba(34,211,238,0.35)",
-                      background: "rgba(34,211,238,0.08)",
-                      fontFamily: "'JetBrains Mono', ui-monospace, monospace",
-                    }}
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <p className="mt-4 text-xs text-white/55">{p.contributions}</p>
-            </article>
-          ))}
-        </div>
-      </section>
 
       {/* CERTS */}
       <section className="relative z-10 mx-auto max-w-6xl px-6 py-24">
