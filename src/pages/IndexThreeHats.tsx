@@ -40,9 +40,9 @@ const hats: Hat[] = [
     companyDetail: "World's largest methanol producer",
     logo: methanexLogo.url,
     blueprint: refineryAsset.url,
-    bg: "radial-gradient(1200px 800px at 30% 20%, #0a2540 0%, #051428 55%, #020814 100%)",
-    accent: "#4bb4e6",
-    accentSoft: "rgba(75,180,230,0.15)",
+    bg: "radial-gradient(1200px 800px at 30% 20%, #1a2a3a 0%, #0a1420 55%, #050a12 100%)",
+    accent: "#0080c7",
+    accentSoft: "rgba(0,128,199,0.15)",
     narrative:
       "Ran DCS, SIS and rotating-machinery systems from inside the plant. Felt uptime as revenue, not as a KPI. Owned Foxboro I/A, Triconex ESD and Bently Nevada 3500 through daily operations, shutdowns and turnarounds.",
     products: ["Foxboro I/A DCS", "Triconex ESD", "Bently Nevada 3500", "AVEVA PI"],
