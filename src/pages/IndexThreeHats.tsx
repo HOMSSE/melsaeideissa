@@ -581,17 +581,30 @@ export default function IndexThreeHats() {
           {trainings.map((c) => (
             <div
               key={c.title}
-              className="flex items-center gap-4 rounded-3xl border p-5"
+              className="flex items-start gap-4 rounded-3xl border p-5"
               style={{
                 borderColor: "rgba(34,211,238,0.35)",
                 background: "linear-gradient(135deg, rgba(34,211,238,0.10), rgba(0,0,0,0.4))",
               }}
             >
-              <c.icon className="h-8 w-8" style={{ color: "#22d3ee" }} />
-              <div>
-                <div className="font-semibold">{c.title}</div>
-                <div className="text-xs text-white/60">
-                  {c.issuer} · {c.year}
+              <c.icon className="mt-0.5 h-8 w-8 shrink-0" style={{ color: "#22d3ee" }} />
+              <div className="min-w-0">
+                {c.url ? (
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold underline decoration-[rgba(34,211,238,0.4)] underline-offset-4 transition-colors hover:text-[#22d3ee]"
+                  >
+                    {c.title}
+                  </a>
+                ) : (
+                  <div className="font-semibold">{c.title}</div>
+                )}
+                <div className="mt-1 text-xs text-white/60">
+                  {c.issuer}
+                  {c.year && ` · ${c.year}`}
+                  {c.location && ` · ${c.location}`}
                 </div>
               </div>
             </div>
