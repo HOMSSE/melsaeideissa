@@ -257,6 +257,8 @@ export default function IndexThreeHats() {
                 As{" "}
                 {h.key === "enduser" ? (
                   <span style={{ color: "rgb(94,202,223)" }}>{h.role}</span>
+                ) : h.key === "integrator" ? (
+                  <span style={{ color: "rgb(29,54,158)" }}>{h.role}</span>
                 ) : (
                   <span style={{ color: h.accent }}>{h.role}</span>
                 )}
