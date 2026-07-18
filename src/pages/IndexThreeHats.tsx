@@ -195,23 +195,32 @@ export default function IndexThreeHats() {
             { t: "Tristation", x: 3, y: 42, s: 15, o: 0.09, d: 2 },
             { t: "Quality", x: 68, y: 30, s: 20, o: 0.10, d: 0 },
             { t: "Maximo", x: 12, y: 72, s: 18, o: 0.10, d: 6 },
-          ].map((n, i) => (
-            <span
-              key={i}
-              className="absolute whitespace-nowrap select-none"
-              style={{
-                left: `${n.x}%`,
-                top: `${n.y}%`,
-                fontSize: `${n.s}px`,
-                color: "#e6f3ff",
-                opacity: n.o,
-                letterSpacing: "0.08em",
-                animation: `constDrift ${18 + (i % 5) * 3}s ease-in-out ${n.d}s infinite`,
-              }}
-            >
-              {n.t}
-            </span>
-          ))}
+          ].map((n, i) => {
+            const litColors = ["#5ecadf", "#22d3ee", "#00a74f"]; // Methanex blue, Advansys cyan, Schneider green
+            const litColor = litColors[i % 3];
+            const cycle = 26; // seconds
+            const delay = -((i * cycle) / 22).toFixed(2) + "s";
+            return (
+              <span
+                key={i}
+                className="absolute whitespace-nowrap select-none"
+                style={{
+                  left: `${n.x}%`,
+                  top: `${n.y}%`,
+                  fontSize: `${n.s}px`,
+                  color: "#e6f3ff",
+                  opacity: n.o,
+                  letterSpacing: "0.08em",
+                  ["--lit-color" as any]: litColor,
+                  ["--base-opacity" as any]: String(n.o),
+                  animation: `constDrift ${18 + (i % 5) * 3}s ease-in-out ${n.d}s infinite, constLight ${cycle}s ease-in-out ${delay} infinite`,
+                }}
+              >
+                {n.t}
+              </span>
+            );
+          })}
+
         </div>
       </div>
 
