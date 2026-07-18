@@ -307,7 +307,7 @@ export default function IndexThreeHats() {
       ))}
 
       {/* CONVERGENCE */}
-      <section className="relative z-10 px-6 py-32">
+      <section id="epilogue" className="relative z-10 px-6 py-32">
         <div className="mx-auto max-w-5xl text-center">
           <div className="flex justify-center gap-4">
             {hats.map((h) => (
