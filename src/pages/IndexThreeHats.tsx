@@ -21,7 +21,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { ChevronDown, FileText } from "lucide-react";
+import { ChevronDown, FileText, Linkedin, ExternalLink } from "lucide-react";
 
 import SEO from "@/components/SEO";
 
@@ -87,6 +87,8 @@ const hats: Hat[] = [
     products: ["WinCC OA SCADA", "AVEVA System Platform", "Unified Operations Center for Data Centers", "Aveva Reports for Operations"],
   },
 ];
+
+const LINKEDIN_URL = "https://www.linkedin.com/in/mohamedeeissa";
 
 export default function IndexThreeHats() {
   const [activeHat, setActiveHat] = useState(0);
@@ -339,6 +341,24 @@ export default function IndexThreeHats() {
               </a>
             ))}
           </div>
+
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mt-8 inline-flex items-center gap-3 rounded-full border px-5 py-2.5 text-sm font-medium transition-all hover:gap-4"
+            style={{
+              borderColor: "rgba(34,211,238,0.45)",
+              color: "#22d3ee",
+              background: "rgba(34,211,238,0.08)",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+            }}
+            aria-label="View Mohamed Eissa's LinkedIn profile"
+          >
+            <Linkedin className="h-4 w-4" />
+            <span>View LinkedIn profile</span>
+            <ExternalLink className="h-3.5 w-3.5 opacity-60 transition-opacity group-hover:opacity-100" />
+          </a>
         </div>
       </section>
 
@@ -769,6 +789,20 @@ export default function IndexThreeHats() {
               </div>
             </blockquote>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm transition-colors hover:text-[#22d3ee]"
+            style={{ color: "rgba(255,255,255,0.7)" }}
+          >
+            <Linkedin className="h-4 w-4" />
+            <span>Read the full profile and more recommendations on LinkedIn</span>
+            <ExternalLink className="h-3.5 w-3.5" />
+          </a>
         </div>
       </section>
 
