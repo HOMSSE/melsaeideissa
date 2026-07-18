@@ -84,7 +84,7 @@ export const certifications: {
   {
     title: "Certified Functional Safety Professional",
     issuer: "exida",
-    year: "2022 – 2025",
+    year: "From 2022 To 2025",
     icon: ShieldIcon,
   },
   {
@@ -92,6 +92,28 @@ export const certifications: {
     issuer: "Siemens",
     year: "",
     icon: SettingsIcon,
+  },
+];
+
+export const skills: {
+  title: string;
+  subtitle: string;
+  icon: LucideIcon;
+}[] = [
+  {
+    title: "BlueCielo Meridian",
+    subtitle: "Document Management",
+    icon: BookOpenIcon,
+  },
+  {
+    title: "CMMS Maximo",
+    subtitle: "Asset & Work Order Management",
+    icon: WrenchIcon,
+  },
+  {
+    title: "Permit To Work System",
+    subtitle: "Safe Work Authorization",
+    icon: ShieldIcon,
   },
 ];
 

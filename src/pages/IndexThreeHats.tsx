@@ -12,6 +12,7 @@ import {
   certifications,
   trainings,
   recommendations,
+  skills,
 } from "@/data/profile";
 import SEO from "@/components/SEO";
 
@@ -510,6 +511,28 @@ export default function IndexThreeHats() {
         </div>
 
         <h2 className="mt-20 text-3xl font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          Skills
+        </h2>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {skills.map((s) => (
+            <div
+              key={s.title}
+              className="flex items-start gap-4 rounded-3xl border p-5"
+              style={{
+                borderColor: "rgba(34,211,238,0.35)",
+                background: "linear-gradient(135deg, rgba(34,211,238,0.10), rgba(0,0,0,0.4))",
+              }}
+            >
+              <s.icon className="mt-0.5 h-8 w-8 shrink-0" style={{ color: "#22d3ee" }} />
+              <div className="min-w-0">
+                <div className="font-semibold">{s.title}</div>
+                <div className="mt-1 text-xs text-white/60">{s.subtitle}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="mt-20 text-3xl font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Projects
         </h2>
         <div className="mt-8 grid gap-5 md:grid-cols-2">
@@ -652,15 +675,6 @@ export default function IndexThreeHats() {
         </div>
       </section>
 
-      <footer
-        className="relative z-10 border-t py-10 text-center text-xs text-white/50"
-        style={{
-          borderColor: "rgba(255,255,255,0.1)",
-          fontFamily: "'JetBrains Mono', ui-monospace, monospace",
-        }}
-      >
-        v11 · THREE HATS · MOHAMED EISSA
-      </footer>
 
       <style>{`
         @keyframes hatFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
