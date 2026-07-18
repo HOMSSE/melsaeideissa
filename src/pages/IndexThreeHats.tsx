@@ -6,12 +6,22 @@ import awardAsset from "@/assets/innovation-award.jpg.asset.json";
 import methanexLogo from "@/assets/methanex-logo-original.png.asset.json";
 import schneiderLogo from "@/assets/schneider-logo.png.asset.json";
 import advansysLogo from "@/assets/advansys-logo.png.asset.json";
+import letterPage1 from "@/assets/methanex-letter-page1.jpg.asset.json";
+import letterPage2 from "@/assets/methanex-letter-page2.jpg.asset.json";
 import {
   certifications,
   trainings,
   recommendations,
   skills,
+  methanexLetter,
 } from "@/data/profile";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { ChevronDown, FileText } from "lucide-react";
 
 import SEO from "@/components/SEO";
 
@@ -81,6 +91,9 @@ const hats: Hat[] = [
 export default function IndexThreeHats() {
   const [activeHat, setActiveHat] = useState(0);
   const [pastHats, setPastHats] = useState(false);
+  const [letterOpen, setLetterOpen] = useState(false);
+  const [lightbox, setLightbox] = useState<number | null>(null);
+  const letterPages = [letterPage1.url, letterPage2.url];
 
   useEffect(() => {
     const onScroll = () => {
@@ -416,8 +429,162 @@ export default function IndexThreeHats() {
               </div>
             </div>
           </div>
+
+          {h.key === "enduser" && (
+            <div className="mx-auto mt-16 max-w-6xl">
+              <article
+                className="overflow-hidden rounded-2xl border backdrop-blur-md"
+                style={{
+                  borderColor: h.accent + "55",
+                  background: `linear-gradient(160deg, ${h.accentSoft}, rgba(2,6,14,0.65))`,
+                  boxShadow: `0 20px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05)`,
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setLetterOpen((v) => !v)}
+                  className="flex w-full items-center gap-5 p-6 text-left transition-colors hover:bg-white/[0.03] sm:p-8"
+                  aria-expanded={letterOpen}
+                  aria-controls="methanex-letter-body"
+                >
+                  <span
+                    className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border"
+                    style={{
+                      borderColor: h.accent + "66",
+                      background: "rgba(0,0,0,0.35)",
+                      color: h.accent,
+                    }}
+                  >
+                    <FileText size={22} />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <div
+                      className="text-[10px] uppercase tracking-[0.3em]"
+                      style={{ color: h.accent, fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
+                    >
+                      Official Letter
+                    </div>
+                    <h3
+                      className="mt-1 text-xl font-semibold text-white/95 sm:text-2xl"
+                      style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                    >
+                      {methanexLetter.title} — {methanexLetter.company}
+                    </h3>
+                    <p className="mt-1 text-sm text-white/60">
+                      Signed by {methanexLetter.signatory}, {methanexLetter.signatoryTitle}
+                    </p>
+                  </div>
+                  <ChevronDown
+                    size={22}
+                    className="flex-shrink-0 transition-transform duration-500"
+                    style={{
+                      color: h.accent,
+                      transform: letterOpen ? "rotate(180deg)" : "rotate(0deg)",
+                    }}
+                  />
+                </button>
+
+                <div
+                  id="methanex-letter-body"
+                  className="grid transition-[grid-template-rows] duration-700 ease-out"
+                  style={{ gridTemplateRows: letterOpen ? "1fr" : "0fr" }}
+                >
+                  <div className="overflow-hidden">
+                    <div
+                      className="border-t px-6 pb-8 pt-6 sm:px-8"
+                      style={{ borderColor: h.accent + "22" }}
+                    >
+                      <div className="space-y-5 text-base leading-relaxed text-white/85 sm:text-[17px]">
+                        {methanexLetter.paragraphs.map((p, i) => (
+                          <p key={i}>{p}</p>
+                        ))}
+                      </div>
+
+                      <div className="mt-8">
+                        <div
+                          className="text-[10px] uppercase tracking-[0.3em] text-white/50"
+                          style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
+                        >
+                          View original document
+                        </div>
+                        <div className="mt-4 flex flex-wrap gap-4">
+                          {letterPages.map((src, i) => (
+                            <button
+                              key={i}
+                              type="button"
+                              onClick={() => setLightbox(i)}
+                              className="group relative overflow-hidden rounded-lg border transition-transform hover:-translate-y-0.5"
+                              style={{
+                                borderColor: h.accent + "44",
+                                background: "rgba(255,255,255,0.04)",
+                              }}
+                              aria-label={`Open original letter page ${i + 1}`}
+                            >
+                              <img
+                                src={src}
+                                alt={`Methanex experience letter, page ${i + 1} of 2, signed by HR Manager`}
+                                className="h-40 w-32 object-cover object-top opacity-90 transition-opacity group-hover:opacity-100 sm:h-48 sm:w-36"
+                                loading="lazy"
+                              />
+                              <span
+                                className="absolute inset-x-0 bottom-0 bg-black/60 py-1 text-center text-[10px] uppercase tracking-widest text-white/80"
+                                style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
+                              >
+                                Page {i + 1}
+                              </span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          )}
         </section>
       ))}
+
+      {/* Letter lightbox */}
+      <Dialog open={lightbox !== null} onOpenChange={(o) => !o && setLightbox(null)}>
+        <DialogContent className="max-w-4xl border-white/10 bg-[#050a12] p-2 sm:p-3">
+          <DialogTitle className="sr-only">
+            Methanex experience letter — page {(lightbox ?? 0) + 1}
+          </DialogTitle>
+          <DialogDescription className="sr-only">
+            Original scanned experience letter from The Egyptian Methanex Methanol Company.
+          </DialogDescription>
+          {lightbox !== null && (
+            <div className="relative">
+              <img
+                src={letterPages[lightbox]}
+                alt={`Methanex experience letter, page ${lightbox + 1} of 2`}
+                className="mx-auto max-h-[85vh] w-auto rounded"
+              />
+              <div className="mt-3 flex items-center justify-between px-2 pb-1">
+                <button
+                  type="button"
+                  onClick={() => setLightbox((i) => (i === null ? null : (i - 1 + letterPages.length) % letterPages.length))}
+                  className="rounded-full border border-white/15 px-4 py-1.5 text-xs uppercase tracking-widest text-white/80 hover:bg-white/5"
+                >
+                  ← Prev
+                </button>
+                <span className="text-xs uppercase tracking-widest text-white/50">
+                  Page {lightbox + 1} of {letterPages.length}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setLightbox((i) => (i === null ? null : (i + 1) % letterPages.length))}
+                  className="rounded-full border border-white/15 px-4 py-1.5 text-xs uppercase tracking-widest text-white/80 hover:bg-white/5"
+                >
+                  Next →
+                </button>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+
 
       {/* CONVERGENCE */}
       <section id="epilogue" className="relative z-10 px-6 py-32">
