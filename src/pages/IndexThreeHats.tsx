@@ -544,10 +544,13 @@ export default function IndexThreeHats() {
           {certifications.map((c) => (
             <div
               key={c.title}
-              className="flex items-center gap-4 rounded-xl border p-5"
-              style={{ borderColor: "rgba(255,255,255,0.12)", background: "rgba(0,0,0,0.4)" }}
+              className="flex items-center gap-4 rounded-3xl border p-5"
+              style={{
+                borderColor: "rgba(34,211,238,0.35)",
+                background: "linear-gradient(135deg, rgba(34,211,238,0.10), rgba(0,0,0,0.4))",
+              }}
             >
-              <c.icon className="h-8 w-8" style={{ color: "#5eead4" }} />
+              <c.icon className="h-8 w-8" style={{ color: "#22d3ee" }} />
               <div>
                 <div className="font-semibold">{c.title}</div>
                 <div className="text-xs text-white/60">
@@ -568,14 +571,17 @@ export default function IndexThreeHats() {
           {recommendations.map((r) => (
             <blockquote
               key={r.name}
-              className="rounded-xl border p-6"
-              style={{ borderColor: "rgba(255,255,255,0.12)", background: "rgba(0,0,0,0.4)" }}
+              className="rounded-3xl border p-6"
+              style={{
+                borderColor: "rgba(34,211,238,0.35)",
+                background: "linear-gradient(135deg, rgba(34,211,238,0.10), rgba(0,0,0,0.4))",
+              }}
             >
               <div className="flex items-center gap-3">
                 <div
                   className="flex h-11 w-11 items-center justify-center rounded-full text-sm font-semibold"
                   style={{
-                    background: "linear-gradient(135deg, #5eead4, #f5b642)",
+                    background: "linear-gradient(135deg, #22d3ee, #5eead4)",
                     color: "#0a0a0a",
                   }}
                 >
