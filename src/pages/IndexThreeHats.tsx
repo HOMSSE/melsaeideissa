@@ -193,6 +193,8 @@ export default function IndexThreeHats() {
             { t: "HMI", x: 92, y: 35, s: 26, o: 0.12, d: 4 },
             { t: "Fail-safe", x: 58, y: 92, s: 17, o: 0.10, d: 5 },
             { t: "Tristation", x: 3, y: 42, s: 15, o: 0.09, d: 2 },
+            { t: "Quality", x: 68, y: 30, s: 20, o: 0.10, d: 0 },
+            { t: "Maximo", x: 12, y: 72, s: 18, o: 0.10, d: 6 },
           ].map((n, i) => (
             <span
               key={i}
