@@ -151,6 +151,68 @@ export default function IndexThreeHats() {
         ))}
       </div>
 
+      {/* Epilogue ambient: three-color aurora + drifting tech constellation */}
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-0 overflow-hidden transition-opacity duration-[1500ms]"
+        style={{ opacity: pastHats ? 1 : 0 }}
+      >
+        {/* Aurora: slow-morphing blend of the three hat accents */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(600px 400px at 20% 30%, rgba(94,234,212,0.12), transparent 60%),
+              radial-gradient(700px 500px at 80% 40%, rgba(126,230,168,0.10), transparent 60%),
+              radial-gradient(650px 450px at 50% 80%, rgba(34,211,238,0.10), transparent 60%)
+            `,
+            filter: "blur(40px)",
+            animation: "auroraDrift 32s ease-in-out infinite",
+          }}
+        />
+        {/* Tech constellation */}
+        <div className="absolute inset-0" style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}>
+          {[
+            { t: "WinCC OA", x: 8, y: 12, s: 22, o: 0.11, d: 0 },
+            { t: "AVEVA System Platform", x: 62, y: 8, s: 18, o: 0.10, d: 2 },
+            { t: "Foxboro I/A", x: 78, y: 22, s: 26, o: 0.12, d: 4 },
+            { t: "Triconex ESD", x: 14, y: 28, s: 20, o: 0.11, d: 1 },
+            { t: "AVEVA PI", x: 45, y: 18, s: 16, o: 0.09, d: 3 },
+            { t: "Bently Nevada 3500", x: 30, y: 42, s: 17, o: 0.10, d: 5 },
+            { t: "IEC 61511", x: 72, y: 48, s: 24, o: 0.12, d: 2 },
+            { t: "CFSP", x: 10, y: 55, s: 32, o: 0.13, d: 6 },
+            { t: "SIL 3", x: 88, y: 62, s: 20, o: 0.11, d: 1 },
+            { t: "OPC UA", x: 22, y: 68, s: 22, o: 0.11, d: 4 },
+            { t: "Modbus", x: 55, y: 58, s: 16, o: 0.09, d: 3 },
+            { t: "SCADA", x: 40, y: 78, s: 34, o: 0.13, d: 0 },
+            { t: "DCS", x: 8, y: 82, s: 30, o: 0.12, d: 5 },
+            { t: "SIS", x: 82, y: 82, s: 30, o: 0.12, d: 2 },
+            { t: "Historian", x: 65, y: 72, s: 18, o: 0.10, d: 6 },
+            { t: "TÜV Rheinland", x: 48, y: 34, s: 15, o: 0.09, d: 1 },
+            { t: "Redundancy", x: 25, y: 90, s: 16, o: 0.09, d: 3 },
+            { t: "HMI", x: 92, y: 35, s: 26, o: 0.12, d: 4 },
+            { t: "Fail-safe", x: 58, y: 92, s: 17, o: 0.10, d: 5 },
+            { t: "Tristation", x: 3, y: 42, s: 15, o: 0.09, d: 2 },
+          ].map((n, i) => (
+            <span
+              key={i}
+              className="absolute whitespace-nowrap select-none"
+              style={{
+                left: `${n.x}%`,
+                top: `${n.y}%`,
+                fontSize: `${n.s}px`,
+                color: "#e6f3ff",
+                opacity: n.o,
+                letterSpacing: "0.08em",
+                animation: `constDrift ${18 + (i % 5) * 3}s ease-in-out ${n.d}s infinite`,
+              }}
+            >
+              {n.t}
+            </span>
+          ))}
+        </div>
+      </div>
+
 
       {/* Fixed side stepper */}
       <nav
@@ -496,6 +558,15 @@ export default function IndexThreeHats() {
 
       <style>{`
         @keyframes hatFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+        @keyframes auroraDrift {
+          0%,100% { transform: translate3d(0,0,0) scale(1); }
+          33% { transform: translate3d(3%,-2%,0) scale(1.05); }
+          66% { transform: translate3d(-2%,3%,0) scale(0.98); }
+        }
+        @keyframes constDrift {
+          0%,100% { transform: translate3d(0,0,0); }
+          50% { transform: translate3d(0,-8px,0); }
+        }
       `}</style>
     </div>
   );
