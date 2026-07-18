@@ -316,32 +316,3 @@ export const methanexLetter = {
   ],
 } as const;
 
-export const schneiderExperience = {
-  title: "Role Details",
-  roles: [
-    {
-      title: "Senior Application Design Engineer",
-      items: [
-        "Using Aveva System Platform to create SCADA systems for monitoring different systems for Data Centers.",
-      ],
-    },
-    {
-      title: "Expert Customer Support Engineer (Global Customer Support)",
-      date: "01/09/2023 – 30/11/2024",
-      items: [
-        "Providing advanced technical support to customers and field service personnel via email, Microsoft Teams and other communication channels for the EMEA region.",
-        "Working on System Advisor cases from the EMEA region including hot cases (customers included Aramco, Novartis Pharma, Infineum Italia, PDO, KNPC, and others).",
-        "Participating in the System Advisor installation, FAT, and SAT for the UGDC (United Gas Derivatives Company) Damietta site.",
-        "Participating in the customer support for service engineers installing System Advisor for multiple projects in the EMEA region.",
-        "Troubleshooting complex issues related to Foxboro's systems, products, and software solutions.",
-        "Collaborating with development teams to resolve customer issues and improve product performance.",
-        "Escalating complex technical issues to higher-level support teams as necessary.",
-        "Replication/duplication of product issues reported by customers.",
-        "Document cases and findings in case management tracking tool.",
-        "Perform diagnostic research and analysis related to product symptoms.",
-        "Develop effective working relationships with customers, co-workers, and cross departmental personnel.",
-        "Transfers/shares Knowledge within GCS (Global Customer Support) Cairo Office and other GCS offices.",
-      ],
-    },
-  ],
-} as const;
