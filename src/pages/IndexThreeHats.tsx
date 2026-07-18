@@ -177,22 +177,6 @@ export default function IndexThreeHats() {
       {/* HERO */}
       <section className="relative z-10 flex min-h-[92vh] items-center px-6 pt-24">
         <div className="mx-auto max-w-5xl">
-          <div
-            className="mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] transition-colors duration-1000"
-            style={{
-              borderColor: hat.accent + "66",
-              color: hat.accent,
-              background: "rgba(0,0,0,0.4)",
-              fontFamily: "'JetBrains Mono', ui-monospace, monospace",
-            }}
-          >
-            <span
-              className="inline-block h-2 w-2 rounded-full transition-colors duration-1000"
-              style={{ background: hat.accent, boxShadow: `0 0 10px ${hat.accent}` }}
-            />
-            Currently viewing · {hat.role}
-          </div>
-
           <h1
             className="text-[clamp(2.8rem,8vw,6rem)] font-semibold leading-[1]"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
