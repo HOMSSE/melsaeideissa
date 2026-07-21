@@ -11,9 +11,9 @@ interface SEOProps {
 
 const SITE_URL = "https://melsaeideissa.com";
 const DEFAULT_TITLE =
-  "Mohamed Eissa | Control Systems Engineer — DCS, SIS, SCADA | Methanex · Schneider Electric · Advansys";
+  "Mohamed Eissa | Control Systems Engineer — DCS, SIS, SCADA";
 const DEFAULT_DESC =
-  "Mohamed Eissa — Control Systems Engineer with 11+ years across Methanex (End User), Schneider Electric (Global Vendor) and Advansys Intelligent Solutions (System Integrator). Innovation Award 2025. Expert in DCS, SIS, SCADA, AVEVA PI, Foxboro, Triconex; TÜV Functional Safety & ISA/IEC 62443 certified.";
+  "Mohamed Eissa — Senior Control Systems Engineer. 11+ years across Methanex, Schneider Electric & Advansys. DCS, SIS, SCADA, Functional Safety. Innovation Award 2025.";
 
 export const SEO = ({
   title = DEFAULT_TITLE,
