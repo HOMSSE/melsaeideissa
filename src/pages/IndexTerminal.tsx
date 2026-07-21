@@ -76,6 +76,7 @@ const IndexTerminal = () => {
       />
 
       <main className="pt-24 pb-20 px-4 md:px-8 max-w-[1600px] mx-auto">
+        <h1 className="sr-only">Mohamed Eissa — Senior Control Systems Engineer (Terminal Edition)</h1>
         {/* Boot */}
         <section className="border border-[#2dd4a8]/40 p-6 mb-8 relative">
           <div className="absolute -top-3 left-4 bg-[#05131a] px-2 text-xs text-[#2dd4a8]">[ BOOT.LOG ]</div>
