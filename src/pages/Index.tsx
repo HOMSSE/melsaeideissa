@@ -152,7 +152,7 @@ const Index = () => {
             <span className="text-sm font-medium text-primary">Innovation Award Winner 2025</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 animate-fade-in text-card">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 animate-fade-in text-card">Mohamed Eissa — Senior Control Systems Engineer</h1>
             Mohamed Eissa
           </h1>
           <h2 className="text-xl md:text-2xl font-light mb-4 text-primary animate-fade-in" style={{ animationDelay: '0.2s' }}>
