@@ -391,7 +391,7 @@ const IndexSpark = () => {
                   {/* Real logo — transparent, original brand colors */}
                   <div className="mb-6 flex items-center justify-center h-20 px-4">
                     <img
-                      src={brandLogos[i]}
+                      src={brandLogos[i].url}
                       alt={`${v.company} logo`}
                       className="max-h-full max-w-full object-contain"
                       loading="lazy"
