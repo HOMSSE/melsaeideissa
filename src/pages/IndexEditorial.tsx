@@ -127,9 +127,7 @@ const IndexEditorial = () => {
               className="text-5xl md:text-8xl font-bold leading-[0.9] uppercase tracking-tighter"
               style={{ ...mono, color: "#f5f0e0" }}
             >
-              Mohamed
-              <br />
-              Eissa
+              Mohamed Eissa — Senior Control Systems Engineer
             </h1>
 
             <div className="mt-10 flex flex-col md:flex-row md:items-end gap-6">

@@ -47,7 +47,11 @@ const C = {
   accent: "#c9a961",     // same gold family — no color soup
 };
 
-const brandLogos = [methanexLogo.url, schneiderLogo.url, advansysLogo.url];
+const brandLogos = [
+  { url: methanexLogo.url, name: "Methanex" },
+  { url: schneiderLogo.url, name: "Schneider Electric" },
+  { url: advansysLogo.url, name: "Advansys Intelligent Solutions" },
+];
 
 const IndexSpark = () => {
   return (
@@ -293,15 +297,15 @@ const IndexSpark = () => {
 
             {/* Brand logo strip */}
             <div className="mt-10 flex flex-wrap items-center justify-center gap-8 spark-fade d-300">
-              {brandLogos.map((url, i) => (
+              {brandLogos.map((logo, i) => (
                 <div
                   key={i}
                   className="flex items-center justify-center px-2"
                   style={{ minWidth: 140, height: 48 }}
                 >
                   <img
-                    src={url}
-                    alt="brand logo"
+                    src={logo.url}
+                    alt={`${logo.name} logo`}
                     className="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
                   />
 
@@ -387,7 +391,7 @@ const IndexSpark = () => {
                   {/* Real logo — transparent, original brand colors */}
                   <div className="mb-6 flex items-center justify-center h-20 px-4">
                     <img
-                      src={brandLogos[i]}
+                      src={brandLogos[i].url}
                       alt={`${v.company} logo`}
                       className="max-h-full max-w-full object-contain"
                       loading="lazy"

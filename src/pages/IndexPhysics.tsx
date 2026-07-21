@@ -126,7 +126,7 @@ const IndexPhysics = () => {
             <div className="h-full flex flex-col justify-between">
               <div className="text-[10px] tracking-[0.4em] text-[#2dd4a8]">// OPERATOR</div>
               <div>
-                <h1 className="text-4xl md:text-6xl font-black text-[#73ffb8] leading-none">MOHAMED<br />EISSA</h1>
+                <h1 className="text-4xl md:text-6xl font-black text-[#73ffb8] leading-none">Mohamed Eissa — Senior Control Systems Engineer</h1>
                 <p className="mt-4 text-sm text-[#c7f9e5]/80 max-w-lg" style={{ fontFamily: "'Work Sans', sans-serif" }}>
                   I&C engineer bridging end-user pragmatism, OEM depth, and integrator craft.
                 </p>
