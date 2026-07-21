@@ -47,7 +47,11 @@ const C = {
   accent: "#c9a961",     // same gold family — no color soup
 };
 
-const brandLogos = [methanexLogo.url, schneiderLogo.url, advansysLogo.url];
+const brandLogos = [
+  { url: methanexLogo.url, name: "Methanex" },
+  { url: schneiderLogo.url, name: "Schneider Electric" },
+  { url: advansysLogo.url, name: "Advansys Intelligent Solutions" },
+];
 
 const IndexSpark = () => {
   return (
