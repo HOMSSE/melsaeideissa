@@ -93,6 +93,7 @@ const IndexTerminal = () => {
               <div className="flex items-center gap-2 mt-2 text-sm">
                 <span className="text-[#2dd4a8]">eissa@mint:~$</span>
                 <input
+                  aria-label="Terminal command input"
                   value={cmd}
                   onChange={(e) => setCmd(e.target.value)}
                   onKeyDown={(e) => {
