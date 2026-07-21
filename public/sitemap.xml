@@ -10,4 +10,13 @@
       <image:title>Mohamed Eissa — Senior Control Systems Engineer</image:title>
     </image:image>
   </url>
+  <url><loc>https://melsaeideissa.com/original</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://melsaeideissa.com/editorial</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://melsaeideissa.com/shader</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://melsaeideissa.com/scroll3d</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://melsaeideissa.com/terminal</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://melsaeideissa.com/physics</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://melsaeideissa.com/cube</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://melsaeideissa.com/chroma</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://melsaeideissa.com/spark</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
 </urlset>
