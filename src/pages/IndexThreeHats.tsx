@@ -174,9 +174,9 @@ export default function IndexThreeHats() {
                     ? `drop-shadow(0 0 55px rgba(94,234,212,0.45)) brightness(1.08) contrast(1.08) hue-rotate(-10deg) saturate(1.15)`
                     : `drop-shadow(0 0 40px ${h.accent}55) brightness(1.05) contrast(1.05)`,
                 WebkitMaskImage:
-                  "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 10%, #000 30%, #000 100%)",
+                  "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 18%, #000 45%, #000 100%)",
                 maskImage:
-                  "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 10%, #000 30%, #000 100%)",
+                  "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 18%, #000 45%, #000 100%)",
               }}
             />
           </div>
