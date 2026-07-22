@@ -154,17 +154,17 @@ export default function IndexThreeHats() {
         {hats.map((h, i) => (
           <div
             key={h.key}
-            className={`absolute right-0 top-0 h-full overflow-hidden ${
-              i === 2 ? "w-[95vw]" : "w-[62vw]"
+            className={`absolute right-0 top-0 h-full overflow-hidden w-full ${
+              i === 2 ? "sm:w-[95vw]" : "sm:w-[62vw]"
             }`}
           >
             <img
               src={h.blueprint}
               alt=""
-              className={`absolute top-1/2 max-w-none -translate-y-1/2 transition-opacity duration-[1500ms] ${
+              className={`absolute top-1/2 -translate-y-1/2 transition-opacity duration-[1500ms] right-0 w-full h-auto max-h-full object-contain object-right sm:max-w-none ${
                 i === 2
-                  ? "right-[-8vw] h-auto w-full"
-                  : "right-0 h-full w-auto"
+                  ? "sm:right-[-8vw] sm:h-auto sm:w-full sm:object-cover"
+                  : "sm:right-0 sm:h-full sm:w-auto sm:object-cover"
               }`}
               style={{
                 opacity: i === activeHat ? 0.85 : 0,
@@ -174,9 +174,9 @@ export default function IndexThreeHats() {
                     ? `drop-shadow(0 0 55px rgba(94,234,212,0.45)) brightness(1.08) contrast(1.08) hue-rotate(-10deg) saturate(1.15)`
                     : `drop-shadow(0 0 40px ${h.accent}55) brightness(1.05) contrast(1.05)`,
                 WebkitMaskImage:
-                  "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 18%, #000 45%, #000 100%)",
+                  "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 10%, #000 30%, #000 100%)",
                 maskImage:
-                  "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 18%, #000 45%, #000 100%)",
+                  "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 10%, #000 30%, #000 100%)",
               }}
             />
           </div>
