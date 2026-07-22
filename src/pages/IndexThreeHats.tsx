@@ -154,17 +154,17 @@ export default function IndexThreeHats() {
         {hats.map((h, i) => (
           <div
             key={h.key}
-            className={`absolute right-0 top-0 h-full overflow-hidden ${
-              i === 2 ? "w-[95vw]" : "w-[62vw]"
+            className={`absolute right-0 top-0 h-full overflow-hidden w-full ${
+              i === 2 ? "sm:w-[95vw]" : "sm:w-[62vw]"
             }`}
           >
             <img
               src={h.blueprint}
               alt=""
-              className={`absolute top-1/2 max-w-none -translate-y-1/2 transition-opacity duration-[1500ms] ${
+              className={`absolute top-1/2 -translate-y-1/2 transition-opacity duration-[1500ms] right-0 w-full h-auto max-h-full object-contain object-right sm:max-w-none ${
                 i === 2
-                  ? "right-[-8vw] h-auto w-full"
-                  : "right-0 h-full w-auto"
+                  ? "sm:right-[-8vw] sm:h-auto sm:w-full sm:object-cover"
+                  : "sm:right-0 sm:h-full sm:w-auto sm:object-cover"
               }`}
               style={{
                 opacity: i === activeHat ? 0.85 : 0,
