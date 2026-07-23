@@ -8,9 +8,7 @@ export default defineConfig(({ mode }) => {
   // GitHub Pages project sites are served from /<repo-name>/.
   // GITHUB_REPOSITORY is "owner/repo"; we only need the repo part.
   const repo = process.env.GITHUB_REPOSITORY?.split('/')[1];
-  const base = process.env.GITHUB_PAGES === 'true' && repo
-    ? `/${repo}/`
-    : '/';
+  const base = repo ? `/${repo}/` : '/';
 
   return {
     base,
