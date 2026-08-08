@@ -1,14 +1,42 @@
-Update the bottom-of-page LinkedIn call-to-action in the LinkedIn Recommendations section.
+# Cleanup: Remove Experimental Site Versions
 
-Selected direction: Prominent brand CTA — solid LinkedIn-blue button with white text and LinkedIn icon.
+## Goal
+Remove all the experimental portfolio versions that were built for testing, keeping only the current live version (v11 — "Three Hats"). Clean up the router and imports so the project only serves the final site.
 
-Changes:
-- Replace the current small, muted inline link with a full-width (or centered max-width) solid button.
-- Use LinkedIn brand blue `#0077b5` with hover state `#006399`.
-- Add the LinkedIn logo SVG icon on the left of the label.
-- Increase text weight to bold/semibold and size to be clearly readable.
-- Add subtle shadow and active-scale feedback.
-- Update the label from "Connect via LinkedIn" to a warmer, action-oriented phrase such as "Let's connect on LinkedIn".
+## Current State
+- `src/App.tsx` imports and routes 11 different page components.
+- The live route (`/`) already points to `IndexThreeHats`.
+- `src/components/StyleToggle.tsx` already returns `null`, so the version switcher is hidden.
+- Only `IndexThreeHats.tsx` is actively used; the other 10 page files are dormant.
 
-File to edit:
-- `src/pages/IndexThreeHats.tsx` — the `<a>` element inside the LinkedIn Recommendations section bottom wrapper (around lines 897–909).
+## Proposed Cleanup
+
+### 1. Remove unused routes from `src/App.tsx`
+- Keep only the root route `/` pointing to `IndexThreeHats`.
+- Remove the `/original`, `/editorial`, `/shader`, `/scroll3d`, `/terminal`, `/physics`, `/cube`, `/chroma`, `/spark`, `/controlroom`, and `/threehats` alias routes.
+- Remove all imports for the unused page components.
+- Keep `NotFound` for the catch-all `*` route.
+- Keep `StyleToggle` imported (it already renders nothing, and removing it is optional).
+
+### 2. Delete unused page files
+Delete the following dormant components from `src/pages/`:
+- `Index.tsx`
+- `IndexEditorial.tsx`
+- `IndexShader.tsx`
+- `IndexScroll3D.tsx`
+- `IndexTerminal.tsx`
+- `IndexPhysics.tsx`
+- `IndexCube.tsx`
+- `IndexChroma.tsx`
+- `IndexSpark.tsx`
+- `IndexControlRoom.tsx`
+
+### 3. Verify build still passes
+Run the build/typecheck to confirm no broken imports or routes remain.
+
+## Revert Safety
+Yes, the files can be recovered if needed. Lovable keeps a full version history of every change. If we delete the files now, they remain in the project's history and can be restored by reverting to an earlier state. Two ways to do that:
+- Click the **revert** button on the AI message that performed the cleanup.
+- Use the **History** tab at the top of the chat and pick the version before the cleanup.
+
+If you prefer an even safer approach, we can keep the unused files in the repo and only remove their routes/imports. That leaves the files physically present but inaccessible. Let me know which you prefer.
