@@ -39,8 +39,26 @@ async function main() {
   );
 
   if (head) {
+    // Drop the static tags that Helmet re-declares, so the document keeps
+    // exactly one title / description / canonical / og / twitter tag.
+    const managed = [
+      /\s*<title>[\s\S]*?<\/title>/,
+      /\s*<meta name="description"[^>]*>/,
+      /\s*<link rel="canonical"[^>]*>/,
+      /\s*<meta property="og:type"[^>]*>/,
+      /\s*<meta property="og:title"[^>]*>/,
+      /\s*<meta property="og:description"[^>]*>/,
+      /\s*<meta property="og:url"[^>]*>/,
+      /\s*<meta property="og:image"(?!:)[^>]*>/,
+      /\s*<meta name="twitter:card"[^>]*>/,
+      /\s*<meta name="twitter:title"[^>]*>/,
+      /\s*<meta name="twitter:description"[^>]*>/,
+      /\s*<meta name="twitter:image"(?!:)[^>]*>/,
+    ];
+    for (const re of managed) template = template.replace(re, "");
     template = template.replace("</head>", `  ${head}\n  </head>`);
   }
+
 
   writeFileSync(templatePath, template);
   // SPA fallback for static hosts (GitHub Pages)
