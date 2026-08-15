@@ -922,6 +922,19 @@ export default function IndexThreeHats() {
       </section>
 
 
+      {/* COPYRIGHT FOOTER */}
+      <footer className="relative z-10 border-t border-white/10 bg-black/30 py-10 text-center backdrop-blur-sm">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="text-sm text-white/60">
+            © {new Date().getFullYear()} Mohamed Eissa. All rights reserved.
+          </p>
+          <p className="mt-2 text-xs text-white/40">
+            Unauthorized copying, reuse, or distribution of this website or its
+            contents is prohibited.
+          </p>
+        </div>
+      </footer>
+
       <style>{`
         @keyframes hatFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
         @keyframes auroraDrift {
