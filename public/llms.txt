@@ -1,7 +1,87 @@
-# Mohamed Eissa
+# Mohamed Eissa — Senior Control Systems Engineer
 
 > Senior Control Systems Engineer with 11+ years across Methanex (End User), Schneider Electric (Global Vendor), and Advansys Intelligent Solutions (System Integrator). Expert in DCS, SIS, SCADA, AVEVA PI, and Functional Safety (IEC 61511). Winner of the Advansys Innovation Award 2025.
 
+- Website: https://melsaeideissa.com/
+- LinkedIn: https://www.linkedin.com/in/mohamedeeissa
+- Location: Egypt (EMEA)
+- Current role: Senior Application Design Engineer, Advansys Intelligent Solutions
+
 ## Pages
 
-- [Home](/): Career overview across End User, Global Vendor, and System Integrator roles; technical skills, certifications, trainings, and recommendations.
+- [Home](https://melsaeideissa.com/): Career overview across End User, Global Vendor, and System Integrator roles; technical skills, certifications, trainings, and recommendations.
+
+## Three hats — 360° perspective
+
+### End User — Methanex (2015–2023)
+Instrument & Control Engineer at the world's largest methanol producer. Maintained DCS, SIS and machinery protection / condition monitoring systems from inside the plant. Owned Foxboro I/A DCS, Triconex ESD and Bently Nevada 3500 through daily operations, shutdowns and turnarounds.
+
+Highlights from the Methanex experience letter:
+- Control system engineering and maintenance using Foxboro I/A DCS, Triconex ESD, Bently Nevada 3500 MMS.
+- Managed control system spare parts and lifecycle monitoring.
+- Engineered, implemented and tested DCS logic, SIS logic, Wonderware and Bently Nevada 3500 modifications through the MOC lifecycle.
+- Developed and reviewed detailed design documentation for I&C projects; supervised installation, testing and commissioning of DCS upgrade components and Emerson 6200 positioner upgrades.
+- Preventive and corrective maintenance; module replacement for Bently Nevada 3500, Triconex and Foxboro.
+- Day-to-day technical support to operations, maintenance and engineering; investigated plant upsets and sequence-of-event reports.
+- Participated in LOPA studies, FAT for DCS upgrades, alarm rationalization studies and alarm management meetings, and control systems cybersecurity activities.
+- Used Maximo CMMS for work orders, purchase requests and lifecycle management; used Meridian document management for MOC.
+- Involved in two turnarounds and numerous plant shutdowns, incident investigations and root cause analysis.
+
+### Global Vendor — Schneider Electric (2023–2024)
+Expert Customer Support Engineer, Global Customer Support (EMEA), and Senior Application Design Engineer.
+- Advanced technical support to customers and field service personnel across EMEA.
+- Worked System Advisor cases including hot cases (Aramco, Novartis Pharma, Infineum Italia, PDO, KNPC and others).
+- Participated in System Advisor installation, FAT and SAT for UGDC (United Gas Derivatives Company), Damietta.
+- Troubleshot complex Foxboro system, product and software issues; collaborated with development teams; replicated reported defects.
+- Built SCADA systems for data centers using AVEVA System Platform.
+
+### System Integrator — Advansys Intelligent Solutions (2024–present)
+Senior Application Design Engineer. Designs SCADA systems bridging vendor technology with client needs.
+- WinCC OA SCADA, AVEVA System Platform, Unified Operations Center for Data Centers, AVEVA Reports for Operations.
+- Recipient of the Advansys Innovation Award 2025.
+
+## Breadth of experience
+
+- Industries: Petrochemicals, Data Centers.
+- Lifecycle: Engineering & design, maintenance & operations.
+- Engagement modes: On-site field engineering, global remote expert customer support.
+- Specialized teams: SCADA team, AVEVA PI team.
+
+## Technical skills
+
+- DCS Systems: Foxboro Archestra / Foxboro I/A, System Advisor, process control, HMI development.
+- SIS Platforms: Triconex Tristation, Safety Instrumented Systems, functional safety, emergency shutdown (ESD).
+- SCADA: WinCC OA, AVEVA System Platform, AVEVA PI System, Unified Operations Center.
+- Maintenance systems: Maximo CMMS, asset management, preventive maintenance, work order management.
+- Additional: Bently Nevada 3500, BlueCielo Meridian document management, alarm management & rationalization, Permit To Work systems, ISA/IEC 62443 industrial cybersecurity.
+
+## Certifications
+
+- Certified Functional Safety Professional (CFSP) — exida, 2022–2025.
+- Certified WinCC OA Basic Training — Siemens.
+- ISA/IEC 62443 Cybersecurity Fundamentals Specialist — ISA.
+
+## Trainings
+
+- IEC 61511: Functional Safety Analysis, Design, and Operation — exida.
+- WinCC OA Basic Training — Siemens.
+- ISA/IEC 62443 Cybersecurity Fundamentals — ISA.
+- Effective Alarm Management, The Practitioners Course — AHC Engineering Consultancy.
+- Managing Risk, Recognizing What Can Hurt Us — Paul Balmert.
+- HAZWOPER Awareness Level Responder — Ross A. Gourlay.
+- 5001 Control Software Configuration Essential — Schneider Electric, Houston TX Learning Center.
+- 8902 TRICON System / TriStation 1131 Configuration and Implementation — Schneider Electric, Webster TX Learning Center.
+- And many others (continuous learning).
+
+## Awards
+
+- Innovation Award 2025 — Advansys Intelligent Solutions.
+
+## LinkedIn recommendations
+
+- Assem Abdou (Electrical, Instrumentation & Control Systems Lead; managed Mohamed directly, Sep 23, 2023): "Mohamed was part of my I&C team. He was always a reliable team member, stepping in to provide support when needed. He is a very decent person and it's always been easy to work and deal with him."
+- Anas Sakr (Senior Instrumentation & Control Systems Engineer, Methanex Corporation, Apr 21, 2026): "I had the pleasure of working with Mohamed Eissa as a colleague in the field of Instrumentation and Control Engineering in Methanex, and I can confidently say he is a highly skilled and reliable engineer. Mohamed has strong hands-on experience with Foxboro IA systems and Triconex safety systems, demonstrating solid knowledge in DCS and SIS environments... I highly recommend Mohamed to any team looking for a competent and dedicated professional Instrumentation and Control Engineer."
+
+## Contact
+
+- LinkedIn: https://www.linkedin.com/in/mohamedeeissa

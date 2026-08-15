@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build:dev": "vite build --mode development",
+    "build": "vite build && node scripts/prerender.mjs",
+    "build:dev": "vite build --mode development && node scripts/prerender.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -67,7 +67,7 @@
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@lovable.dev/vite-plugin-dev-server-bridge": "^1.0.2",
-    "@lovable.dev/vite-plugin-hmr-gate": "^1.5.0",
+    "@lovable.dev/vite-plugin-hmr-gate": "^1.6.4",
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",
