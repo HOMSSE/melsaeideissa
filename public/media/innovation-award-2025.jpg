@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="/@vite/client"></script>
+
+    <script>
+(() => {
+  if (globalThis.__lovableErrorCollectorInstalled) return;
+  globalThis.__lovableErrorCollectorInstalled = true;
+  const endpoint = "/__lovable/error-collector";
+  const clip = (value) => String(value ?? "").slice(0, 10000);
+  const describe = (value, fallback) => {
+    if (value && typeof value === "object") {
+      const message = "message" in value ? clip(value.message) : "";
+      const stack = "stack" in value ? clip(value.stack) : "";
+      const name = "name" in value ? clip(value.name) : "";
+      if (message || stack || name) return { name: name || undefined, message: message || fallback, stack: stack || undefined };
+      try {
+        const seen = new WeakSet();
+        const json = JSON.stringify(value, (_key, nested) => {
+          if (typeof nested === "bigint") return String(nested);
+          if (nested && typeof nested === "object") {
+            if (seen.has(nested)) return "[Circular]";
+            seen.add(nested);
+          }
+          return nested;
+        });
+        if (json) return { message: clip(json) };
+      } catch {}
+    }
+    return { message: value == null ? fallback : clip(value) };
+  };
+  const post = (report) => {
+    try {
+      const body = JSON.stringify({
+        ...report,
+        timestamp: new Date().toISOString(),
+        pageUrl: location.href,
+        userAgent: navigator.userAgent,
+      });
+      void fetch(endpoint, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body,
+        keepalive: true,
+      }).catch(() => {});
+    } catch {}
+  };
+  addEventListener("error", (event) => {
+    const target = event.target;
+    if (target && target !== globalThis && typeof target === "object" && "tagName" in target) {
+      const tagName = clip(target.tagName).toLowerCase();
+      const resourceUrl = clip(target.currentSrc || target.src || target.href || "");
+      post({
+        type: "resource-error",
+        message: resourceUrl ? `Failed to load <${tagName}>: ${resourceUrl}` : `Failed to load <${tagName}>`,
+        tagName,
+        resourceUrl: resourceUrl || undefined,
+      });
+      return;
+    }
+    post({
+      type: "runtime-error",
+      ...describe(event.error || event.message, "Unknown runtime error"),
+      filename: clip(event.filename) || undefined,
+      line: Number.isFinite(event.lineno) ? event.lineno : undefined,
+      column: Number.isFinite(event.colno) ? event.colno : undefined,
+    });
+  }, true);
+  addEventListener("unhandledrejection", (event) => {
+    post({
+      type: "unhandled-rejection",
+      ...describe(event.reason, "Unhandled promise rejection"),
+    });
+  });
+})();
+</script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f4c4a" />
+
+    <!-- Primary SEO -->
+    <title>Mohamed Eissa | Control Systems Engineer — DCS, SIS, SCADA</title>
+    <meta name="description" content="Mohamed Eissa — Senior Control Systems Engineer. 11+ years across Methanex, Schneider Electric & Advansys. DCS, SIS, SCADA, Functional Safety. Innovation Award 2025." />
+    <meta name="keywords" content="Mohamed Eissa, Control Systems Engineer, DCS Engineer, SIS Engineer, SCADA Engineer, Functional Safety Engineer, Certified Functional Safety Professional, CFSP, TÜV, IEC 61511, IEC 61508, ISA/IEC 62443, Industrial Cybersecurity, Foxboro DCS, Triconex, Bently Nevada 3500, AVEVA PI, AVEVA System Platform, WinCC OA, System Advisor, Alarm Management, Alarm Rationalization, HMI, Maximo CMMS, Industrial Automation, Process Automation, Petrochemicals, Methanol, Data Centers, Methanex, Schneider Electric, Advansys, Advansys Intelligent Solutions, Innovation Award, Innovation Award 2025, End User, Global Vendor, System Integrator, EMEA, Egypt" />
+    <meta name="author" content="Mohamed Eissa" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://melsaeideissa.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Mohamed Eissa" />
+    <meta property="og:title" content="Mohamed Eissa | Control Systems Engineer — Methanex · Schneider Electric · Advansys" />
+    <meta property="og:description" content="11+ years building safer, smarter industrial automation across End User (Methanex), Global Vendor (Schneider Electric) and System Integrator (Advansys) roles. DCS · SIS · SCADA · AVEVA PI · Functional Safety. Innovation Award 2025 winner." />
+    <meta property="og:url" content="https://melsaeideissa.com/" />
+    <meta property="og:image" content="https://melsaeideissa.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Mohamed Eissa — Control Systems Engineer" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="profile:first_name" content="Mohamed" />
+    <meta property="profile:last_name" content="Eissa" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mohamed Eissa | Control Systems Engineer — Methanex · Schneider Electric · Advansys" />
+    <meta name="twitter:description" content="11+ years across Methanex, Schneider Electric & Advansys. DCS · SIS · SCADA · Functional Safety. Innovation Award 2025." />
+    <meta name="twitter:image" content="https://melsaeideissa.com/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Mohamed Eissa — Control Systems Engineer" />
+
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.linkedin.com" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico?v=3" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=3" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3" />
+
+
+    <!-- Structured Data: Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohamed Eissa",
+      "alternateName": "Mohamed El Saeid Eissa",
+      "url": "https://melsaeideissa.com/",
+      "image": "https://melsaeideissa.com/og-image.jpg",
+      "jobTitle": "Senior Control Systems Engineer",
+      "description": "Control Systems Engineer and Certified Functional Safety Professional with 11+ years across End User (Methanex), Global Vendor (Schneider Electric) and System Integrator (Advansys Intelligent Solutions) roles. Expert in DCS, SIS, SCADA and AVEVA PI across petrochemicals and data centers. Winner of the Advansys Innovation Award 2025.",
+      "nationality": "Egyptian",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Advansys Intelligent Solutions",
+        "url": "https://advansys-is.com/"
+      },
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Senior Control Systems Engineer",
+        "occupationalCategory": "17-2112 Industrial Engineers / Control Systems Engineering",
+        "skills": "DCS, SIS, SCADA, AVEVA PI, Foxboro, Triconex, Bently Nevada, WinCC OA, Functional Safety (IEC 61511), ISA/IEC 62443 Cybersecurity, Alarm Management, HMI Development, Maximo CMMS"
+      },
+      "alumniOf": [
+        { "@type": "Organization", "name": "Schneider Electric", "url": "https://www.se.com/" },
+        { "@type": "Organization", "name": "Methanex Corporation", "url": "https://www.methanex.com/" }
+      ],
+      "knowsAbout": [
+        "Distributed Control Systems (DCS)",
+        "Safety Instrumented Systems (SIS)",
+        "SCADA",
+        "AVEVA PI System",
+        "AVEVA System Platform",
+        "Functional Safety (IEC 61511 / IEC 61508)",
+        "Foxboro I/A Series DCS",
+        "Triconex Tristation",
+        "Bently Nevada 3500 Machinery Protection",
+        "WinCC OA",
+        "System Advisor",
+        "Alarm Management & Rationalization",
+        "Industrial Cybersecurity (ISA/IEC 62443)",
+        "Process Automation",
+        "HMI Development",
+        "Maximo CMMS",
+        "Petrochemicals Automation",
+        "Data Center Control Systems"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "TÜV Certified Functional Safety Professional (CFSP)",
+          "credentialCategory": "certification",
+          "recognizedBy": { "@type": "Organization", "name": "exida" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "ISA/IEC 62443 Cybersecurity Fundamentals Specialist",
+          "credentialCategory": "certification",
+          "recognizedBy": { "@type": "Organization", "name": "ISA" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Certified WinCC OA Basic Training",
+          "credentialCategory": "certification",
+          "recognizedBy": { "@type": "Organization", "name": "Siemens" }
+        }
+      ],
+      "award": [
+        "Innovation Award 2025 — Advansys Intelligent Solutions"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/mohamedeeissa"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: FAQ (surfaces brand + expertise keywords in search) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is Mohamed Eissa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mohamed Eissa is a Senior Control Systems Engineer with 11+ years of experience in DCS, SIS and SCADA across petrochemicals and data centers. He has worked as an End User at Methanex, a Global Vendor at Schneider Electric, and a System Integrator at Advansys Intelligent Solutions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Mohamed Eissa's technical expertise?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Foxboro DCS, Triconex ESD/SIS, Bently Nevada 3500, AVEVA PI, AVEVA System Platform, WinCC OA, System Advisor, Alarm Management, HMI development, Maximo CMMS, and Functional Safety per IEC 61511 / IEC 61508."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What certifications does Mohamed Eissa hold?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TÜV Certified Functional Safety Professional (CFSP) via exida, ISA/IEC 62443 Cybersecurity Fundamentals Specialist, and Certified WinCC OA Basic Training by Siemens."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Innovation Award 2025?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mohamed Eissa received the Innovation Award 2025 from Advansys Intelligent Solutions in recognition of innovative contributions to industrial automation and control system delivery."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: ProfilePage / WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://melsaeideissa.com/",
+      "name": "Mohamed Eissa — Senior Control Systems Engineer",
+      "inLanguage": "en"
+    }
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
